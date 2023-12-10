@@ -3140,24 +3140,7 @@ pre .id {
     float: right
 }
 
-@media screen and (max-width:800px){
-    body {
-		background: rgb(255, 112, 112);
-    }
-	.article-title{
-		font-family: 'Times New Roman', Times, serif;
-		color: rgb(59, 0, 65);
-		font-weight: 900;
-		font-size: 20px;
-		animation-play-state: paused;
-	}
-	.article-title:hover{
-		font-size: 22px;
-		color: rgb(148, 109, 151);
-	}
-}
-
-/* @media screen and (max-width:800px) {
+@media screen and (max-width:800px) {
 
     #container,
     body,
@@ -3648,7 +3631,7 @@ pre .id {
         -webkit-box-orient: vertical;
         padding: 0 24px
     }
-} */
+}
 
 /*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */
 .pswp__button {
