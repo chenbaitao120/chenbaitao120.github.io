@@ -3314,11 +3314,11 @@ pre .id {
     }
 
     .article {
-        margin: 30px;
+        margin: 20px;
         border: 1px solid #090202;
         border-top: 1px solid #0f0808;
         border-bottom: 1px solid #0b0404;
-        background: rgba(17, 15, 15, 0.966);
+        background: rgba(227, 201, 201, 0.966);
         transition: all .2s ease-in
     }
     
@@ -3333,7 +3333,7 @@ pre .id {
 
     .article .article-inner h1.article-title,
     .article .article-title {
-        font-size: 18px;
+        font-size: 15px;
         font-weight: 300;
         display: block;
         margin: 0
