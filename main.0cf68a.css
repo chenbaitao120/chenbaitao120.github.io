@@ -361,7 +361,15 @@ html {
     height: 100%
 }
 
-
+/* body {
+    margin: 0;
+    font-size: 14px;
+    font-family: Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    min-height: 100%
+} */
 
 article,
 aside,
@@ -2185,7 +2193,14 @@ pre .id {
     }
 }
 
-
+/* .article {
+    margin: 30px;
+    border: 1px solid #ddd;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background: rgba(255,255,255,.5);
+    transition: all .2s ease-in
+} */
 
 
 .article img {
@@ -3299,11 +3314,11 @@ pre .id {
     }
 
     .article {
-        margin: 10px;
+        margin: 30px;
         border: 1px solid #090202;
         border-top: 1px solid #0f0808;
         border-bottom: 1px solid #0b0404;
-        background: rgba(237, 225, 225, 0.966);
+        background: rgba(17, 15, 15, 0.966);
         transition: all .2s ease-in
     }
     
@@ -3334,7 +3349,7 @@ pre .id {
     .article .article-meta .article-date {
         font-size: 12px;
         border-radius: 0;
-        color: #f3ecec;
+        color: #070303;
         background: none;
         height: auto;
         padding: 0;
