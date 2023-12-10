@@ -3318,7 +3318,7 @@ pre .id {
         border: 1px solid #090202;
         border-top: 1px solid #0f0808;
         border-bottom: 1px solid #0b0404;
-        background: rgba(17, 15, 15, 0.966);
+        background: rgba(242, 237, 237, 0.966);
         transition: all .2s ease-in
     }
     
@@ -3349,7 +3349,7 @@ pre .id {
     .article .article-meta .article-date {
         font-size: 12px;
         border-radius: 0;
-        color: #070303;
+        color: #f3ecec;
         background: none;
         height: auto;
         padding: 0;
