@@ -4323,11 +4323,11 @@ a.pswp__share--download:hover {
     background: #708090;
 }
 
-.search:hover {
+/* .search:hover {
     border: 2px solid #d3d3d3;
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /*搜索重置按钮*/
 #search-form .fa-times {
