@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta charset="utf-8">
 
   
@@ -281,6 +282,16 @@
           </a>
         </div> -->
       <!--  -->
+      <script>
+        (function(){
+          let password2 =  '' ;
+          if(password2 != ''){
+            if(prompt('请输入密码') != password2){
+                history.back();
+            }
+          }
+        })();
+    </script>
       
         
           
@@ -556,16 +567,7 @@
 
  -->
  <!--  -->
-  <script>
-    (function(){
-        if('{{ page.password2 }}'){
-            if (prompt('请输入文章密码') !== '{{ page.password2 }}'){
-                alert('密码错误！');
-                history.back();
-            }
-        }
-    })();
-</script>
+
 <body>
     <div id="gitalk-container"></div>
 </body>
@@ -696,6 +698,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -705,10 +711,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
               </li>
             
             <div class="clearfix"></div>
