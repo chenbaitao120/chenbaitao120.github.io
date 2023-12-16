@@ -18,8 +18,9 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144809908.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144154573.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210204111384.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216135128038.png">
 <meta property="article:published_time" content="2023-12-10T14:46:25.000Z">
-<meta property="article:modified_time" content="2023-12-15T13:56:02.432Z">
+<meta property="article:modified_time" content="2023-12-16T05:53:41.221Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="自动化">
 <meta property="article:tag" content="爬虫">
@@ -54,13 +55,14 @@
 <div class="overlay"></div>
 <div class="intrude-less">
 	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-	<form id="search-form"> <!-- 搜索框相关 -->
-		<input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="站内搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
-		<i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
-	</form>
-	<div id="local-search-result"></div> <!-- 搜索结果区 -->
-	<p class='no-result'>没找到。。。</p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+
 	<header id="header" class="inner">
+		<form id="search-form"> <!-- 搜索框相关 -->
+			<input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="站内搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+			<i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+		</form>
+		<div id="local-search-result"></div> <!-- 搜索结果区 -->
+		<p class='no-result'>没找到。。。</p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
 		<a href="/" class="profilepic">
 			<img src="/img/u=1717317016,2170413612&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG.webp" class="js-avatar">
 		</a>
@@ -198,7 +200,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%B1%E5%88%80%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">影刀基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E7%9B%B8%E4%BC%BC%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">最大相似性</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%B1%E5%88%80%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">影刀基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E7%9B%B8%E4%BC%BC%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">最大相似性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">操作类型</span></a></li></ol>
  </div>
  <script type="text/javascript">
   function showToc(){
@@ -261,6 +263,8 @@
 <h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><h3 id="最大相似性"><a href="#最大相似性" class="headerlink" title="最大相似性"></a>最大相似性</h3><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210204111384.png" alt="image-20231210204111384"></p>
 <p>元素有完成和取消，如果想捕获全部，那么完成和取消都需要捕获，因为他们只有位置是相似的。</p>
 <p>相似元素主要处理循环相似元素的操作。</p>
+<h1 id="操作类型"><a href="#操作类型" class="headerlink" title="操作类型"></a>操作类型</h1><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216135128038.png" alt="image-20231216135128038"></p>
+<p><a target="_blank" rel="noopener" href="https://shop.yingdao.com/">https://shop.yingdao.com/</a> 影刀商城</p>
 
       
 
@@ -308,6 +312,8 @@
 <h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><h3 id="最大相似性"><a href="#最大相似性" class="headerlink" title="最大相似性"></a>最大相似性</h3><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210204111384.png" alt="image-20231210204111384"></p>
 <p>元素有完成和取消，如果想捕获全部，那么完成和取消都需要捕获，因为他们只有位置是相似的。</p>
 <p>相似元素主要处理循环相似元素的操作。</p>
+<h1 id="操作类型"><a href="#操作类型" class="headerlink" title="操作类型"></a>操作类型</h1><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216135128038.png" alt="image-20231216135128038"></p>
+<p><a target="_blank" rel="noopener" href="https://shop.yingdao.com/">https://shop.yingdao.com/</a> 影刀商城</p>
 
           
         
@@ -439,7 +445,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%B1%E5%88%80%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">影刀基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E7%9B%B8%E4%BC%BC%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">最大相似性</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%B1%E5%88%80%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">影刀基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E7%9B%B8%E4%BC%BC%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">最大相似性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">操作类型</span></a></li></ol>
                     </div>
                 </span>
             </div>
