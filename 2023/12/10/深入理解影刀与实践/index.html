@@ -8,19 +8,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>影刀入门 | chen.blog</title>
+  <title>如何用影刀搭建一个数据采集机器人 | chen.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="article">
-<meta property="og:title" content="影刀入门">
-<meta property="og:url" content="http://example.com/2023/12/10/%E5%BD%B1%E5%88%80%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="如何用影刀搭建一个数据采集机器人">
+<meta property="og:url" content="http://example.com/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="chen.blog">
 <meta property="og:locale">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144809908.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144154573.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210204111384.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216135128038.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216143618599.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216151701472.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216152031597.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216161643149.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216162316281-17027150274641.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216164525524.png">
 <meta property="article:published_time" content="2023-12-10T14:46:25.000Z">
-<meta property="article:modified_time" content="2023-12-16T05:53:41.221Z">
+<meta property="article:modified_time" content="2023-12-16T08:55:16.596Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="自动化">
 <meta property="article:tag" content="爬虫">
@@ -189,7 +195,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-影刀基础" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-深入理解影刀与实践" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 <!-- 目录内容 -->
 
@@ -200,7 +206,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%B1%E5%88%80%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">影刀基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E7%9B%B8%E4%BC%BC%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">最大相似性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">操作类型</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">2.</span> <span class="toc-text">搭建第一个机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">2.2.</span> <span class="toc-text">元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">操作类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">2.4.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.5.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%94%A8%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">2.6.</span> <span class="toc-text">如何搭建一个实用的机器人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92"><span class="toc-number">2.7.</span> <span class="toc-text">如何进行人机交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%88%86%E4%BA%AB"><span class="toc-number">2.8.</span> <span class="toc-text">如何进行机器人的分享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-number">2.9.</span> <span class="toc-text">定时任务</span></a></li></ol></li></ol>
  </div>
  <script type="text/javascript">
   function showToc(){
@@ -224,7 +230,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      影刀入门
+      如何用影刀搭建一个数据采集机器人
     </h1>
   
 
@@ -244,7 +250,7 @@
             
         <!--显示阅读次数完毕-->
         
-        <a href="/2023/12/10/%E5%BD%B1%E5%88%80%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+        <a href="/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
   	<time datetime="2023-12-10T14:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-10</time>
 </a>
         
@@ -257,14 +263,39 @@
         <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144809908.png" alt="image-20231210144809908"></p>
 <span id="more"></span>
 
-<h1 id="影刀基础"><a href="#影刀基础" class="headerlink" title="影刀基础"></a>影刀基础</h1><h2 id="搭建第一个自动化流程"><a href="#搭建第一个自动化流程" class="headerlink" title="搭建第一个自动化流程"></a>搭建第一个自动化流程</h2><p>打开网页-&gt;填写输入框-&gt;crlt+鼠标左键可以选择输入框元素-&gt;点击元素 -&gt;crlt+左键</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="搭建第一个机器人"><a href="#搭建第一个机器人" class="headerlink" title="搭建第一个机器人"></a>搭建第一个机器人</h1><h2 id="搭建第一个自动化流程"><a href="#搭建第一个自动化流程" class="headerlink" title="搭建第一个自动化流程"></a>搭建第一个自动化流程</h2><p>打开网页-&gt;填写输入框-&gt;crlt+鼠标左键可以选择输入框元素-&gt;点击元素 -&gt;crlt+左键</p>
 <p>搭建完成，其实就是对 元素+操作 的编排集合。</p>
-<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144154573.png" alt="image-20231210144154573"></p>
-<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><h3 id="最大相似性"><a href="#最大相似性" class="headerlink" title="最大相似性"></a>最大相似性</h3><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210204111384.png" alt="image-20231210204111384"></p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144154573.png" alt="image-20231210144154573" style="zoom:50%;" align="left" />
+
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p>最大相似性</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210204111384.png" alt="image-20231210204111384"></p>
 <p>元素有完成和取消，如果想捕获全部，那么完成和取消都需要捕获，因为他们只有位置是相似的。</p>
 <p>相似元素主要处理循环相似元素的操作。</p>
-<h1 id="操作类型"><a href="#操作类型" class="headerlink" title="操作类型"></a>操作类型</h1><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216135128038.png" alt="image-20231216135128038"></p>
+<h2 id="操作类型"><a href="#操作类型" class="headerlink" title="操作类型"></a>操作类型</h2><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216135128038.png" alt="image-20231216135128038" style="zoom: 50%;" align="left"/>
+
 <p><a target="_blank" rel="noopener" href="https://shop.yingdao.com/">https://shop.yingdao.com/</a> 影刀商城</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>对象命名不能重复；要有意义；</p>
+ <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216143618599.png" alt="image-20231216143618599" style="zoom: 50%;" />
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>字符串  数字 区别是拼接和相加</p>
+<p>列表</p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216151701472.png" alt="image-20231216151701472" style="zoom:50%;" align = "left"/>
+
+
+
+<h2 id="如何搭建一个实用的机器人"><a href="#如何搭建一个实用的机器人" class="headerlink" title="如何搭建一个实用的机器人"></a>如何搭建一个实用的机器人</h2><p>输入商品名称进行搜索，搜索出来的内容抓取下来保存到本地的excel里面去</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216152031597.png" alt="image-20231216152031597"></p>
+<p>打开页面，输入账号密码，设置超时时间，通过获取相似元素列表获取底下的页码，然后获得倒数第二个就是页码的数值，设为变量，这个就是页码的数字，批量数据抓取抓取页数这里设置成这个数字，就能固定获取到指定的全部列表数据。</p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216161643149.png" alt="image-20231216161643149" style="zoom: 80%;" align="left"/>
+
+<h2 id="如何进行人机交互"><a href="#如何进行人机交互" class="headerlink" title="如何进行人机交互"></a>如何进行人机交互</h2><p>用这个可以让执行的过程中允许你输入东西，可以让你在运行过程中个性化自定义的东西放进去</p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216162316281-17027150274641.png" style="zoom: 80%;" align="left"/>
+
+
+
+<h2 id="如何进行机器人的分享"><a href="#如何进行机器人的分享" class="headerlink" title="如何进行机器人的分享"></a>如何进行机器人的分享</h2><p>左上角重命名保存一下退出来。</p>
+<p>要分享先发版；选中机器人点击发版。填写发版备注；</p>
+<h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216164525524.png" alt="image-20231216164525524"></p>
 
       
 
@@ -306,14 +337,39 @@
             <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144809908.png" alt="image-20231210144809908"></p>
 <span id="more"></span>
 
-<h1 id="影刀基础"><a href="#影刀基础" class="headerlink" title="影刀基础"></a>影刀基础</h1><h2 id="搭建第一个自动化流程"><a href="#搭建第一个自动化流程" class="headerlink" title="搭建第一个自动化流程"></a>搭建第一个自动化流程</h2><p>打开网页-&gt;填写输入框-&gt;crlt+鼠标左键可以选择输入框元素-&gt;点击元素 -&gt;crlt+左键</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="搭建第一个机器人"><a href="#搭建第一个机器人" class="headerlink" title="搭建第一个机器人"></a>搭建第一个机器人</h1><h2 id="搭建第一个自动化流程"><a href="#搭建第一个自动化流程" class="headerlink" title="搭建第一个自动化流程"></a>搭建第一个自动化流程</h2><p>打开网页-&gt;填写输入框-&gt;crlt+鼠标左键可以选择输入框元素-&gt;点击元素 -&gt;crlt+左键</p>
 <p>搭建完成，其实就是对 元素+操作 的编排集合。</p>
-<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144154573.png" alt="image-20231210144154573"></p>
-<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><h3 id="最大相似性"><a href="#最大相似性" class="headerlink" title="最大相似性"></a>最大相似性</h3><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210204111384.png" alt="image-20231210204111384"></p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144154573.png" alt="image-20231210144154573" style="zoom:50%;" align="left" />
+
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p>最大相似性</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210204111384.png" alt="image-20231210204111384"></p>
 <p>元素有完成和取消，如果想捕获全部，那么完成和取消都需要捕获，因为他们只有位置是相似的。</p>
 <p>相似元素主要处理循环相似元素的操作。</p>
-<h1 id="操作类型"><a href="#操作类型" class="headerlink" title="操作类型"></a>操作类型</h1><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216135128038.png" alt="image-20231216135128038"></p>
+<h2 id="操作类型"><a href="#操作类型" class="headerlink" title="操作类型"></a>操作类型</h2><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216135128038.png" alt="image-20231216135128038" style="zoom: 50%;" align="left"/>
+
 <p><a target="_blank" rel="noopener" href="https://shop.yingdao.com/">https://shop.yingdao.com/</a> 影刀商城</p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>对象命名不能重复；要有意义；</p>
+ <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216143618599.png" alt="image-20231216143618599" style="zoom: 50%;" />
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>字符串  数字 区别是拼接和相加</p>
+<p>列表</p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216151701472.png" alt="image-20231216151701472" style="zoom:50%;" align = "left"/>
+
+
+
+<h2 id="如何搭建一个实用的机器人"><a href="#如何搭建一个实用的机器人" class="headerlink" title="如何搭建一个实用的机器人"></a>如何搭建一个实用的机器人</h2><p>输入商品名称进行搜索，搜索出来的内容抓取下来保存到本地的excel里面去</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216152031597.png" alt="image-20231216152031597"></p>
+<p>打开页面，输入账号密码，设置超时时间，通过获取相似元素列表获取底下的页码，然后获得倒数第二个就是页码的数值，设为变量，这个就是页码的数字，批量数据抓取抓取页数这里设置成这个数字，就能固定获取到指定的全部列表数据。</p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216161643149.png" alt="image-20231216161643149" style="zoom: 80%;" align="left"/>
+
+<h2 id="如何进行人机交互"><a href="#如何进行人机交互" class="headerlink" title="如何进行人机交互"></a>如何进行人机交互</h2><p>用这个可以让执行的过程中允许你输入东西，可以让你在运行过程中个性化自定义的东西放进去</p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216162316281-17027150274641.png" style="zoom: 80%;" align="left"/>
+
+
+
+<h2 id="如何进行机器人的分享"><a href="#如何进行机器人的分享" class="headerlink" title="如何进行机器人的分享"></a>如何进行机器人的分享</h2><p>左上角重命名保存一下退出来。</p>
+<p>要分享先发版；选中机器人点击发版。填写发版备注；</p>
+<h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216164525524.png" alt="image-20231216164525524"></p>
 
           
         
@@ -401,7 +457,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/10/%E5%BD%B1%E5%88%80%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -416,8 +472,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2013/07/13/hexo%E5%AD%A6%E4%B9%A0(5)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo学习</div>
+    <a href="/2013/07/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">深入理解hexo</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -445,7 +501,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BD%B1%E5%88%80%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">影刀基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E7%9B%B8%E4%BC%BC%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">最大相似性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">操作类型</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">2.</span> <span class="toc-text">搭建第一个机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">2.2.</span> <span class="toc-text">元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">操作类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">2.4.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.5.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%94%A8%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">2.6.</span> <span class="toc-text">如何搭建一个实用的机器人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92"><span class="toc-number">2.7.</span> <span class="toc-text">如何进行人机交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%88%86%E4%BA%AB"><span class="toc-number">2.8.</span> <span class="toc-text">如何进行机器人的分享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-number">2.9.</span> <span class="toc-text">定时任务</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -461,7 +517,7 @@
   
 
   
-  <div id="SOHUCS" sid="影刀基础" ></div> 
+  <div id="SOHUCS" sid="深入理解影刀与实践" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
@@ -708,10 +764,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -721,6 +773,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
               </li>
             
             <div class="clearfix"></div>
