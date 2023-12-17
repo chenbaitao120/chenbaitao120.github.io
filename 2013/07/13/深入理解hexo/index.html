@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231209183403496.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210113200093.png">
 <meta property="article:published_time" content="2013-07-13T12:46:25.000Z">
-<meta property="article:modified_time" content="2023-12-16T08:06:31.524Z">
+<meta property="article:modified_time" content="2023-12-17T06:50:20.234Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="hexo标签">
 <meta name="twitter:card" content="summary">
@@ -184,7 +184,7 @@
 	</div>
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 
-	<div>123</div>
+
 </nav>
 
       <div id="wrapper" class="body-wrap">
@@ -262,13 +262,24 @@
 <span id="more"></span>
 
 <h1 id="优秀案例"><a href="#优秀案例" class="headerlink" title="优秀案例"></a>优秀案例</h1><p><a target="_blank" rel="noopener" href="https://baiyongan.github.io/posts/2566/">https://baiyongan.github.io/posts/2566/</a></p>
-<h1 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h1><p>hexo网站地址 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
-<p>source：放置原始的markdown</p>
-<p>themes:放置主题 可以进行更改 生成</p>
-<p>config.yml 配置文件夹 标题 作者 远程部署地址等</p>
-<h2 id="生成静态网站"><a href="#生成静态网站" class="headerlink" title="生成静态网站"></a>生成静态网站</h2><p>hexo generate</p>
-<p>hexo g</p>
-<p>生成好的pulic文件夹就直接当成静态网站进行部署</p>
+<h1 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h1><ul>
+<li><p>hexo网站地址 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
+</li>
+<li><p>source：放置原始的markdown</p>
+</li>
+<li><p>themes:放置主题 可以进行更改 生成</p>
+</li>
+<li><p>config.yml 配置文件夹 标题 作者 远程部署地址等</p>
+</li>
+</ul>
+<h2 id="生成静态网站"><a href="#生成静态网站" class="headerlink" title="生成静态网站"></a>生成静态网站</h2><ol>
+<li><p>hexo generate</p>
+</li>
+<li><p>hexo g</p>
+</li>
+<li><p>生成好的pulic文件夹就直接当成静态网站进行部署</p>
+</li>
+</ol>
 <h1 id="博客的主题安装和推荐"><a href="#博客的主题安装和推荐" class="headerlink" title="博客的主题安装和推荐"></a>博客的主题安装和推荐</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
 <p>1.git clone获取下来</p>
 <p>复制到theme文件夹下面</p>
@@ -276,11 +287,26 @@
 <p>2.修改config.yml</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231207205749630.png" alt="image-20231207205749630"></p>
 <p>启动即可</p>
-<h1 id="发布安装"><a href="#发布安装" class="headerlink" title="发布安装"></a>发布安装</h1><p>个人博客的重要性<br> npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a> 安装淘宝镜像源<br> npm config get registry<br> 配置cnpm环境变量<br> cnpm install -g hexo-cli 安装博客<br> hexo -v验证博客<br> hexo init 初始化博客<br> hexo -s 启动博客本地<br> hexo -n “我的第一篇文章”</p>
-<p> 部署到远端去 通过git hub上去 github密码 <a href="mailto:&#x35;&#55;&#x34;&#x36;&#x35;&#x38;&#50;&#x31;&#56;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;">&#x35;&#55;&#x34;&#x36;&#x35;&#x38;&#50;&#x31;&#56;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;</a> ysydxhyz147<br> <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/baitaochen.gitub.io.git">https://github.com/chenbaitao120/baitaochen.gitub.io.git</a><br> git 新建仓库 仓库命名一定要是自己的昵称baitaochen.github.io<br> _config.yml 编辑<br> -—————————<br> deploy:<br>  type: git<br>  repo: <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/chenbaitao120.github.io.git">https://github.com/chenbaitao120/chenbaitao120.github.io.git</a><br>  branch: main</p>
-<p>  npm install –save hexo-deployer-git 安装git相关组件</p>
-<p>  部署到远端<br>  hexo d </p>
-<p> 博客主题:<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a> 素材操作<br> git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> thmes&#x2F;yilia 克隆<br> config 里面修改主题为yilia<br> hexo clean 清除一下<br> hexo s 重新开始</p>
+<h1 id="发布安装"><a href="#发布安装" class="headerlink" title="发布安装"></a>发布安装</h1><ol>
+<li>npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a> 安装淘宝镜像源</li>
+<li>npm config get registry</li>
+<li>配置cnpm环境变量</li>
+<li>cnpm install -g hexo-cli 安装博客</li>
+<li>hexo -v验证博客</li>
+<li>hexo init 初始化博客</li>
+<li>hexo -s 启动博客本地</li>
+<li>hexo -n “我的第一篇文章”</li>
+</ol>
+<ul>
+<li><p>部署到远端去 通过git hub上去 github密码 <a href="mailto:&#x35;&#x37;&#52;&#54;&#53;&#56;&#50;&#49;&#x38;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;">&#x35;&#x37;&#52;&#54;&#53;&#56;&#50;&#49;&#x38;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;</a> ysydxhyz147<br><a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/baitaochen.gitub.io.git">https://github.com/chenbaitao120/baitaochen.gitub.io.git</a><br>git 新建仓库 仓库命名一定要是自己的昵称baitaochen.github.io<br>_config.yml 编辑<br>-—————————<br>deploy:<br> type: git<br> repo: <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/chenbaitao120.github.io.git">https://github.com/chenbaitao120/chenbaitao120.github.io.git</a><br> branch: main</p>
+</li>
+<li><p>npm install –save hexo-deployer-git 安装git相关组件</p>
+</li>
+<li><p>部署到远端<br>hexo d </p>
+</li>
+<li><p>博客主题:<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a> 素材操作<br>git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> thmes&#x2F;yilia 克隆<br>config 里面修改主题为yilia<br>hexo clean 清除一下<br>hexo s 重新开始</p>
+</li>
+</ul>
 <p> 博客地址：<br> <a target="_blank" rel="noopener" href="https://chenbaitao120.github.io/">https://chenbaitao120.github.io/</a></p>
 <h1 id="如何自定义博客结构"><a href="#如何自定义博客结构" class="headerlink" title="如何自定义博客结构"></a>如何自定义博客结构</h1><p>hexo.io&#x2F;hexo&#x3D;theme-light&#x2F;</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231207210909960.png" alt="image-20231207210909960"></p>
@@ -294,24 +320,53 @@
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231207211805793.png" alt="image-20231207211805793"></p>
 <p>要按照标签的写法。需要学习markdown的语法</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40609008/article/details/120198623">https://blog.csdn.net/qq_40609008/article/details/120198623</a></p>
-<h1 id="代码如何美化"><a href="#代码如何美化" class="headerlink" title="代码如何美化"></a>代码如何美化</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter.html">https://hexo.io/docs/front-matter.html</a></p>
-<p>在tag plugins里面描述代码如何书写</p>
-<p>设置高亮 引入到header里面</p>
+<h1 id="代码如何美化"><a href="#代码如何美化" class="headerlink" title="代码如何美化"></a>代码如何美化</h1><ol>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter.html">https://hexo.io/docs/front-matter.html</a></p>
+</li>
+<li><p>在tag plugins里面描述代码如何书写</p>
+</li>
+<li><p>设置高亮 引入到header里面</p>
+</li>
+</ol>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231207213436853.png" alt="image-20231207213436853"></p>
-<h1 id="本地写作时图床的解决方案"><a href="#本地写作时图床的解决方案" class="headerlink" title="本地写作时图床的解决方案"></a>本地写作时图床的解决方案</h1><p>qiniu.com</p>
-<h1 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h1><p><a target="_blank" rel="noopener" href="http://ibruce.info/2015/04/04/busuanzi/">http://ibruce.info/2015/04/04/busuanzi/</a></p>
-<p>hexo.io&#x2F;plugins</p>
-<p>插件安装在ejs 脚本里面</p>
+<h1 id="本地写作时图床的解决方案"><a href="#本地写作时图床的解决方案" class="headerlink" title="本地写作时图床的解决方案"></a>本地写作时图床的解决方案</h1><ul>
+<li>qiniu.com</li>
+</ul>
+<h1 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h1><ol>
+<li><p><a target="_blank" rel="noopener" href="http://ibruce.info/2015/04/04/busuanzi/">http://ibruce.info/2015/04/04/busuanzi/</a></p>
+</li>
+<li><p>hexo.io&#x2F;plugins</p>
+</li>
+<li><p>插件安装在ejs 脚本里面</p>
+</li>
+</ol>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231209140050342.png" alt="image-20231209140050342"></p>
-<h1 id="如何增加搜索的功能"><a href="#如何增加搜索的功能" class="headerlink" title="如何增加搜索的功能"></a>如何增加搜索的功能</h1><p>swifty.com</p>
-<p>自定义site语法进行跳转</p>
-<p>爬虫 -》 数据库-》接口</p>
-<h1 id="多个博客系统接入方案的分析"><a href="#多个博客系统接入方案的分析" class="headerlink" title="多个博客系统接入方案的分析"></a>多个博客系统接入方案的分析</h1><p>查看访问的来源，热点图</p>
-<p>CNZZ </p>
-<h1 id="其他文档"><a href="#其他文档" class="headerlink" title="其他文档"></a>其他文档</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a> 中文文档</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108918133">https://zhuanlan.zhihu.com/p/108918133</a> yilia美化文档</p>
-<h1 id="如何设置个人头像"><a href="#如何设置个人头像" class="headerlink" title="如何设置个人头像"></a>如何设置个人头像</h1><p>C:\Users\ALIENWARE\blog\themes\yilia_config.yml</p>
-<p>在主题的配置文件中找到对应的图片地址</p>
+<h1 id="如何增加搜索的功能"><a href="#如何增加搜索的功能" class="headerlink" title="如何增加搜索的功能"></a>如何增加搜索的功能</h1><ol>
+<li><p>swifty.com</p>
+</li>
+<li><p>自定义site语法进行跳转</p>
+</li>
+<li><p>爬虫 -》 数据库-》接口</p>
+</li>
+</ol>
+<h1 id="多个博客系统接入方案的分析"><a href="#多个博客系统接入方案的分析" class="headerlink" title="多个博客系统接入方案的分析"></a>多个博客系统接入方案的分析</h1><ul>
+<li><p>查看访问的来源，热点图</p>
+</li>
+<li><p>CNZZ</p>
+</li>
+</ul>
+<h1 id="其他文档"><a href="#其他文档" class="headerlink" title="其他文档"></a>其他文档</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a> 中文文档</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108918133">https://zhuanlan.zhihu.com/p/108918133</a> yilia美化文档</p>
+</li>
+</ul>
+<h1 id="如何设置个人头像"><a href="#如何设置个人头像" class="headerlink" title="如何设置个人头像"></a>如何设置个人头像</h1><ol>
+<li><p>C:\Users\ALIENWARE\blog\themes\yilia_config.yml</p>
+</li>
+<li><p>在主题的配置文件中找到对应的图片地址</p>
+</li>
+</ol>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231209181046198.png" alt="image-20231209181046198"></p>
 <h1 id="如何设置标题头"><a href="#如何设置标题头" class="headerlink" title="如何设置标题头"></a>如何设置标题头</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo学习</span><br><span class="line">date: 2013/7/13 20:46:25</span><br><span class="line">bash declare: true</span><br><span class="line">tags: [hexo标签] </span><br><span class="line">categories: [hexo相关]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
@@ -337,9 +392,15 @@
 
 <h1 id="如何修改背景色"><a href="#如何修改背景色" class="headerlink" title="如何修改背景色"></a>如何修改背景色</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/103050813">https://blog.csdn.net/weixin_41287260/article/details/103050813</a></p>
 <p>建议不要改哈，用原生的比较好看，不然还要改各种字体</p>
-<h1 id="如何部署到码云"><a href="#如何部署到码云" class="headerlink" title="如何部署到码云"></a>如何部署到码云</h1><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904144013099022">https://juejin.cn/post/6844904144013099022</a></p>
-<h1 id="为什么本地和远程样式有区别"><a href="#为什么本地和远程样式有区别" class="headerlink" title="为什么本地和远程样式有区别"></a>为什么本地和远程样式有区别</h1><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/319817323/answer/2876342437">https://www.zhihu.com/question/319817323/answer/2876342437</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.hzhcontrols.com/new-1790729.html">http://www.hzhcontrols.com/new-1790729.html</a></p>
+<h1 id="如何部署到码云"><a href="#如何部署到码云" class="headerlink" title="如何部署到码云"></a>如何部署到码云</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904144013099022">https://juejin.cn/post/6844904144013099022</a></li>
+</ul>
+<h1 id="为什么本地和远程样式有区别"><a href="#为什么本地和远程样式有区别" class="headerlink" title="为什么本地和远程样式有区别"></a>为什么本地和远程样式有区别</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/319817323/answer/2876342437">https://www.zhihu.com/question/319817323/answer/2876342437</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.hzhcontrols.com/new-1790729.html">http://www.hzhcontrols.com/new-1790729.html</a></p>
+</li>
+</ul>
 <h1 id="如何修改代码样式"><a href="#如何修改代码样式" class="headerlink" title="如何修改代码样式"></a>如何修改代码样式</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/103051056">https://blog.csdn.net/weixin_41287260/article/details/103051056</a></p>
 <p>修改pc端口字体大小</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    margin:0;</span><br><span class="line">    font-size:20px;</span><br><span class="line">    font-family:Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;</span><br><span class="line">    line-height:1.5;</span><br><span class="line">    color:#333;</span><br><span class="line">    /* background-color:#fff; */</span><br><span class="line">    min-height:100%;</span><br><span class="line">    background: linear-gradient(rgba(250, 246, 246, 0.5), rgba(255, 255, 255, 0.5)), </span><br><span class="line">    /* url(&#x27;./img/u=1766956309,2956233489&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG.webp&#x27;) no-repeat 0% 0%/ cover; */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -349,13 +410,22 @@
 
 
 
-<h1 id="接入评论系统"><a href="#接入评论系统" class="headerlink" title="接入评论系统"></a>接入评论系统</h1><p><a target="_blank" rel="noopener" href="https://console.leancloud.cn/account/verify">https://console.leancloud.cn/account/verify</a></p>
-<p>用git 的形式<a target="_blank" rel="noopener" href="https://www.dandelioncloud.cn/article/details/1495016180728561665">https://www.dandelioncloud.cn/article/details/1495016180728561665</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/settings/applications/2407901">https://github.com/settings/applications/2407901</a></p>
-<p>使用gittalk</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tangguoxing000/article/details/104187400">https://blog.csdn.net/tangguoxing000/article/details/104187400</a></p>
-<p><strong>推荐使用畅言</strong></p>
-<p><a target="_blank" rel="noopener" href="https://changyan.kuaizhan.com/v3/changyan/overview">https://changyan.kuaizhan.com/v3/changyan/overview</a></p>
+<h1 id="接入评论系统"><a href="#接入评论系统" class="headerlink" title="接入评论系统"></a>接入评论系统</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://console.leancloud.cn/account/verify">https://console.leancloud.cn/account/verify</a></p>
+</li>
+<li><p>用git 的形式<a target="_blank" rel="noopener" href="https://www.dandelioncloud.cn/article/details/1495016180728561665">https://www.dandelioncloud.cn/article/details/1495016180728561665</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/settings/applications/2407901">https://github.com/settings/applications/2407901</a></p>
+</li>
+<li><p>使用gittalk</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tangguoxing000/article/details/104187400">https://blog.csdn.net/tangguoxing000/article/details/104187400</a></p>
+</li>
+<li><p><strong>推荐使用畅言</strong></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://changyan.kuaizhan.com/v3/changyan/overview">https://changyan.kuaizhan.com/v3/changyan/overview</a></p>
+</li>
+</ul>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210113200093.png" alt="image-20231210113200093"></p>
 <p>配置到yilia的config.yml里面即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#3、畅言</span><br><span class="line">changyan_appid: cyx2mTY0U</span><br><span class="line">changyan_conf: 668c5e8c687da163f670569a23b7f88b</span><br></pre></td></tr></table></figure>
@@ -368,10 +438,14 @@
 <p>前置目录设为</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 目录内容 --&gt;</span><br><span class="line">&lt;% if (!index &amp;&amp; post.toc)&#123; %&gt;</span><br><span class="line">  &lt;p class=&quot;show-toc-btn&quot; id=&quot;show-toc-btn&quot; onclick=&quot;showToc();&quot; style=&quot;display:none&quot;&gt;</span><br><span class="line">  &lt;span class=&quot;btn-bg&quot;&gt;&lt;/span&gt;</span><br><span class="line">  &lt;span class=&quot;btn-text&quot;&gt;文章导航&lt;/span&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">  &lt;div id=&quot;toc-article&quot; class=&quot;toc-article&quot;&gt;</span><br><span class="line">      &lt;span id=&quot;toc-close&quot; class=&quot;toc-close&quot; title=&quot;隐藏导航&quot; onclick=&quot;showBtn();&quot;&gt;×&lt;/span&gt;</span><br><span class="line">      &lt;strong class=&quot;toc-title&quot;&gt;文章目录&lt;/strong&gt;</span><br><span class="line">      &lt;%- toc(post.content) %&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  function showToc()&#123;</span><br><span class="line">      var toc_article = document.getElementById(&quot;toc-article&quot;);</span><br><span class="line">      var show_toc_btn = document.getElementById(&quot;show-toc-btn&quot;);</span><br><span class="line">      toc_article.setAttribute(&quot;style&quot;,&quot;display:block&quot;);</span><br><span class="line">      show_toc_btn.setAttribute(&quot;style&quot;,&quot;display:none&quot;);</span><br><span class="line">      &#125;;</span><br><span class="line">  function showBtn()&#123;</span><br><span class="line">      var toc_article = document.getElementById(&quot;toc-article&quot;);</span><br><span class="line">      var show_toc_btn = document.getElementById(&quot;show-toc-btn&quot;);</span><br><span class="line">      toc_article.setAttribute(&quot;style&quot;,&quot;display:none&quot;);</span><br><span class="line">      show_toc_btn.setAttribute(&quot;style&quot;,&quot;display:block&quot;);</span><br><span class="line">      &#125;;</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;     </span><br><span class="line">&lt;!-- 目录内容结束 --&gt;</span><br></pre></td></tr></table></figure>
 
-<h1 id="如何添加密码"><a href="#如何添加密码" class="headerlink" title="如何添加密码"></a>如何添加密码</h1><p>在模板文件任意位置插入</p>
+<h1 id="如何添加密码"><a href="#如何添加密码" class="headerlink" title="如何添加密码"></a>如何添加密码</h1><ul>
+<li>在模板文件任意位置插入</li>
+</ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line">    (function()&#123;</span><br><span class="line">      let password2 =  &#x27;&lt;%= page.password2 %&gt;&#x27; ;</span><br><span class="line">      if(password2 != &#x27;&#x27;)&#123;</span><br><span class="line">        if(prompt(&#x27;请输入密码&#x27;) != password2)&#123;</span><br><span class="line">            history.back();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>标题位置配置密码</p>
+<ul>
+<li>标题位置配置密码</li>
+</ul>
 
       
 
@@ -414,13 +488,24 @@
 <span id="more"></span>
 
 <h1 id="优秀案例"><a href="#优秀案例" class="headerlink" title="优秀案例"></a>优秀案例</h1><p><a target="_blank" rel="noopener" href="https://baiyongan.github.io/posts/2566/">https://baiyongan.github.io/posts/2566/</a></p>
-<h1 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h1><p>hexo网站地址 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
-<p>source：放置原始的markdown</p>
-<p>themes:放置主题 可以进行更改 生成</p>
-<p>config.yml 配置文件夹 标题 作者 远程部署地址等</p>
-<h2 id="生成静态网站"><a href="#生成静态网站" class="headerlink" title="生成静态网站"></a>生成静态网站</h2><p>hexo generate</p>
-<p>hexo g</p>
-<p>生成好的pulic文件夹就直接当成静态网站进行部署</p>
+<h1 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h1><ul>
+<li><p>hexo网站地址 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
+</li>
+<li><p>source：放置原始的markdown</p>
+</li>
+<li><p>themes:放置主题 可以进行更改 生成</p>
+</li>
+<li><p>config.yml 配置文件夹 标题 作者 远程部署地址等</p>
+</li>
+</ul>
+<h2 id="生成静态网站"><a href="#生成静态网站" class="headerlink" title="生成静态网站"></a>生成静态网站</h2><ol>
+<li><p>hexo generate</p>
+</li>
+<li><p>hexo g</p>
+</li>
+<li><p>生成好的pulic文件夹就直接当成静态网站进行部署</p>
+</li>
+</ol>
 <h1 id="博客的主题安装和推荐"><a href="#博客的主题安装和推荐" class="headerlink" title="博客的主题安装和推荐"></a>博客的主题安装和推荐</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
 <p>1.git clone获取下来</p>
 <p>复制到theme文件夹下面</p>
@@ -428,11 +513,26 @@
 <p>2.修改config.yml</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231207205749630.png" alt="image-20231207205749630"></p>
 <p>启动即可</p>
-<h1 id="发布安装"><a href="#发布安装" class="headerlink" title="发布安装"></a>发布安装</h1><p>个人博客的重要性<br> npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a> 安装淘宝镜像源<br> npm config get registry<br> 配置cnpm环境变量<br> cnpm install -g hexo-cli 安装博客<br> hexo -v验证博客<br> hexo init 初始化博客<br> hexo -s 启动博客本地<br> hexo -n “我的第一篇文章”</p>
-<p> 部署到远端去 通过git hub上去 github密码 <a href="mailto:&#x35;&#55;&#x34;&#x36;&#x35;&#x38;&#50;&#x31;&#56;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;">&#x35;&#55;&#x34;&#x36;&#x35;&#x38;&#50;&#x31;&#56;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;</a> ysydxhyz147<br> <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/baitaochen.gitub.io.git">https://github.com/chenbaitao120/baitaochen.gitub.io.git</a><br> git 新建仓库 仓库命名一定要是自己的昵称baitaochen.github.io<br> _config.yml 编辑<br> -—————————<br> deploy:<br>  type: git<br>  repo: <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/chenbaitao120.github.io.git">https://github.com/chenbaitao120/chenbaitao120.github.io.git</a><br>  branch: main</p>
-<p>  npm install –save hexo-deployer-git 安装git相关组件</p>
-<p>  部署到远端<br>  hexo d </p>
-<p> 博客主题:<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a> 素材操作<br> git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> thmes&#x2F;yilia 克隆<br> config 里面修改主题为yilia<br> hexo clean 清除一下<br> hexo s 重新开始</p>
+<h1 id="发布安装"><a href="#发布安装" class="headerlink" title="发布安装"></a>发布安装</h1><ol>
+<li>npm install -g cnpm –registry&#x3D;<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a> 安装淘宝镜像源</li>
+<li>npm config get registry</li>
+<li>配置cnpm环境变量</li>
+<li>cnpm install -g hexo-cli 安装博客</li>
+<li>hexo -v验证博客</li>
+<li>hexo init 初始化博客</li>
+<li>hexo -s 启动博客本地</li>
+<li>hexo -n “我的第一篇文章”</li>
+</ol>
+<ul>
+<li><p>部署到远端去 通过git hub上去 github密码 <a href="mailto:&#x35;&#x37;&#52;&#54;&#53;&#56;&#50;&#49;&#x38;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;">&#x35;&#x37;&#52;&#54;&#53;&#56;&#50;&#49;&#x38;&#64;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;</a> ysydxhyz147<br><a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/baitaochen.gitub.io.git">https://github.com/chenbaitao120/baitaochen.gitub.io.git</a><br>git 新建仓库 仓库命名一定要是自己的昵称baitaochen.github.io<br>_config.yml 编辑<br>-—————————<br>deploy:<br> type: git<br> repo: <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/chenbaitao120.github.io.git">https://github.com/chenbaitao120/chenbaitao120.github.io.git</a><br> branch: main</p>
+</li>
+<li><p>npm install –save hexo-deployer-git 安装git相关组件</p>
+</li>
+<li><p>部署到远端<br>hexo d </p>
+</li>
+<li><p>博客主题:<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a> 素材操作<br>git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> thmes&#x2F;yilia 克隆<br>config 里面修改主题为yilia<br>hexo clean 清除一下<br>hexo s 重新开始</p>
+</li>
+</ul>
 <p> 博客地址：<br> <a target="_blank" rel="noopener" href="https://chenbaitao120.github.io/">https://chenbaitao120.github.io/</a></p>
 <h1 id="如何自定义博客结构"><a href="#如何自定义博客结构" class="headerlink" title="如何自定义博客结构"></a>如何自定义博客结构</h1><p>hexo.io&#x2F;hexo&#x3D;theme-light&#x2F;</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231207210909960.png" alt="image-20231207210909960"></p>
@@ -446,24 +546,53 @@
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231207211805793.png" alt="image-20231207211805793"></p>
 <p>要按照标签的写法。需要学习markdown的语法</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40609008/article/details/120198623">https://blog.csdn.net/qq_40609008/article/details/120198623</a></p>
-<h1 id="代码如何美化"><a href="#代码如何美化" class="headerlink" title="代码如何美化"></a>代码如何美化</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter.html">https://hexo.io/docs/front-matter.html</a></p>
-<p>在tag plugins里面描述代码如何书写</p>
-<p>设置高亮 引入到header里面</p>
+<h1 id="代码如何美化"><a href="#代码如何美化" class="headerlink" title="代码如何美化"></a>代码如何美化</h1><ol>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter.html">https://hexo.io/docs/front-matter.html</a></p>
+</li>
+<li><p>在tag plugins里面描述代码如何书写</p>
+</li>
+<li><p>设置高亮 引入到header里面</p>
+</li>
+</ol>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231207213436853.png" alt="image-20231207213436853"></p>
-<h1 id="本地写作时图床的解决方案"><a href="#本地写作时图床的解决方案" class="headerlink" title="本地写作时图床的解决方案"></a>本地写作时图床的解决方案</h1><p>qiniu.com</p>
-<h1 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h1><p><a target="_blank" rel="noopener" href="http://ibruce.info/2015/04/04/busuanzi/">http://ibruce.info/2015/04/04/busuanzi/</a></p>
-<p>hexo.io&#x2F;plugins</p>
-<p>插件安装在ejs 脚本里面</p>
+<h1 id="本地写作时图床的解决方案"><a href="#本地写作时图床的解决方案" class="headerlink" title="本地写作时图床的解决方案"></a>本地写作时图床的解决方案</h1><ul>
+<li>qiniu.com</li>
+</ul>
+<h1 id="插件的安装"><a href="#插件的安装" class="headerlink" title="插件的安装"></a>插件的安装</h1><ol>
+<li><p><a target="_blank" rel="noopener" href="http://ibruce.info/2015/04/04/busuanzi/">http://ibruce.info/2015/04/04/busuanzi/</a></p>
+</li>
+<li><p>hexo.io&#x2F;plugins</p>
+</li>
+<li><p>插件安装在ejs 脚本里面</p>
+</li>
+</ol>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231209140050342.png" alt="image-20231209140050342"></p>
-<h1 id="如何增加搜索的功能"><a href="#如何增加搜索的功能" class="headerlink" title="如何增加搜索的功能"></a>如何增加搜索的功能</h1><p>swifty.com</p>
-<p>自定义site语法进行跳转</p>
-<p>爬虫 -》 数据库-》接口</p>
-<h1 id="多个博客系统接入方案的分析"><a href="#多个博客系统接入方案的分析" class="headerlink" title="多个博客系统接入方案的分析"></a>多个博客系统接入方案的分析</h1><p>查看访问的来源，热点图</p>
-<p>CNZZ </p>
-<h1 id="其他文档"><a href="#其他文档" class="headerlink" title="其他文档"></a>其他文档</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a> 中文文档</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108918133">https://zhuanlan.zhihu.com/p/108918133</a> yilia美化文档</p>
-<h1 id="如何设置个人头像"><a href="#如何设置个人头像" class="headerlink" title="如何设置个人头像"></a>如何设置个人头像</h1><p>C:\Users\ALIENWARE\blog\themes\yilia_config.yml</p>
-<p>在主题的配置文件中找到对应的图片地址</p>
+<h1 id="如何增加搜索的功能"><a href="#如何增加搜索的功能" class="headerlink" title="如何增加搜索的功能"></a>如何增加搜索的功能</h1><ol>
+<li><p>swifty.com</p>
+</li>
+<li><p>自定义site语法进行跳转</p>
+</li>
+<li><p>爬虫 -》 数据库-》接口</p>
+</li>
+</ol>
+<h1 id="多个博客系统接入方案的分析"><a href="#多个博客系统接入方案的分析" class="headerlink" title="多个博客系统接入方案的分析"></a>多个博客系统接入方案的分析</h1><ul>
+<li><p>查看访问的来源，热点图</p>
+</li>
+<li><p>CNZZ</p>
+</li>
+</ul>
+<h1 id="其他文档"><a href="#其他文档" class="headerlink" title="其他文档"></a>其他文档</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a> 中文文档</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108918133">https://zhuanlan.zhihu.com/p/108918133</a> yilia美化文档</p>
+</li>
+</ul>
+<h1 id="如何设置个人头像"><a href="#如何设置个人头像" class="headerlink" title="如何设置个人头像"></a>如何设置个人头像</h1><ol>
+<li><p>C:\Users\ALIENWARE\blog\themes\yilia_config.yml</p>
+</li>
+<li><p>在主题的配置文件中找到对应的图片地址</p>
+</li>
+</ol>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231209181046198.png" alt="image-20231209181046198"></p>
 <h1 id="如何设置标题头"><a href="#如何设置标题头" class="headerlink" title="如何设置标题头"></a>如何设置标题头</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo学习</span><br><span class="line">date: 2013/7/13 20:46:25</span><br><span class="line">bash declare: true</span><br><span class="line">tags: [hexo标签] </span><br><span class="line">categories: [hexo相关]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
@@ -489,9 +618,15 @@
 
 <h1 id="如何修改背景色"><a href="#如何修改背景色" class="headerlink" title="如何修改背景色"></a>如何修改背景色</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/103050813">https://blog.csdn.net/weixin_41287260/article/details/103050813</a></p>
 <p>建议不要改哈，用原生的比较好看，不然还要改各种字体</p>
-<h1 id="如何部署到码云"><a href="#如何部署到码云" class="headerlink" title="如何部署到码云"></a>如何部署到码云</h1><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904144013099022">https://juejin.cn/post/6844904144013099022</a></p>
-<h1 id="为什么本地和远程样式有区别"><a href="#为什么本地和远程样式有区别" class="headerlink" title="为什么本地和远程样式有区别"></a>为什么本地和远程样式有区别</h1><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/319817323/answer/2876342437">https://www.zhihu.com/question/319817323/answer/2876342437</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.hzhcontrols.com/new-1790729.html">http://www.hzhcontrols.com/new-1790729.html</a></p>
+<h1 id="如何部署到码云"><a href="#如何部署到码云" class="headerlink" title="如何部署到码云"></a>如何部署到码云</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904144013099022">https://juejin.cn/post/6844904144013099022</a></li>
+</ul>
+<h1 id="为什么本地和远程样式有区别"><a href="#为什么本地和远程样式有区别" class="headerlink" title="为什么本地和远程样式有区别"></a>为什么本地和远程样式有区别</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/319817323/answer/2876342437">https://www.zhihu.com/question/319817323/answer/2876342437</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.hzhcontrols.com/new-1790729.html">http://www.hzhcontrols.com/new-1790729.html</a></p>
+</li>
+</ul>
 <h1 id="如何修改代码样式"><a href="#如何修改代码样式" class="headerlink" title="如何修改代码样式"></a>如何修改代码样式</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41287260/article/details/103051056">https://blog.csdn.net/weixin_41287260/article/details/103051056</a></p>
 <p>修改pc端口字体大小</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    margin:0;</span><br><span class="line">    font-size:20px;</span><br><span class="line">    font-family:Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;</span><br><span class="line">    line-height:1.5;</span><br><span class="line">    color:#333;</span><br><span class="line">    /* background-color:#fff; */</span><br><span class="line">    min-height:100%;</span><br><span class="line">    background: linear-gradient(rgba(250, 246, 246, 0.5), rgba(255, 255, 255, 0.5)), </span><br><span class="line">    /* url(&#x27;./img/u=1766956309,2956233489&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG.webp&#x27;) no-repeat 0% 0%/ cover; */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -501,13 +636,22 @@
 
 
 
-<h1 id="接入评论系统"><a href="#接入评论系统" class="headerlink" title="接入评论系统"></a>接入评论系统</h1><p><a target="_blank" rel="noopener" href="https://console.leancloud.cn/account/verify">https://console.leancloud.cn/account/verify</a></p>
-<p>用git 的形式<a target="_blank" rel="noopener" href="https://www.dandelioncloud.cn/article/details/1495016180728561665">https://www.dandelioncloud.cn/article/details/1495016180728561665</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/settings/applications/2407901">https://github.com/settings/applications/2407901</a></p>
-<p>使用gittalk</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tangguoxing000/article/details/104187400">https://blog.csdn.net/tangguoxing000/article/details/104187400</a></p>
-<p><strong>推荐使用畅言</strong></p>
-<p><a target="_blank" rel="noopener" href="https://changyan.kuaizhan.com/v3/changyan/overview">https://changyan.kuaizhan.com/v3/changyan/overview</a></p>
+<h1 id="接入评论系统"><a href="#接入评论系统" class="headerlink" title="接入评论系统"></a>接入评论系统</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://console.leancloud.cn/account/verify">https://console.leancloud.cn/account/verify</a></p>
+</li>
+<li><p>用git 的形式<a target="_blank" rel="noopener" href="https://www.dandelioncloud.cn/article/details/1495016180728561665">https://www.dandelioncloud.cn/article/details/1495016180728561665</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/settings/applications/2407901">https://github.com/settings/applications/2407901</a></p>
+</li>
+<li><p>使用gittalk</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/tangguoxing000/article/details/104187400">https://blog.csdn.net/tangguoxing000/article/details/104187400</a></p>
+</li>
+<li><p><strong>推荐使用畅言</strong></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://changyan.kuaizhan.com/v3/changyan/overview">https://changyan.kuaizhan.com/v3/changyan/overview</a></p>
+</li>
+</ul>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210113200093.png" alt="image-20231210113200093"></p>
 <p>配置到yilia的config.yml里面即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#3、畅言</span><br><span class="line">changyan_appid: cyx2mTY0U</span><br><span class="line">changyan_conf: 668c5e8c687da163f670569a23b7f88b</span><br></pre></td></tr></table></figure>
@@ -520,10 +664,14 @@
 <p>前置目录设为</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 目录内容 --&gt;</span><br><span class="line">&lt;% if (!index &amp;&amp; post.toc)&#123; %&gt;</span><br><span class="line">  &lt;p class=&quot;show-toc-btn&quot; id=&quot;show-toc-btn&quot; onclick=&quot;showToc();&quot; style=&quot;display:none&quot;&gt;</span><br><span class="line">  &lt;span class=&quot;btn-bg&quot;&gt;&lt;/span&gt;</span><br><span class="line">  &lt;span class=&quot;btn-text&quot;&gt;文章导航&lt;/span&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">  &lt;div id=&quot;toc-article&quot; class=&quot;toc-article&quot;&gt;</span><br><span class="line">      &lt;span id=&quot;toc-close&quot; class=&quot;toc-close&quot; title=&quot;隐藏导航&quot; onclick=&quot;showBtn();&quot;&gt;×&lt;/span&gt;</span><br><span class="line">      &lt;strong class=&quot;toc-title&quot;&gt;文章目录&lt;/strong&gt;</span><br><span class="line">      &lt;%- toc(post.content) %&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  function showToc()&#123;</span><br><span class="line">      var toc_article = document.getElementById(&quot;toc-article&quot;);</span><br><span class="line">      var show_toc_btn = document.getElementById(&quot;show-toc-btn&quot;);</span><br><span class="line">      toc_article.setAttribute(&quot;style&quot;,&quot;display:block&quot;);</span><br><span class="line">      show_toc_btn.setAttribute(&quot;style&quot;,&quot;display:none&quot;);</span><br><span class="line">      &#125;;</span><br><span class="line">  function showBtn()&#123;</span><br><span class="line">      var toc_article = document.getElementById(&quot;toc-article&quot;);</span><br><span class="line">      var show_toc_btn = document.getElementById(&quot;show-toc-btn&quot;);</span><br><span class="line">      toc_article.setAttribute(&quot;style&quot;,&quot;display:none&quot;);</span><br><span class="line">      show_toc_btn.setAttribute(&quot;style&quot;,&quot;display:block&quot;);</span><br><span class="line">      &#125;;</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;     </span><br><span class="line">&lt;!-- 目录内容结束 --&gt;</span><br></pre></td></tr></table></figure>
 
-<h1 id="如何添加密码"><a href="#如何添加密码" class="headerlink" title="如何添加密码"></a>如何添加密码</h1><p>在模板文件任意位置插入</p>
+<h1 id="如何添加密码"><a href="#如何添加密码" class="headerlink" title="如何添加密码"></a>如何添加密码</h1><ul>
+<li>在模板文件任意位置插入</li>
+</ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line">    (function()&#123;</span><br><span class="line">      let password2 =  &#x27;&lt;%= page.password2 %&gt;&#x27; ;</span><br><span class="line">      if(password2 != &#x27;&#x27;)&#123;</span><br><span class="line">        if(prompt(&#x27;请输入密码&#x27;) != password2)&#123;</span><br><span class="line">            history.back();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<p>标题位置配置密码</p>
+<ul>
+<li>标题位置配置密码</li>
+</ul>
 
           
         
@@ -914,10 +1062,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -927,6 +1071,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
               </li>
             
             <div class="clearfix"></div>
