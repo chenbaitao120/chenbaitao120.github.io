@@ -4443,7 +4443,8 @@ pre .tag .name {
 pre .at_rule, pre .at_rule .keyword, pre .css~* .tag, pre .preprocessor, pre .preprocessor .keyword, pre .title{
     color:#fa9400
 }
-/* 代码块样式之属性、类、函数的title：绿色 */
+/* 代码块样式之属性、类
+、函数的title：绿色 */
 pre .attr,pre .attribute, pre .built_in, pre .class, pre .css~* .class, pre .function .title {
     color:#a6e22e
 }
@@ -4458,3 +4459,20 @@ pre .number {
 pre .css~* .id, pre .id {
     color:#fd971f
 }
+.markdown-section img {
+    max-width: 100%;
+    padding: 0.5em 0;
+    margin: auto;
+    display: block;
+}
+
+
+.caption {
+    color: #444;
+    display: block;
+    font-size: 0.9em;
+    margin-top: 0.1em;
+    position: relative;
+    text-align: center;
+}
+
