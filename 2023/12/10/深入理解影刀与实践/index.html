@@ -65,6 +65,11 @@
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="mymenucontainer" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
     <div class="left-col" q-class="show:isShow">
       
 <!-- <div class="overlay" style="background: #4d4d4d"></div> -->
@@ -207,26 +212,7 @@
           <div id="js-content" class="content-ll">
             <article id="post-深入理解影刀与实践" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    <!-- 
-      <!--MOB SHARE BEGIN-->
-<div class="-mob-share-ui-button -mob-share-open">分享</div>
-<div class="-mob-share-ui" style="display: none">
-    <ul class="-mob-share-list">
-        <li class="-mob-share-weibo"><p>新浪微博</p></li>
-        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
-        <li class="-mob-share-qzone"><p>QQ空间</p></li>
-        <li class="-mob-share-qq"><p>QQ好友</p></li>
-        <li class="-mob-share-weixin"><p>微信</p></li>                        <li class="-mob-share-twitter"><p>Twitter</p></li>     
-        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
-        <li class="-mob-share-mingdao"><p>明道</p></li>            
-        <li class="-mob-share-linkedin"><p>LinkedIn</p></li>
-    </ul>
-<div class="-mob-share-close">取消</div>
-</div>
-<div class="-mob-share-ui-bg"></div>
-<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey={{ theme.shareSDKappkey }}"></script>
-<!--MOB SHARE END-->
-   -->
+    <!--  -->
 <!-- 目录内容 -->
 
   <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
@@ -289,123 +275,33 @@
     
 
     <div class="article-entry" itemprop="articleBody">
-      <!-- 
-        <a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" onclick="window.location.replace(this.href); return false;">  
-  <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144809908.png" alt="image-20231209143728319" style="zoom: 80%;"  />
-
-</a>
-<span id="more"></span>
-
-
-
-<h1 id="搭建第一个机器人"><a href="#搭建第一个机器人" class="headerlink" title="搭建第一个机器人"></a>搭建第一个机器人</h1><h2 id="搭建第一个自动化流程"><a href="#搭建第一个自动化流程" class="headerlink" title="搭建第一个自动化流程"></a>搭建第一个自动化流程</h2><ul>
-<li><p>打开网页-&gt;填写输入框-&gt;crlt+鼠标左键可以选择输入框元素-&gt;点击元素 -&gt;crlt+左键</p>
-</li>
-<li><p>搭建完成，其实就是对 元素+操作 的编排集合。</p>
-</li>
-</ul>
-<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144154573.png" alt="image-20231210144154573" style="zoom:50%;" />
-
-<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><ul>
-<li>最大相似性</li>
-</ul>
-<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210204111384.png" alt="image-20231210204111384"></p>
-<ul>
-<li><p>元素有完成和取消，如果想捕获全部，那么完成和取消都需要捕获，因为他们只有位置是相似的。</p>
-</li>
-<li><p>相似元素主要处理循环相似元素的操作。</p>
-</li>
-</ul>
-<h2 id="操作类型"><a href="#操作类型" class="headerlink" title="操作类型"></a>操作类型</h2><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216135128038.png" alt="image-20231216135128038" style="zoom: 50%;"/>
-
-<p><a target="_blank" rel="noopener" href="https://shop.yingdao.com/">https://shop.yingdao.com/</a> 影刀商城</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
-<li>对象命名不能重复；要有意义；</li>
-</ul>
- <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216143618599.png" alt="image-20231216143618599" style="zoom: 50%;" />
-
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
-<li><p>字符串  数字 区别是拼接和相加</p>
-</li>
-<li><p>列表</p>
-</li>
-</ul>
-<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216151701472.png" alt="image-20231216151701472" style="zoom:50%;" />
-
-
-
-
-
-<h2 id="如何搭建一个实用的机器人"><a href="#如何搭建一个实用的机器人" class="headerlink" title="如何搭建一个实用的机器人"></a>如何搭建一个实用的机器人</h2><p>输入商品名称进行搜索，搜索出来的内容抓取下来保存到本地的excel里面去</p>
-<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216152031597.png" alt="image-20231216152031597"></p>
-<p>打开页面，输入账号密码，设置超时时间，通过获取相似元素列表获取底下的页码，然后获得倒数第二个就是页码的数值，设为变量，这个就是页码的数字，批量数据抓取抓取页数这里设置成这个数字，就能固定获取到指定的全部列表数据。</p>
-<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216161643149.png" alt="image-20231216161643149" style="zoom: 80%;" />
-
-<h2 id="如何进行人机交互"><a href="#如何进行人机交互" class="headerlink" title="如何进行人机交互"></a>如何进行人机交互</h2><ul>
-<li>用这个可以让执行的过程中允许你输入东西，可以让你在运行过程中个性化自定义的东西放进去</li>
-</ul>
-<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216162316281-17027150274641.png" style="zoom: 80%;" />
-
-
-
-<h2 id="如何进行机器人的分享"><a href="#如何进行机器人的分享" class="headerlink" title="如何进行机器人的分享"></a>如何进行机器人的分享</h2><ul>
-<li><p>左上角重命名保存一下退出来。</p>
-</li>
-<li><p>要分享先发版；选中机器人点击发版。填写发版备注；</p>
-</li>
-</ul>
-<h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231216164525524.png" alt="image-20231216164525524"></p>
-<h1 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h1><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218205554441.png" alt="image-20231218205554441" style="zoom:50%;" />
-
-
-
-<h2 id="单分支"><a href="#单分支" class="headerlink" title="单分支"></a>单分支</h2><p>可以进行条件判断</p>
-<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218214427565.png" alt="image-20231218214427565"></p>
-<h2 id="二分支"><a href="#二分支" class="headerlink" title="二分支"></a>二分支</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218214839752.png" alt="image-20231218214839752"></p>
-<h2 id="多分支"><a href="#多分支" class="headerlink" title="多分支"></a>多分支</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218220439559.png" alt="image-20231218220439559"></p>
-<h2 id="与或"><a href="#与或" class="headerlink" title="与或"></a>与或</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218222344644.png" alt="image-20231218222344644"></p>
-<h2 id="元素判断"><a href="#元素判断" class="headerlink" title="元素判断"></a>元素判断</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218223824657.png" alt="image-20231218223824657"></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div> -->
-      <!--  -->
       <script>
         (function(){
-          let password2 =  '' ;
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+    
           if(password2 != ''){
-            if(prompt('请输入密码') != password2){
-                history.back();
-                // window.history.back(-1);
-                // window.location.replace('https://www.baidu.com');
-            }
+            passwordEntered = prompt('请输入密码') === password2;
           }
-        })();
-    </script>
-      
-        
+    
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+              history.back();
+          }
           
-            <a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" onclick="window.location.replace(this.href); return false;">  
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered || password2 === '') {
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" onclick="window.location.replace(this.href); return false;">  
   <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144809908.png" alt="image-20231209143728319" style="zoom: 80%;"  />
 
 </a>
@@ -481,9 +377,10 @@
 <h2 id="与或"><a href="#与或" class="headerlink" title="与或"></a>与或</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218222344644.png" alt="image-20231218222344644"></p>
 <h2 id="元素判断"><a href="#元素判断" class="headerlink" title="元素判断"></a>元素判断</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218223824657.png" alt="image-20231218223824657"></p>
 
-          
+            
+          </div>
         
-    </div>
+      </div>
     <div class="article-info article-info-index">
       
       
@@ -616,111 +513,7 @@
 
   
 
-<!-- 
-  <section id="comments" style="margin:10px;padding:10px;background:#fff;">
-    <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "UpSISmNc4QjaCUM8zQrLHDwK-gzGzoHsz",
-        app_key: "8GZXzutu0hgciuWeIAZU7r1f",
-        placeholder: "Just go go",
-        avatar:"",
-    });
-</script>
 
-
-  </section>
- -->
-
-<!-- 
-  
-      <section id="comments" class="comments">
-        <style>
-          .comments{margin:30px;padding:10px;background:#fff}
-          @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-        </style>
-        <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "UpSISmNc4QjaCUM8zQrLHDwK-gzGzoHsz",
-        app_key: "8GZXzutu0hgciuWeIAZU7r1f",
-        placeholder: "Just go go",
-        avatar:"",
-    });
-</script>
-
-
-    </section>
-  
- -->
-<!--  -->
-  <!-- 
-    
-        <section id="comments" class="comments">
-          <style>
-            .comments{margin:30px;padding:10px;background:#fff}
-            @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-          </style>
-          <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "UpSISmNc4QjaCUM8zQrLHDwK-gzGzoHsz",
-        app_key: "8GZXzutu0hgciuWeIAZU7r1f",
-        placeholder: "Just go go",
-        avatar:"",
-    });
-</script>
-
-
-      </section>
-    
-
- -->
- <!--  -->
-  <!-- 
-    <!--MOB SHARE BEGIN-->
-<div class="-mob-share-ui-button -mob-share-open">分享</div>
-<div class="-mob-share-ui" style="display: none">
-    <ul class="-mob-share-list">
-        <li class="-mob-share-weibo"><p>新浪微博</p></li>
-        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
-        <li class="-mob-share-qzone"><p>QQ空间</p></li>
-        <li class="-mob-share-qq"><p>QQ好友</p></li>
-        <li class="-mob-share-weixin"><p>微信</p></li>                        <li class="-mob-share-twitter"><p>Twitter</p></li>     
-        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
-        <li class="-mob-share-mingdao"><p>明道</p></li>            
-        <li class="-mob-share-linkedin"><p>LinkedIn</p></li>
-    </ul>
-<div class="-mob-share-close">取消</div>
-</div>
-<div class="-mob-share-ui-bg"></div>
-<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey={{ theme.shareSDKappkey }}"></script>
-<!--MOB SHARE END-->
- -->
 <body>
     <div id="gitalk-container"></div>
 </body>
@@ -855,6 +648,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -864,10 +661,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1005,4 +798,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
   </div>
 </body>
+<script>
+  var hide = false;
+  function myFunction(x) {
+      x.classList.toggle("change");
+      if(hide == false){
+          $(".left-col").css('display', 'none');
+          $(".mid-col").css("left", 6);
+          $(".tools-col").css('display', 'none');
+          $(".tools-col.hide").css('display', 'none');
+          hide = true;
+      }else{
+          $(".left-col").css('display', '');
+          $(".mid-col").css("left", 300);
+          $(".tools-col").css('display', '');
+          $(".tools-col.hide").css('display', '');
+          hide = false;
+      }
+  }
+</script>
 </html>

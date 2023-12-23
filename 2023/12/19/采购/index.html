@@ -55,6 +55,11 @@
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="mymenucontainer" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
     <div class="left-col" q-class="show:isShow">
       
 <!-- <div class="overlay" style="background: #4d4d4d"></div> -->
@@ -197,26 +202,7 @@
           <div id="js-content" class="content-ll">
             <article id="post-采购" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    <!-- 
-      <!--MOB SHARE BEGIN-->
-<div class="-mob-share-ui-button -mob-share-open">分享</div>
-<div class="-mob-share-ui" style="display: none">
-    <ul class="-mob-share-list">
-        <li class="-mob-share-weibo"><p>新浪微博</p></li>
-        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
-        <li class="-mob-share-qzone"><p>QQ空间</p></li>
-        <li class="-mob-share-qq"><p>QQ好友</p></li>
-        <li class="-mob-share-weixin"><p>微信</p></li>                        <li class="-mob-share-twitter"><p>Twitter</p></li>     
-        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
-        <li class="-mob-share-mingdao"><p>明道</p></li>            
-        <li class="-mob-share-linkedin"><p>LinkedIn</p></li>
-    </ul>
-<div class="-mob-share-close">取消</div>
-</div>
-<div class="-mob-share-ui-bg"></div>
-<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey={{ theme.shareSDKappkey }}"></script>
-<!--MOB SHARE END-->
-   -->
+    <!--  -->
 <!-- 目录内容 -->
 
   <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
@@ -279,82 +265,33 @@
     
 
     <div class="article-entry" itemprop="articleBody">
-      <!-- 
-        <a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/2023/12/19/采购/" onclick="window.location.replace(this.href); return false;">  
-  <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/u=1913648676,1108977963&fm=253&fmt=auto&app=138&f=JPEG.jpeg" alt="image-20231209143728319" style="zoom: 100%;"  />
-
-</a>
-<span id="more"></span>
-# 采购
-
-<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/%E9%87%87%E8%B4%AD%E4%B8%9A%E5%8A%A1%20(1).jpg" alt="采购业务 (1)" style="zoom:200%;" />
-
-<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17024509248627.png" alt="img"></p>
-<h2 id="预算配置"><a href="#预算配置" class="headerlink" title="预算配置"></a>预算配置</h2><p>1.选择费用大小类</p>
-<p>​	<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231213103220932.png" alt="image-20231213103220932" style="zoom: 33%;" /></p>
-<p>2.对应一个预算科目或者项目</p>
-<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231213103336926.png" alt="image-20231213103336926" style="zoom: 33%;" />
-
-<p>3.预算维护（SAP同步过来）</p>
-<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231213103428427.png" alt="image-20231213103428427" style="zoom:33%;" />
-
-<p>4.采购申请的时候预算费用冻结</p>
-<p>入库的时候费用入账 ，确认收货（实际收货发票录入为准），标识为是的时候释放所有冻结的费用，如果超出预算会有</p>
-<h2 id="京东"><a href="#京东" class="headerlink" title="京东"></a>京东</h2><p>供应商为上海圆迈贸易公司的时候需要同步京东账户的数据</p>
-<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231213164839521.png" alt="image-20231213164839521"></p>
-<p>CreatePTP0205 归档日期大于预付款基准日期直接付款</p>
-<p>入库 归档入账</p>
-<p>开票 过账日期+账期自动发起付款申请 可能对应多比订单 归档同步凭证</p>
-<p>付款申请  出纳节点同步到SAP</p>
-<p>供应商变更</p>
-<p>合同变更</p>
-<p>预付款和入库是平行的关系</p>
-<p>应付对应预付款 如果发票没有录入还要走应付发票录入 提交就冻结预算 ，发票录入后才会入账</p>
-<p>招标文件</p>
-<p>sap计划任务推到OA直采数据，入库在直采入 直采不涉及预算</p>
-<p>京东付款 直接走SAP 京东同步数据</p>
-<p>采购订单作废</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div> -->
-      <!--  -->
       <script>
         (function(){
-          let password2 =  'gongyinglian' ;
+          let password2 = 'gongyinglian';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+    
           if(password2 != ''){
-            if(prompt('请输入密码') != password2){
-                history.back();
-                // window.history.back(-1);
-                // window.location.replace('https://www.baidu.com');
-            }
+            passwordEntered = prompt('请输入密码') === password2;
           }
-        })();
-    </script>
-      
-        
+    
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+              history.back();
+          }
           
-            <a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/2023/12/19/采购/" onclick="window.location.replace(this.href); return false;">  
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered || password2 === '') {
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/2023/12/19/采购/" onclick="window.location.replace(this.href); return false;">  
   <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/u=1913648676,1108977963&fm=253&fmt=auto&app=138&f=JPEG.jpeg" alt="image-20231209143728319" style="zoom: 100%;"  />
 
 </a>
@@ -389,9 +326,10 @@
 <p>京东付款 直接走SAP 京东同步数据</p>
 <p>采购订单作废</p>
 
-          
+            
+          </div>
         
-    </div>
+      </div>
     <div class="article-info article-info-index">
       
       
@@ -511,111 +449,7 @@
 
   
 
-<!-- 
-  <section id="comments" style="margin:10px;padding:10px;background:#fff;">
-    <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "UpSISmNc4QjaCUM8zQrLHDwK-gzGzoHsz",
-        app_key: "8GZXzutu0hgciuWeIAZU7r1f",
-        placeholder: "Just go go",
-        avatar:"",
-    });
-</script>
 
-
-  </section>
- -->
-
-<!-- 
-  
-      <section id="comments" class="comments">
-        <style>
-          .comments{margin:30px;padding:10px;background:#fff}
-          @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-        </style>
-        <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "UpSISmNc4QjaCUM8zQrLHDwK-gzGzoHsz",
-        app_key: "8GZXzutu0hgciuWeIAZU7r1f",
-        placeholder: "Just go go",
-        avatar:"",
-    });
-</script>
-
-
-    </section>
-  
- -->
-<!--  -->
-  <!-- 
-    
-        <section id="comments" class="comments">
-          <style>
-            .comments{margin:30px;padding:10px;background:#fff}
-            @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-          </style>
-          <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "UpSISmNc4QjaCUM8zQrLHDwK-gzGzoHsz",
-        app_key: "8GZXzutu0hgciuWeIAZU7r1f",
-        placeholder: "Just go go",
-        avatar:"",
-    });
-</script>
-
-
-      </section>
-    
-
- -->
- <!--  -->
-  <!-- 
-    <!--MOB SHARE BEGIN-->
-<div class="-mob-share-ui-button -mob-share-open">分享</div>
-<div class="-mob-share-ui" style="display: none">
-    <ul class="-mob-share-list">
-        <li class="-mob-share-weibo"><p>新浪微博</p></li>
-        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
-        <li class="-mob-share-qzone"><p>QQ空间</p></li>
-        <li class="-mob-share-qq"><p>QQ好友</p></li>
-        <li class="-mob-share-weixin"><p>微信</p></li>                        <li class="-mob-share-twitter"><p>Twitter</p></li>     
-        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
-        <li class="-mob-share-mingdao"><p>明道</p></li>            
-        <li class="-mob-share-linkedin"><p>LinkedIn</p></li>
-    </ul>
-<div class="-mob-share-close">取消</div>
-</div>
-<div class="-mob-share-ui-bg"></div>
-<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey={{ theme.shareSDKappkey }}"></script>
-<!--MOB SHARE END-->
- -->
 <body>
     <div id="gitalk-container"></div>
 </body>
@@ -750,6 +584,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -759,10 +597,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -900,4 +734,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
   </div>
 </body>
+<script>
+  var hide = false;
+  function myFunction(x) {
+      x.classList.toggle("change");
+      if(hide == false){
+          $(".left-col").css('display', 'none');
+          $(".mid-col").css("left", 6);
+          $(".tools-col").css('display', 'none');
+          $(".tools-col.hide").css('display', 'none');
+          hide = true;
+      }else{
+          $(".left-col").css('display', '');
+          $(".mid-col").css("left", 300);
+          $(".tools-col").css('display', '');
+          $(".tools-col.hide").css('display', '');
+          hide = false;
+      }
+  }
+</script>
 </html>
