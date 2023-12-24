@@ -100,7 +100,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 6
+			总文章数 7
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -209,6 +209,7 @@
     <!--  -->
 <!-- 目录内容 -->
 
+
   <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
   <span class="btn-bg"></span>
   <span class="btn-text">文章导航</span>
@@ -232,7 +233,7 @@
       show_toc_btn.setAttribute("style","display:block");
       };
  </script>
-     
+
 <!-- 目录内容结束 -->
 
     
@@ -250,7 +251,7 @@
           
             
             <br />
-            
+
             <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
               <span class="icon-sort"></span>
               <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
@@ -273,16 +274,16 @@
         (function(){
           let password2 = 'hexo';
           var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
-    
+
           if(password2 != ''){
             passwordEntered = prompt('请输入密码') === password2;
           }
-    
+
           // 基于密码输入结果，进行处理
           if (!passwordEntered && password2 != '') {
               history.back();
           }
-          
+
           // 当密码正确，或没有设置密码时进行内容显示
           window.addEventListener('load', function() {
               if (passwordEntered || password2 === '') {
@@ -336,7 +337,7 @@
 <li>hexo -n “我的第一篇文章”</li>
 </ol>
 <ul>
-<li><p>部署到远端去 通过git hub上去 github密码 <a href="mailto:&#53;&#x37;&#x34;&#54;&#x35;&#56;&#x32;&#x31;&#x38;&#64;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#53;&#x37;&#x34;&#54;&#x35;&#56;&#x32;&#x31;&#x38;&#64;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;</a> ysydxhyz147<br><a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/baitaochen.gitub.io.git">https://github.com/chenbaitao120/baitaochen.gitub.io.git</a><br>git 新建仓库 仓库命名一定要是自己的昵称baitaochen.github.io<br>_config.yml 编辑<br>-—————————<br>deploy:<br> type: git<br> repo: <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/chenbaitao120.github.io.git">https://github.com/chenbaitao120/chenbaitao120.github.io.git</a><br> branch: main</p>
+<li><p>部署到远端去 通过git hub上去 github密码 <a href="mailto:&#53;&#55;&#52;&#54;&#x35;&#56;&#50;&#49;&#x38;&#x40;&#x71;&#x71;&#46;&#x63;&#111;&#109;">&#53;&#55;&#52;&#54;&#x35;&#56;&#50;&#49;&#x38;&#x40;&#x71;&#x71;&#46;&#x63;&#111;&#109;</a> ysydxhyz147<br><a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/baitaochen.gitub.io.git">https://github.com/chenbaitao120/baitaochen.gitub.io.git</a><br>git 新建仓库 仓库命名一定要是自己的昵称baitaochen.github.io<br>_config.yml 编辑<br>-—————————<br>deploy:<br> type: git<br> repo: <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/chenbaitao120.github.io.git">https://github.com/chenbaitao120/chenbaitao120.github.io.git</a><br> branch: main</p>
 </li>
 <li><p>npm install –save hexo-deployer-git 安装git相关组件</p>
 </li>
@@ -589,7 +590,7 @@
 
 
   
-  
+
   
 
   
@@ -767,10 +768,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -780,6 +777,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo标签</a>
               </li>
              
               <li class="article-tag-list-item">
