@@ -1133,7 +1133,7 @@ html {
 
 .article-entry .highlight,
 .article-entry pre {
-    background: #1a0139;
+    background: #272822;
     margin: 10px 0;
     padding: 10px;
     overflow: auto;
@@ -1145,7 +1145,7 @@ html {
 .article-entry .gist .gist-file .gist-data .line-numbers,
 .article-entry .highlight .gutter pre,
 .article-entry .highlight .gutter pre .line {
-    color: #fc0000
+    color: #666
 }
 
 .article-entry code,
@@ -1216,7 +1216,7 @@ html {
 }
 
 .article-entry .highlight .line {
-    color: #e9e3e4;
+    color: #fff;
     min-height: 20px
 }
 
@@ -2194,7 +2194,7 @@ pre .id {
 }
 
 .article {
-    margin: 30px;
+    margin: 1px;
     border: 1px solid #ddd;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
@@ -2275,7 +2275,7 @@ pre .id {
 
 .article-info-index.article-info {
     padding-top: 20px;
-    margin: 30px 7.6923% 0;
+    margin: 10px 7.6923% 0;
     min-height: 72px;
     border-top: 1px solid #ddd
 }
@@ -2283,7 +2283,7 @@ pre .id {
 .article-info-post.article-info {
     padding: 0;
     border: none;
-    margin: -30px 0 20px 7.6923%
+    margin: -10px 0 20px 7.6923%
 }
 
 .article-inner p {
@@ -2367,6 +2367,7 @@ pre .id {
 }
 
 .article-entry p {
+    margin: auto;
     margin-top: 10px
 }
 
@@ -2378,7 +2379,7 @@ pre .id {
     border: 1px solid #ccc;
     font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     word-wrap: break-word;
-    font-size: 20px
+    font-size: 10px
 }
 
 .article-entry blockquote {
@@ -2497,7 +2498,7 @@ pre .id {
 .article-entry table {
     width: 100%;
     border: 1px solid #dedede;
-    margin: 15px 0;
+    margin: 5px 0;
     border-collapse: collapse
 }
 
@@ -3321,14 +3322,14 @@ pre .id {
         background: rgba(234, 221, 202, 0.966);
         transition: all .2s ease-in
     }
-    
+
 
     .article .article-more-link {
         margin: 0
     }
 
     .article .article-entry {
-        padding: 10px 0 30px
+        padding: 10px 0 10px
     }
 
     .article .article-inner h1.article-title,
@@ -3632,8 +3633,8 @@ pre .id {
         padding: 0 24px
     }
 }
-    
-    
+
+
 /*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */
 .pswp__button {
     width: 44px;
@@ -4323,7 +4324,7 @@ a.pswp__share--download:hover {
     background: #708090;
 }
 
-/* .search:hover {                                                
+/* .search:hover {
     border: 2px solid #d3d3d3;
     opacity: 1;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -4413,7 +4414,7 @@ body {
     color:#333;
     /* background-color:#fff; */
     min-height:100%;
-    background: linear-gradient(rgba(250, 246, 246, 0.5), rgba(255, 255, 255, 0.5)), 
+    background: linear-gradient(rgba(250, 246, 246, 0.5), rgba(255, 255, 255, 0.5)),
     /* url('./img/u=1766956309,2956233489&fm=253&fmt=auto&app=138&f=JPEG.webp') no-repeat 0% 0%/ cover; */
 }
 
