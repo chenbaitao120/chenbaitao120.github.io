@@ -2508,16 +2508,16 @@ pre .id {
 }
 
 .article-entry table thead tr {
-    background: #0d0303
+    background: #dedede
 }
 
 .article-entry table tbody tr:hover {
-    background: #160909
+    background: #fff
 }
 
 .article-entry table td,
 .article-entry table th {
-    border: 1px solid #0c0303;
+    border: 1px solid #BA8F6C;
     padding: 0 10px
 }
 
@@ -4523,4 +4523,128 @@ pre .css~* .id, pre .id {
 .change .bar3 {
 	-webkit-transform:rotate(0deg) translate(0px,0px);
 	transform:rotate(0deg) translate(0px,0px);
+}
+#calendar {  
+    margin-top: 410px;
+    padding-top: 20px;
+    position: absolute;
+    margin-left: 35px;
+  }
+#calendar a {
+    text-decoration: block;
+  }
+  
+  .cal-head {
+    position: relative;
+    height: 30px;
+    padding: 10px 6px 2px 6px;
+  }
+  .title{
+    display: none;
+  }
+  .cal-prev,
+  .cal-next {
+    position: absolute;
+    top: 9px;
+    width: 9px;
+    height: 100px;
+    padding: 3px 4px;
+    border: 1px solid transparent;
+    color: #333;
+    outline: 0;
+  }
+  .cal-prev {
+    left: 8px;
+  }
+  .cal-prev:before {
+    border-right: 9px solid #333;
+  }
+  .cal-next {
+    right: 8px;
+  }
+  .cal-next:before {
+    border-left: 9px solid #333;
+  }
+  .cal-prev:before,
+  .cal-next:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+  .cal-title {
+    width: 100px;
+    margin: 0 auto;
+    color: #dcc10c;
+    font: bold 18px/20px Arial;
+    text-align: center;
+  }
+  .cal-title a {
+    border: 1px solid transparent;
+    color: color-link;
+  }
+  .cal,
+  .cal th,
+  .cal td {
+    border: 1px solid #eee;
+  }
+  .cal {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    table-layout: auto;
+    width: 100%;
+    height: 50%;
+    margin: 1;
+  }
+  .cal th {
+    color: color-link;
+    border-width: 0 1px 1px 0;
+    font-weight: 700;
+  }
+  .cal td {
+    border-width: 0 1px 1px 0;
+  }
+  .cal tbody a {
+    background-color: color-link;
+    color: #fff;
+    display: block;
+    font-weight: 700;
+  }
+  .cal tbody .cal-today {
+    color: color-link;
+    font-weight: bold;
+  }
+  .cal .cal-gray {
+    color: #ddd;
+  }
+  .cal th,
+  .cal td {
+    font-weight: normal;
+    line-height: 1.5625;
+    padding: 0;
+    text-align: center;
+  }
+  .cal .cal-foot {
+    color: color-link;
+  }
+  .cal-title a:hover,
+  .cal-prev:hover,
+  .cal-next:hover,
+  .cal .cal-foot:hover,
+  .cal .cal-foot:focus {
+    background-color: color-link;
+    color: #fff;
+    cursor: pointer;
+  }
+  .cal tbody a:hover,
+  .cal tbody a:focus {
+    background-color: color-calendar-post-bg;
+    color: #fff;
+    cursor: pointer;
+  }
+#widget-calender-xxx {  
+    z-index: 2;  
 }
