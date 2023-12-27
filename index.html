@@ -205,141 +205,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-srm/会议纪要" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    <!--  -->
-<!-- 目录内容 -->
-
-
-<!-- 目录内容结束 -->
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      <script>
-        (function(){
-          let password2 = '';
-          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
-
-         
-          //基于缓存密码校验
-          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
-          if(storedPassword == password2 ){
-            // 当密码正确，或没有设置密码时进行内容显示
-            window.addEventListener('load', function() {
-                  document.getElementById('protectedContent').style.display = 'block';
-                  passwordEntered = true;
-          });
-          return;
-          }
-          if(password2 != ''){
-            passwordEntered = prompt('请输入密码') === password2;
-          }
-          // 基于密码输入结果，进行处理
-          if (!passwordEntered && password2 != '') {
-              history.back();
-          }
-          
-          // 当密码正确，或没有设置密码时进行内容显示
-          window.addEventListener('load', function() {
-              if (passwordEntered  || password2 === '') {
-                if(password2!=''){
-                  localStorage.removeItem('password');
-                  localStorage.setItem('password', password2);
-                  setTimeout(function() {
-                  localStorage.removeItem('password');
-                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
-                }
-                  document.getElementById('protectedContent').style.display = 'block';
-              }
-    
-          });
-        })();
-      </script>
-      
-          <!-- 这部分内容受密码保护 -->
-          <div id="protectedContent" style="display: block;">
-            
-              <h1 id="12-27会议纪要"><a href="#12-27会议纪要" class="headerlink" title="12&#x2F;27会议纪要"></a>12&#x2F;27会议纪要</h1><p>参会人员:李文斌,楼群,熊佑忠,严斯正,陈柏涛,邱凯凯,张勇平,黄贤陆,李丛建,徐辉,戴美玲,胡强英,殷海飞,林颖</p>
-<h2 id="供应商分类"><a href="#供应商分类" class="headerlink" title="供应商分类"></a>供应商分类</h2><p>讨论结果</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">供应商资产分类的必要性</span><br><span class="line">一级分类包含编号<span class="number">1001</span>-<span class="number">1005</span>供应商，再加一个关联供应商和年度供应商的维护；</span><br><span class="line">二级分类根据需求进行细化,需要找瀚晖再维护;</span><br><span class="line">对于某些特殊物料，如中间体、贵金属和塑料等，可能需要单独的分类,或采取贴标签的形式。</span><br><span class="line"></span><br><span class="line">供应商的分类全公司层面要统一；在集团层面编号统一起来；</span><br><span class="line">直采物料在品类里分类，品类分类一定要有，品类下面一定要有编码。</span><br><span class="line">供应商也可以有二级分类，和品类是不同的维度。供应商分类可以粗一点，品类的分类要细一点。主要用到直采和间采的分类。</span><br></pre></td></tr></table></figure>
-
-<h2 id="管理模式"><a href="#管理模式" class="headerlink" title="管理模式"></a>管理模式</h2><p>集团统一管理还是公司管理</p>
-<p>瀚晖：按公司管理更合适一点,供应商库重叠的部分比较少；</p>
-<p>各自管理维护成本比较大，总公司的话一个品类一个人维护</p>
-<p>两种集团引进共用 区别在于</p>
-<p>1.是否需要重新审批（公司间的管理）</p>
-<p>2.是否分开改供应商的信息</p>
-<p>3.能否纳入各家的流程来</p>
-<p>供应商节点对外体现，只要不投料就可以，放在冻结库里</p>
-<p>讨论结果(待定)：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>供应商注册进来后集团共享能用;</span><br><span class="line"><span class="number">2.</span>寻源流程需要要重新走;物料部分是各个公司进行批准；</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="品类分类"><a href="#品类分类" class="headerlink" title="品类分类"></a>品类分类</h2><ul>
-<li>具体分类见EXCEL</li>
-<li>品类和供应商分类要可以对应起来，供应商对品类是多对多的关系，供应商提供了一个品类以后，系统自动添加品类到供应商下面。</li>
-<li>集团层面统一管理，不能随意添加删除编辑。</li>
-</ul>
-<h2 id="采购分类大小类"><a href="#采购分类大小类" class="headerlink" title="采购分类大小类"></a>采购分类大小类</h2><p>采购分类大小类是需要的，</p>
-<p>审批流的设置根据小类来走。</p>
-<h2 id="SRM系统对接"><a href="#SRM系统对接" class="headerlink" title="SRM系统对接"></a>SRM系统对接</h2><p>供应商的使用微信公众号接入</p>
-<p>合同不是不需的，收货是可选的。</p>
-<p>如果是线下寻源就不走SRM系统了。</p>
-<p>采取采购方式如何比价进行招标 过程中如何进行监管。针对不同的寻源方式要加不同的管控方式。比价和寻找采购方式比较重要。</p>
-<p>寻源完源确定了以后再导系统里面增加编码。</p>
-<p>直采的直接去SRM里面寻源。确认好供应商后后面再审批。</p>
-<h2 id="项目小组成员"><a href="#项目小组成员" class="headerlink" title="项目小组成员"></a>项目小组成员</h2><p>供应链:3人</p>
-<p>瀚晖:2人 楼群 章程波</p>
-<p>直采由采购员提 ，间采都可以提 </p>
-<p>付款方式放到合同里，直接带到付款的环节</p>
-<p>瀚晖全部导入到OA系统，但是供应商的编码可能会换掉，一个编码对应一个供应商。</p>
-
-            
-          </div>
-        
-      </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/27/srm/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-    
-        <!--  -->
-        <div class="jump-container" id="js-jump-container" style="display:block;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        <!--  -->
-        <!--  -->
-    </div>
-</aside>
-
-
-
-
-
-
-  
     <article id="post-采购" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     <!--  -->
@@ -1058,7 +923,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1066,11 +931,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">OA发布</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1086,15 +963,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
+                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
