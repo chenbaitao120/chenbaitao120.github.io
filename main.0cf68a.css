@@ -4525,12 +4525,13 @@ pre .css~* .id, pre .id {
 	transform:rotate(0deg) translate(0px,0px);
 }
 #calendar {  
-    margin-top: 40px;
+    margin-top: 90px;
     margin-left: 0px;
     padding-left: 0px;
     padding-top: 80px;
     position: absolute;
-    height: 60px;
+    height: 10px;
+    z-index: -1;
   }
 #calendar a {
     text-decoration: block;
