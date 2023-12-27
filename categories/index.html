@@ -242,20 +242,38 @@
           let password2 = '';
           var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
 
+         
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
           if(password2 != ''){
             passwordEntered = prompt('请输入密码') === password2;
           }
-
           // 基于密码输入结果，进行处理
           if (!passwordEntered && password2 != '') {
               history.back();
           }
-
+          
           // 当密码正确，或没有设置密码时进行内容显示
           window.addEventListener('load', function() {
-              if (passwordEntered || password2 === '') {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
                   document.getElementById('protectedContent').style.display = 'block';
               }
+    
           });
         })();
       </script>
@@ -445,10 +463,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
@@ -461,11 +475,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">高项</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,14 +504,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
             
             <div class="clearfix"></div>

@@ -289,20 +289,38 @@
           let password2 = 'chenbaitao181';
           var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
 
+         
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
           if(password2 != ''){
             passwordEntered = prompt('请输入密码') === password2;
           }
-
           // 基于密码输入结果，进行处理
           if (!passwordEntered && password2 != '') {
               history.back();
           }
-
+          
           // 当密码正确，或没有设置密码时进行内容显示
           window.addEventListener('load', function() {
-              if (passwordEntered || password2 === '') {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
                   document.getElementById('protectedContent').style.display = 'block';
               }
+    
           });
         })();
       </script>
@@ -351,7 +369,7 @@
 <li>hexo -n “我的第一篇文章”</li>
 </ol>
 <ul>
-<li><p>部署到远端去 通过git hub上去 github密码 <a href="mailto:&#x35;&#x37;&#x34;&#54;&#x35;&#56;&#x32;&#49;&#x38;&#x40;&#x71;&#x71;&#46;&#x63;&#x6f;&#109;">&#x35;&#x37;&#x34;&#54;&#x35;&#56;&#x32;&#49;&#x38;&#x40;&#x71;&#x71;&#46;&#x63;&#x6f;&#109;</a> ysydxhyz147<br><a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/baitaochen.gitub.io.git">https://github.com/chenbaitao120/baitaochen.gitub.io.git</a><br>git 新建仓库 仓库命名一定要是自己的昵称baitaochen.github.io<br>_config.yml 编辑<br>-—————————<br>deploy:<br> type: git<br> repo: <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/chenbaitao120.github.io.git">https://github.com/chenbaitao120/chenbaitao120.github.io.git</a><br> branch: main</p>
+<li><p>部署到远端去 通过git hub上去 github密码 <a href="mailto:&#x35;&#x37;&#52;&#x36;&#x35;&#x38;&#50;&#x31;&#56;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;">&#x35;&#x37;&#52;&#x36;&#x35;&#x38;&#50;&#x31;&#56;&#64;&#x71;&#x71;&#x2e;&#x63;&#111;&#109;</a> ysydxhyz147<br><a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/baitaochen.gitub.io.git">https://github.com/chenbaitao120/baitaochen.gitub.io.git</a><br>git 新建仓库 仓库命名一定要是自己的昵称baitaochen.github.io<br>_config.yml 编辑<br>-—————————<br>deploy:<br> type: git<br> repo: <a target="_blank" rel="noopener" href="https://github.com/chenbaitao120/chenbaitao120.github.io.git">https://github.com/chenbaitao120/chenbaitao120.github.io.git</a><br> branch: main</p>
 </li>
 <li><p>npm install –save hexo-deployer-git 安装git相关组件</p>
 </li>
@@ -803,10 +821,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
@@ -819,11 +833,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">高项</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -836,14 +862,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
             
             <div class="clearfix"></div>

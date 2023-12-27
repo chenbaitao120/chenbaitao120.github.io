@@ -18,7 +18,7 @@
 <meta property="og:description" content="12&#x2F;27会议纪要参会人员:张勇平 求凯凯 黄贤陆 徐辉 李从建 殷海飞 戴美玲 林颖 供应商分类是否需要增加品类管理分类层面 1.分类:品类负责人做审批管理，进行经费的分析,供应商管理的基础数据。 2.只做复核功能，供应商信息归集团管理。一个供应只能对应一个类型。 3.供应商分类、品类分类；直采物料在品类里分类，品类分类一定要有，有些品类下面一定要有编码。供应商也可以有二级分类。 和品">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-12-27T00:35:47.747Z">
-<meta property="article:modified_time" content="2023-12-27T01:55:40.782Z">
+<meta property="article:modified_time" content="2023-12-27T02:12:17.983Z">
 <meta property="article:author" content="今孔明">
 <meta name="twitter:card" content="summary">
   
@@ -221,20 +221,38 @@
           let password2 = '';
           var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
 
+         
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
           if(password2 != ''){
             passwordEntered = prompt('请输入密码') === password2;
           }
-
           // 基于密码输入结果，进行处理
           if (!passwordEntered && password2 != '') {
               history.back();
           }
-
+          
           // 当密码正确，或没有设置密码时进行内容显示
           window.addEventListener('load', function() {
-              if (passwordEntered || password2 === '') {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
                   document.getElementById('protectedContent').style.display = 'block';
               }
+    
           });
         })();
       </script>
@@ -264,8 +282,6 @@
 <p>供应商节点对外体现，只要不投料就可以，放在冻结库里</p>
 <p>讨论结果(待定)：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.供应商进来后集团共享能用，新的供应商叫做注册供应商;寻源还是需要质量参与的; 只是进来但是流程还是要重新走一下;</span><br><span class="line">2.物料是各个公司批准;控制点在物料；</span><br></pre></td></tr></table></figure>
-
-
 
 
 
@@ -533,10 +549,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
@@ -549,11 +561,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">高项</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,14 +590,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
             
             <div class="clearfix"></div>
