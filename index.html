@@ -53,17 +53,14 @@
     <div class="left-col" q-class="show:isShow">
       
 
+
 <!-- <div class="overlay" style="background: #4d4d4d"></div> -->
+
 <div class="overlay"></div>
 
 <div class="intrude-less">
 	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-	<div id="widget-calender-xxx" >
-		<div class="widget tag">
-    <h3 class="title">calendar</h3>
-    <div id="calendar"></div>
-  </div>
-	</div>	
+
 	<header id="header" class="inner">
 		<form id="search-form"> <!-- 搜索框相关 -->
 			<input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="站内搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
@@ -93,7 +90,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 15
+			总文章数 16
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -132,7 +129,12 @@
 	</header>	
 
 </div>
-
+<div id="widget-calender-xxx" >
+	<div class="widget tag">
+    <h3 class="title">calendar</h3>
+    <div id="calendar"></div>
+  </div>
+</div>	
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -200,6 +202,96 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-srm/会议纪要" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+              history.back();
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered || password2 === '') {
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <h1 id="12-27会议纪要"><a href="#12-27会议纪要" class="headerlink" title="12&#x2F;27会议纪要"></a>12&#x2F;27会议纪要</h1><h2 id="供应商分类"><a href="#供应商分类" class="headerlink" title="供应商分类"></a>供应商分类</h2><p>是否需要增加品类管理分类层面</p>
+<p>1.分类:品类负责人做审批管理，进行经费的分析,供应商管理的基础数据。</p>
+<p>2.只做复核功能，供应商信息归集团管理。一个供应只能对应一个类型。</p>
+<p>3.供应商分类、品类分类；直采物料在品类里分类，品类分类一定要有，有些品类下面一定要有编码。供应商也可以有二级分类。</p>
+<p>和品类是不同的维度。供应商分类可以粗一点，品类的分类要细一点。主要用到直采和间采的分类。</p>
+<ol start="4">
+<li></li>
+</ol>
+
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/27/srm/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+
   
     <article id="post-采购" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -843,6 +935,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
@@ -851,7 +947,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -859,7 +955,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -872,18 +976,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
             
             <div class="clearfix"></div>
