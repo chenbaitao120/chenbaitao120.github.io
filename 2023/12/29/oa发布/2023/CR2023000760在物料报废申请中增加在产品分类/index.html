@@ -10,17 +10,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>CR2023000760在物料报废申请中增加在产品分类 | chen.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CR2023000760在物料报废申请中增加在产品分类计划实施方案12345678910OA：    表头新增物料分类字段（库存商品&#x2F;在产品），如果是在产品，仓库只读；    行：增加生产流程订单号字段，不需要填写报废数量    如果公司是1000和1100公司的，归档后调用SAP接口进行报废处理。SAP：OA审批后，通过接口将对应的在产品流程订单号传给SAP，SAP需要对该订单修改结算规则。SA">
+  <meta name="description" content="CR2023000760在物料报废申请中增加在产品分类https:&#x2F;&#x2F;oa.hisunpharm.com:48998&#x2F;spa&#x2F;workflow&#x2F;static4form&#x2F;index.html?_rdm&#x3D;1703839574744#&#x2F;main&#x2F;workflow&#x2F;req?requestid&#x3D;6033692&amp;preloadkey&#x3D;1703839574744&amp;timestamp&#x3D;170383">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CR2023000760在物料报废申请中增加在产品分类">
 <meta property="og:url" content="http://example.com/2023/12/29/oa%E5%8F%91%E5%B8%83/2023/CR2023000760%E5%9C%A8%E7%89%A9%E6%96%99%E6%8A%A5%E5%BA%9F%E7%94%B3%E8%AF%B7%E4%B8%AD%E5%A2%9E%E5%8A%A0%E5%9C%A8%E4%BA%A7%E5%93%81%E5%88%86%E7%B1%BB/index.html">
 <meta property="og:site_name" content="chen.blog">
-<meta property="og:description" content="CR2023000760在物料报废申请中增加在产品分类计划实施方案12345678910OA：    表头新增物料分类字段（库存商品&#x2F;在产品），如果是在产品，仓库只读；    行：增加生产流程订单号字段，不需要填写报废数量    如果公司是1000和1100公司的，归档后调用SAP接口进行报废处理。SAP：OA审批后，通过接口将对应的在产品流程订单号传给SAP，SAP需要对该订单修改结算规则。SA">
+<meta property="og:description" content="CR2023000760在物料报废申请中增加在产品分类https:&#x2F;&#x2F;oa.hisunpharm.com:48998&#x2F;spa&#x2F;workflow&#x2F;static4form&#x2F;index.html?_rdm&#x3D;1703839574744#&#x2F;main&#x2F;workflow&#x2F;req?requestid&#x3D;6033692&amp;preloadkey&#x3D;1703839574744&amp;timestamp&#x3D;170383">
 <meta property="og:locale">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231228162623023.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231229153953643.png">
 <meta property="article:published_time" content="2023-12-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-29T07:44:56.352Z">
+<meta property="article:modified_time" content="2023-12-29T08:49:41.648Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA发布">
@@ -365,10 +365,13 @@
           <!-- 这部分内容受密码保护 -->
           <div id="protectedContent" style="display: block;">
             
-              <h1 id="CR2023000760在物料报废申请中增加在产品分类"><a href="#CR2023000760在物料报废申请中增加在产品分类" class="headerlink" title="CR2023000760在物料报废申请中增加在产品分类"></a>CR2023000760在物料报废申请中增加在产品分类</h1><h2 id="计划实施方案"><a href="#计划实施方案" class="headerlink" title="计划实施方案"></a>计划实施方案</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">OA</span>：</span><br><span class="line">    表头新增物料分类字段（库存商品/在产品），如果是在产品，仓库只读；</span><br><span class="line">    行：增加生产流程订单号字段，不需要填写报废数量</span><br><span class="line">    如果公司是<span class="number">1000</span>和<span class="number">1100</span>公司的，归档后调用<span class="variable constant_">SAP</span>接口进行报废处理。</span><br><span class="line"><span class="variable constant_">SAP</span>：</span><br><span class="line"><span class="variable constant_">OA</span>审批后，通过接口将对应的在产品流程订单号传给<span class="variable constant_">SAP</span>，<span class="variable constant_">SAP</span>需要对该订单修改结算规则。</span><br><span class="line"><span class="variable constant_">SAP</span>表：<span class="variable constant_">COBRB</span> 、<span class="variable constant_">AUFK</span></span><br><span class="line">逻辑：<span class="variable constant_">AUFK</span>-<span class="variable constant_">AUFNR</span>=订单号，<span class="variable constant_">COBRB</span>-<span class="variable constant_">OBJNR</span>=<span class="variable constant_">AUFK</span>-<span class="variable constant_">OBJNR</span>，</span><br><span class="line">订单原结算规则行（<span class="variable constant_">COBRB</span>-<span class="variable constant_">KONTY</span>=<span class="variable constant_">MAT</span>），百分比（<span class="variable constant_">COBRB</span>-<span class="variable constant_">PROZS</span>）修改为<span class="number">0</span></span><br><span class="line">新增一行：<span class="variable constant_">COBRB</span>-<span class="variable constant_">KONTY</span>=G/L，<span class="variable constant_">COBRB</span>-<span class="variable constant_">PROZS</span>=<span class="number">100</span> ，<span class="variable constant_">COBRB</span>-<span class="variable constant_">REC_OBJNR1</span>=<span class="number">1901010000</span></span><br></pre></td></tr></table></figure>
+              <h1 id="CR2023000760在物料报废申请中增加在产品分类"><a href="#CR2023000760在物料报废申请中增加在产品分类" class="headerlink" title="CR2023000760在物料报废申请中增加在产品分类"></a>CR2023000760在物料报废申请中增加在产品分类</h1><p><a target="_blank" rel="noopener" href="https://oa.hisunpharm.com:48998/spa/workflow/static4form/index.html?_rdm=1703839574744#/main/workflow/req?requestid=6033692&preloadkey=1703839574744&timestamp=1703839574744&_key=bca14b">https://oa.hisunpharm.com:48998/spa/workflow/static4form/index.html?_rdm=1703839574744#/main/workflow/req?requestid=6033692&amp;preloadkey=1703839574744&amp;timestamp=1703839574744&amp;_key=bca14b</a></p>
+<h2 id="计划实施方案"><a href="#计划实施方案" class="headerlink" title="计划实施方案"></a>计划实施方案</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">OA</span>：</span><br><span class="line">    表头新增物料分类字段（库存商品/在产品），如果是在产品，仓库只读；</span><br><span class="line">    行：增加生产流程订单号字段，不需要填写报废数量</span><br><span class="line">    如果公司是<span class="number">1000</span>和<span class="number">1100</span>公司的，归档后调用<span class="variable constant_">SAP</span>接口进行报废处理。</span><br><span class="line"><span class="variable constant_">SAP</span>：</span><br><span class="line"><span class="variable constant_">OA</span>审批后，通过接口将对应的在产品流程订单号传给<span class="variable constant_">SAP</span>，<span class="variable constant_">SAP</span>需要对该订单修改结算规则。</span><br><span class="line"><span class="variable constant_">SAP</span>表：<span class="variable constant_">COBRB</span> 、<span class="variable constant_">AUFK</span></span><br><span class="line">逻辑：<span class="variable constant_">AUFK</span>-<span class="variable constant_">AUFNR</span>=订单号，<span class="variable constant_">COBRB</span>-<span class="variable constant_">OBJNR</span>=<span class="variable constant_">AUFK</span>-<span class="variable constant_">OBJNR</span>，</span><br><span class="line">订单原结算规则行（<span class="variable constant_">COBRB</span>-<span class="variable constant_">KONTY</span>=<span class="variable constant_">MAT</span>），百分比（<span class="variable constant_">COBRB</span>-<span class="variable constant_">PROZS</span>）修改为<span class="number">0</span></span><br><span class="line">新增一行：<span class="variable constant_">COBRB</span>-<span class="variable constant_">KONTY</span>=G/L，<span class="variable constant_">COBRB</span>-<span class="variable constant_">PROZS</span>=<span class="number">100</span> ，<span class="variable constant_">COBRB</span>-<span class="variable constant_">REC_OBJNR1</span>=<span class="number">1901010000</span></span><br></pre></td></tr></table></figure>
 
-<p>在产品的时候调用服务，否则保持原来逻辑</p>
-<p><font color=red><strong>1000和1100公司要对接  其他公司不对接SAP</strong></font></p>
+
+
+<p><font color=red><strong>1000和1100公司要对接  其他公司不对接SAP 在产品的时候调用服务，否则保持原来逻辑</strong></font></p>
+<p>sap系统只需要调用SAP2和SAP</p>
 <h2 id="SAP规则"><a href="#SAP规则" class="headerlink" title="SAP规则"></a>SAP规则</h2><p><a target="_blank" rel="noopener" href="https://oa.hisunpharm.com:48998/spa/document/index.jsp?f_weaver_belongto_userid=32033&f_weaver_belongto_usertype=0&id=1360890&isrequest=1&requestid=6033692&desrequestid=-1&authStr=dmlld0NoYWluPTYwMzM2OTJ8bWFpbmlkPTYwMzM2OTJ8&authSignatureStr=b6b4471bc2a938730ea27a45910271ad&router=1#/main/document/detail?_key=v1w6pk">https://oa.hisunpharm.com:48998/spa/document/index.jsp?f_weaver_belongto_userid=32033&amp;f_weaver_belongto_usertype=0&amp;id=1360890&amp;isrequest=1&amp;requestid=6033692&amp;desrequestid=-1&amp;authStr=dmlld0NoYWluPTYwMzM2OTJ8bWFpbmlkPTYwMzM2OTJ8&amp;authSignatureStr=b6b4471bc2a938730ea27a45910271ad&amp;router=1#/main/document/detail?_key=v1w6pk</a></p>
 <h2 id="实施步骤"><a href="#实施步骤" class="headerlink" title="实施步骤"></a>实施步骤</h2><p>配置编码</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231228162623023.png" alt="image-20231228162623023"></p>
@@ -688,19 +691,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
+                <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -716,6 +715,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
@@ -728,23 +731,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">未完成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">商业</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,11 +755,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
             
             <div class="clearfix"></div>
