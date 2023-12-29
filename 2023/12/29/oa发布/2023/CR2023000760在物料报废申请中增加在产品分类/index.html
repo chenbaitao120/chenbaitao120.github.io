@@ -18,13 +18,15 @@
 <meta property="og:description" content="CR2023000760在物料报废申请中增加在产品分类计划实施方案12345678910OA：    表头新增物料分类字段（库存商品&#x2F;在产品），如果是在产品，仓库只读；    行：增加生产流程订单号字段，不需要填写报废数量    如果公司是1000和1100公司的，归档后调用SAP接口进行报废处理。SAP：OA审批后，通过接口将对应的在产品流程订单号传给SAP，SAP需要对该订单修改结算规则。SA">
 <meta property="og:locale">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231228162623023.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231229153953643.png">
 <meta property="article:published_time" content="2023-12-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-29T02:54:03.280Z">
+<meta property="article:modified_time" content="2023-12-29T07:44:56.352Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA发布">
 <meta property="article:tag" content="供应链发布">
 <meta property="article:tag" content="未完成">
+<meta property="article:tag" content="物料报废申请流程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231228162623023.png">
   
@@ -135,7 +137,7 @@
 				INTJの日记
 			</div>
 		</nav>
-	</header>	
+	</header>
 
 </div>
 
@@ -144,7 +146,49 @@
     <h3 class="title">calendar</h3>
     <div id="calendar"></div>
   </div>
-</div>	
+
+  <script>
+          (function(){
+            let password3 = 'cbt';
+            var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+            //基于缓存密码校验
+            var storedPassword = localStorage.getItem('password2'); // 获取本地存储中的密码
+            if(storedPassword == password3 ){
+              // 当密码正确，或没有设置密码时进行内容显示
+              window.addEventListener('load', function() {
+                    document.getElementById('protectedContent').style.display = 'block';
+                    passwordEntered = true;
+            });
+            return;
+            }
+            if(password3 != ''){
+              passwordEntered = prompt('请输入密码') === password3;
+            }
+            // 基于密码输入结果，进行处理
+            if (!passwordEntered && password3 != '') {
+                history.back();
+            }
+
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                if (passwordEntered  || password3 === '') {
+                  if(password3!=''){
+                    localStorage.removeItem('password2');
+                    localStorage.setItem('password2', password3);
+                    setTimeout(function() {
+                    localStorage.removeItem('password');
+                  }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                  }
+                }
+
+            });
+          })();
+        </script>
+
+</div>
+
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -324,9 +368,15 @@
               <h1 id="CR2023000760在物料报废申请中增加在产品分类"><a href="#CR2023000760在物料报废申请中增加在产品分类" class="headerlink" title="CR2023000760在物料报废申请中增加在产品分类"></a>CR2023000760在物料报废申请中增加在产品分类</h1><h2 id="计划实施方案"><a href="#计划实施方案" class="headerlink" title="计划实施方案"></a>计划实施方案</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">OA</span>：</span><br><span class="line">    表头新增物料分类字段（库存商品/在产品），如果是在产品，仓库只读；</span><br><span class="line">    行：增加生产流程订单号字段，不需要填写报废数量</span><br><span class="line">    如果公司是<span class="number">1000</span>和<span class="number">1100</span>公司的，归档后调用<span class="variable constant_">SAP</span>接口进行报废处理。</span><br><span class="line"><span class="variable constant_">SAP</span>：</span><br><span class="line"><span class="variable constant_">OA</span>审批后，通过接口将对应的在产品流程订单号传给<span class="variable constant_">SAP</span>，<span class="variable constant_">SAP</span>需要对该订单修改结算规则。</span><br><span class="line"><span class="variable constant_">SAP</span>表：<span class="variable constant_">COBRB</span> 、<span class="variable constant_">AUFK</span></span><br><span class="line">逻辑：<span class="variable constant_">AUFK</span>-<span class="variable constant_">AUFNR</span>=订单号，<span class="variable constant_">COBRB</span>-<span class="variable constant_">OBJNR</span>=<span class="variable constant_">AUFK</span>-<span class="variable constant_">OBJNR</span>，</span><br><span class="line">订单原结算规则行（<span class="variable constant_">COBRB</span>-<span class="variable constant_">KONTY</span>=<span class="variable constant_">MAT</span>），百分比（<span class="variable constant_">COBRB</span>-<span class="variable constant_">PROZS</span>）修改为<span class="number">0</span></span><br><span class="line">新增一行：<span class="variable constant_">COBRB</span>-<span class="variable constant_">KONTY</span>=G/L，<span class="variable constant_">COBRB</span>-<span class="variable constant_">PROZS</span>=<span class="number">100</span> ，<span class="variable constant_">COBRB</span>-<span class="variable constant_">REC_OBJNR1</span>=<span class="number">1901010000</span></span><br></pre></td></tr></table></figure>
 
 <p>在产品的时候调用服务，否则保持原来逻辑</p>
+<p><font color=red><strong>1000和1100公司要对接  其他公司不对接SAP</strong></font></p>
 <h2 id="SAP规则"><a href="#SAP规则" class="headerlink" title="SAP规则"></a>SAP规则</h2><p><a target="_blank" rel="noopener" href="https://oa.hisunpharm.com:48998/spa/document/index.jsp?f_weaver_belongto_userid=32033&f_weaver_belongto_usertype=0&id=1360890&isrequest=1&requestid=6033692&desrequestid=-1&authStr=dmlld0NoYWluPTYwMzM2OTJ8bWFpbmlkPTYwMzM2OTJ8&authSignatureStr=b6b4471bc2a938730ea27a45910271ad&router=1#/main/document/detail?_key=v1w6pk">https://oa.hisunpharm.com:48998/spa/document/index.jsp?f_weaver_belongto_userid=32033&amp;f_weaver_belongto_usertype=0&amp;id=1360890&amp;isrequest=1&amp;requestid=6033692&amp;desrequestid=-1&amp;authStr=dmlld0NoYWluPTYwMzM2OTJ8bWFpbmlkPTYwMzM2OTJ8&amp;authSignatureStr=b6b4471bc2a938730ea27a45910271ad&amp;router=1#/main/document/detail?_key=v1w6pk</a></p>
 <h2 id="实施步骤"><a href="#实施步骤" class="headerlink" title="实施步骤"></a>实施步骤</h2><p>配置编码</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231228162623023.png" alt="image-20231228162623023"></p>
+<p>2.修改代码</p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231229153953643.png" alt="image-20231229153953643" style="zoom: 50%;" />
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hisun.action.PTP0303_OVER</span><br></pre></td></tr></table></figure>
+
 
             
           </div>
@@ -353,6 +403,10 @@
       		
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">未完成</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">物料报废申请流程</a>
         		</li>
       		
 		</ul>
@@ -551,6 +605,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 
 
+
 <!-- Calendar -->
 
     <script src="/js/calendar.js"></script>
@@ -633,11 +688,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+                <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,10 +728,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">商业</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
               </li>
              
@@ -685,11 +736,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">原料药发布</a>
+                <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
               </li>
             
             <div class="clearfix"></div>

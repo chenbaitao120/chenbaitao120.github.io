@@ -127,7 +127,7 @@
 				INTJの日记
 			</div>
 		</nav>
-	</header>	
+	</header>
 
 </div>
 
@@ -136,7 +136,49 @@
     <h3 class="title">calendar</h3>
     <div id="calendar"></div>
   </div>
-</div>	
+
+  <script>
+          (function(){
+            let password3 = 'cbt';
+            var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+            //基于缓存密码校验
+            var storedPassword = localStorage.getItem('password2'); // 获取本地存储中的密码
+            if(storedPassword == password3 ){
+              // 当密码正确，或没有设置密码时进行内容显示
+              window.addEventListener('load', function() {
+                    document.getElementById('protectedContent').style.display = 'block';
+                    passwordEntered = true;
+            });
+            return;
+            }
+            if(password3 != ''){
+              passwordEntered = prompt('请输入密码') === password3;
+            }
+            // 基于密码输入结果，进行处理
+            if (!passwordEntered && password3 != '') {
+                history.back();
+            }
+
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                if (passwordEntered  || password3 === '') {
+                  if(password3!=''){
+                    localStorage.removeItem('password2');
+                    localStorage.setItem('password2', password3);
+                    setTimeout(function() {
+                    localStorage.removeItem('password');
+                  }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                  }
+                }
+
+            });
+          })();
+        </script>
+
+</div>
+
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -260,6 +302,10 @@
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">未完成</a>
         		</li>
       		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">合同管理流程</a>
+        		</li>
+      		
 		</ul>
 	</div>
 
@@ -325,6 +371,10 @@
       		
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">未完成</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">物料报废申请流程</a>
         		</li>
       		
 		</ul>
@@ -394,6 +444,10 @@
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">人力发布</a>
         		</li>
       		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">请假流程</a>
+        		</li>
+      		
 		</ul>
 	</div>
 
@@ -461,6 +515,10 @@
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">未完成</a>
         		</li>
       		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">OA报表</a>
+        		</li>
+      		
 		</ul>
 	</div>
 
@@ -521,7 +579,11 @@
         		</li>
       		
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">原料药发布</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">电子档案移交流程</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">档案室发布</a>
         		</li>
       		
 		</ul>
@@ -661,6 +723,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 
 
+
 <!-- Calendar -->
 
     <script src="/js/calendar.js"></script>
@@ -743,11 +806,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+                <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -783,10 +846,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">商业</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
               </li>
              
@@ -795,11 +854,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">原料药发布</a>
+                <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
               </li>
             
             <div class="clearfix"></div>

@@ -127,7 +127,7 @@
 				INTJの日记
 			</div>
 		</nav>
-	</header>	
+	</header>
 
 </div>
 
@@ -136,7 +136,49 @@
     <h3 class="title">calendar</h3>
     <div id="calendar"></div>
   </div>
-</div>	
+
+  <script>
+          (function(){
+            let password3 = 'cbt';
+            var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+            //基于缓存密码校验
+            var storedPassword = localStorage.getItem('password2'); // 获取本地存储中的密码
+            if(storedPassword == password3 ){
+              // 当密码正确，或没有设置密码时进行内容显示
+              window.addEventListener('load', function() {
+                    document.getElementById('protectedContent').style.display = 'block';
+                    passwordEntered = true;
+            });
+            return;
+            }
+            if(password3 != ''){
+              passwordEntered = prompt('请输入密码') === password3;
+            }
+            // 基于密码输入结果，进行处理
+            if (!passwordEntered && password3 != '') {
+                history.back();
+            }
+
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                if (passwordEntered  || password3 === '') {
+                  if(password3!=''){
+                    localStorage.removeItem('password2');
+                    localStorage.setItem('password2', password3);
+                    setTimeout(function() {
+                    localStorage.removeItem('password');
+                  }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                  }
+                }
+
+            });
+          })();
+        </script>
+
+</div>
+
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
@@ -258,6 +300,10 @@
       		
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">未完成</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">合同管理流程</a>
         		</li>
       		
 		</ul>
@@ -382,6 +428,10 @@
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">未完成</a>
         		</li>
       		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">物料报废申请流程</a>
+        		</li>
+      		
 		</ul>
 	</div>
 
@@ -449,6 +499,10 @@
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">人力发布</a>
         		</li>
       		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">请假流程</a>
+        		</li>
+      		
 		</ul>
 	</div>
 
@@ -514,6 +568,10 @@
       		
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">未完成</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">OA报表</a>
         		</li>
       		
 		</ul>
@@ -607,65 +665,6 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       	<div class="article-meta">
-	      	<a href="/2023/12/26/oa/%E5%A6%82%E4%BD%95%E7%94%A8MD5%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%80%E8%87%B4%E6%80%A7%E6%A0%A1%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2023-12-26T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/26/oa/%E5%A6%82%E4%BD%95%E7%94%A8MD5%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%80%E8%87%B4%E6%80%A7%E6%A0%A1%E9%AA%8C/">MD5进行文件一致性校验</a>
-    </h1>
-  
-
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">过滤</a>
-        		</li>
-      		
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/OA/" class="article-tag-list-link color3">OA</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-
-    
-
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
 	      	<a href="/2023/12/26/srm/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81/" class="archive-article-date">
   	<time datetime="2023-12-26T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-26</time>
 </a>
@@ -729,6 +728,65 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       	<div class="article-meta">
+	      	<a href="/2023/12/26/oa/%E5%A6%82%E4%BD%95%E7%94%A8MD5%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%80%E8%87%B4%E6%80%A7%E6%A0%A1%E9%AA%8C/" class="archive-article-date">
+  	<time datetime="2023-12-26T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-26</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/12/26/oa/%E5%A6%82%E4%BD%95%E7%94%A8MD5%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%80%E8%87%B4%E6%80%A7%E6%A0%A1%E9%AA%8C/">MD5进行文件一致性校验</a>
+    </h1>
+  
+
+
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">过滤</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/OA/" class="article-tag-list-link color3">OA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+
+    
+
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
 	      	<a href="/2023/12/26/oa%E5%8F%91%E5%B8%83/2023/MD5%E6%A0%A1%E9%AA%8C%E9%97%AE%E9%A2%98/" class="archive-article-date">
   	<time datetime="2023-12-26T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-26</time>
 </a>
@@ -757,7 +815,11 @@
         		</li>
       		
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">原料药发布</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">电子档案移交流程</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">档案室发布</a>
         		</li>
       		
 		</ul>
@@ -901,6 +963,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 
 
+
 <!-- Calendar -->
 
     <script src="/js/calendar.js"></script>
@@ -983,11 +1046,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+                <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1023,10 +1086,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">商业</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
               </li>
              
@@ -1035,11 +1094,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">原料药发布</a>
+                <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
               </li>
             
             <div class="clearfix"></div>
