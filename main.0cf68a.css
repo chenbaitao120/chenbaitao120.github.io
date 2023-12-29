@@ -2504,7 +2504,8 @@ pre .id {
 
 .article-entry table td,
 .article-entry table tr {
-    height: 35px
+    height: 35px;
+    width: auto;
 }
 
 .article-entry table thead tr {
@@ -2518,7 +2519,8 @@ pre .id {
 .article-entry table td,
 .article-entry table th {
     border: 1px solid #BA8F6C;
-    padding: 0 10px
+    padding: 0 10px;
+  width: auto;
 }
 
 .article-entry figure table {
@@ -4525,7 +4527,7 @@ pre .css~* .id, pre .id {
 	-webkit-transform:rotate(0deg) translate(0px,0px);
 	transform:rotate(0deg) translate(0px,0px);
 }
-#calendar {  
+#calendar {
     margin-top: 90px;
     margin-left: 0px;
     padding-left: 0px;
@@ -4538,7 +4540,7 @@ pre .css~* .id, pre .id {
     text-decoration: block;
     font-size: 7px;
   }
-  
+
   .cal-head {
     position: relative;
     height: 30px;
@@ -4636,7 +4638,7 @@ pre .css~* .id, pre .id {
     height: 15px;
     font-size: 10px;
   }
-  .cal .cal-foot {  
+  .cal .cal-foot {
     color: color-link;
   }
   .cal-title a:hover,
@@ -4654,6 +4656,6 @@ pre .css~* .id, pre .id {
     color: #fff;
     cursor: pointer;
   }
-#widget-calender-xxx {  
+#widget-calender-xxx {
     z-index: 20;
 }
