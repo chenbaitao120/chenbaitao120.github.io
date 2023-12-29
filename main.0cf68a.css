@@ -605,12 +605,11 @@ textarea::-webkit-input-placeholder {
 
 table {
     border-collapse: collapse;
-    border-spacing: 0
+    border-spacing: 0;
 }
 
-td,
 th {
-    padding: 0
+    padding: 0;
 }
 
 blockquote,
@@ -2496,16 +2495,15 @@ pre .id {
 }
 
 .article-entry table {
-    width: 100%;
+    width: 50%;
     border: 1px solid #dedede;
     margin: 5px 0;
-    border-collapse: collapse
+    border-collapse: collapse;
 }
 
 .article-entry table td,
 .article-entry table tr {
-    height: 35px;
-    width: auto;
+    height: 35px
 }
 
 .article-entry table thead tr {
@@ -2520,7 +2518,6 @@ pre .id {
 .article-entry table th {
     border: 1px solid #BA8F6C;
     padding: 0 10px;
-  width: auto;
 }
 
 .article-entry figure table {
