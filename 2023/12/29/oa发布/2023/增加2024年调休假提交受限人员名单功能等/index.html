@@ -18,11 +18,13 @@
 <meta property="og:description" content="CR2023000779增加2024年调休假提交受限人员名单功能等1.上线后调休受限人员清单的权限分配要修改一下 2.配置后置处理接口   校验拦截的接口要放在最前面3.重新选一下用工主体浏览 后端代码12&#x2F;usr&#x2F;weaver&#x2F;ecology&#x2F;classbean&#x2F;hisun&#x2F;action -&gt;KqCompensatoryLeaveBlackListCheck      SQL修改调休余额查">
 <meta property="og:locale">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231221133129484.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231229143040162.png">
 <meta property="article:published_time" content="2023-12-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-29T03:10:40.205Z">
+<meta property="article:modified_time" content="2023-12-29T07:14:06.876Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA发布">
+<meta property="article:tag" content="未完成">
 <meta property="article:tag" content="人力发布">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231221133129484.png">
@@ -97,7 +99,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 21
+			总文章数 22
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -223,7 +225,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2023000779%E5%A2%9E%E5%8A%A02024%E5%B9%B4%E8%B0%83%E4%BC%91%E5%81%87%E6%8F%90%E4%BA%A4%E5%8F%97%E9%99%90%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95%E5%8A%9F%E8%83%BD%E7%AD%89"><span class="toc-number">1.</span> <span class="toc-text">CR2023000779增加2024年调休假提交受限人员名单功能等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">后端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL"><span class="toc-number">1.2.</span> <span class="toc-text">SQL</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2023000779%E5%A2%9E%E5%8A%A02024%E5%B9%B4%E8%B0%83%E4%BC%91%E5%81%87%E6%8F%90%E4%BA%A4%E5%8F%97%E9%99%90%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95%E5%8A%9F%E8%83%BD%E7%AD%89"><span class="toc-number">1.</span> <span class="toc-text">CR2023000779增加2024年调休假提交受限人员名单功能等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">后端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL"><span class="toc-number">1.2.</span> <span class="toc-text">SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E4%BC%91%E4%BD%99%E9%A2%9D%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.</span> <span class="toc-text">调休余额控制</span></a></li></ol></li></ol>
  </div>
  <script type="text/javascript">
   function showToc(){
@@ -334,7 +336,7 @@
 <h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><p>修改调休余额查询SQL为</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.id,e.resourceid resourceid,b.lastname lastname,e.belongyear belongyear ,<span class="built_in">COALESCE</span>(a.extraamount,<span class="number">0</span>) extraamount</span><br><span class="line">,<span class="built_in">COALESCE</span>(aa.usedAmount,<span class="number">0</span>) usedAmount,<span class="built_in">COALESCE</span>(a.extraamount,<span class="number">0</span>)<span class="operator">-</span><span class="built_in">COALESCE</span>(aa.usedAmount,<span class="number">0</span>) txye,b.departmentid departmentid,c.field6 field6,BUKRS,</span><br><span class="line">e.baseAmount njbaseAmount,e.extraAmount njextraAmount,e.usedAmount njusedAmount </span><br><span class="line">,e.baseAmount<span class="operator">+</span>e.extraAmount<span class="operator">-</span>e.usedAmount njye,<span class="keyword">case</span> <span class="keyword">when</span> e.belongyear<span class="operator">&lt;=</span>to_number(to_char(sysdate,<span class="string">&#x27;yyyy&#x27;</span>))<span class="number">-2</span> <span class="keyword">then</span> <span class="number">0</span> </span><br><span class="line"><span class="keyword">when</span> e.belongyear<span class="operator">=</span>to_number(to_char(sysdate,<span class="string">&#x27;yyyy&#x27;</span>))<span class="number">-1</span> <span class="keyword">then</span> e.baseAmount<span class="operator">+</span>e.extraAmount<span class="operator">-</span>e.usedAmount <span class="keyword">else</span>  </span><br><span class="line">ROUND((trunc(sysdate) <span class="operator">-</span> trunc(sysdate,<span class="string">&#x27;YYYY&#x27;</span>)<span class="operator">+</span><span class="number">1</span>)<span class="operator">*</span>e.baseAmount<span class="operator">/</span><span class="number">365</span>,<span class="number">2</span>)<span class="operator">-</span>e.usedAmount <span class="keyword">end</span> kxnjye ,</span><br><span class="line">NVL(f.baseAmount,<span class="number">0</span>)<span class="operator">+</span>NVL(f.extraAmount,<span class="number">0</span>)<span class="operator">-</span>NVL(f.usedAmount,<span class="number">0</span>) qnye,<span class="built_in">COALESCE</span>(g.txhj, <span class="number">0</span>) <span class="keyword">AS</span> txhj,</span><br><span class="line">e.baseAmount<span class="operator">+</span>e.extraAmount<span class="operator">+</span>NVl(f.baseAmount,<span class="number">0</span>)<span class="operator">+</span>NVL(f.extraAmount,<span class="number">0</span>)<span class="operator">-</span>NVL(f.usedAmount,<span class="number">0</span>) njqnye</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">ecology.kq_balanceOfLeave e</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> resourceid,belongyear,<span class="built_in">sum</span>(extraamount)<span class="operator">+</span><span class="built_in">sum</span>(tiaoxiuamount) extraamount <span class="keyword">from</span> </span><br><span class="line">ecology.KQ_BALANCEOFLEAVE </span><br><span class="line"><span class="keyword">where</span> LEAVERULESID<span class="operator">=</span><span class="number">-13</span> <span class="keyword">and</span> (isdelete<span class="operator">=</span><span class="number">0</span> <span class="keyword">or</span> isdelete <span class="keyword">is</span> <span class="keyword">null</span>)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> resourceid,belongyear) a <span class="keyword">on</span> a.resourceid<span class="operator">=</span>e.resourceid <span class="keyword">and</span> a.belongyear<span class="operator">=</span>e.belongyear</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> nvl(<span class="built_in">sum</span>(aa.hjts), <span class="number">0</span>) <span class="operator">-</span> nvl(<span class="built_in">sum</span>(dd.detail_duration), <span class="number">0</span>) usedAmount,substr(jsrq,<span class="number">0</span>,<span class="number">4</span>) nd,applicant  <span class="keyword">from</span> ecology.formtable_main_82 aa </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.workflow_requestbase bb <span class="keyword">on</span> aa.requestid<span class="operator">=</span>bb.requestid </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.formtable_main_105 cc <span class="keyword">on</span> aa.requestid <span class="operator">=</span> cc.qjlc</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.formtable_main_105_dt1 dd <span class="keyword">on</span> cc.id <span class="operator">=</span> dd.mainid <span class="keyword">and</span> dd.detail_newLeaveType <span class="keyword">in</span> (<span class="number">48</span>, <span class="number">-13</span>)</span><br><span class="line"><span class="keyword">where</span> (qjlx<span class="operator">=</span><span class="number">48</span> <span class="keyword">or</span> qjlx<span class="operator">=</span><span class="number">-13</span>) <span class="keyword">and</span> currentnodetype<span class="operator">=</span><span class="number">3</span> </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> applicant,substr(jsrq,<span class="number">0</span>,<span class="number">4</span>)) aa <span class="keyword">on</span> aa.applicant <span class="operator">=</span>e.resourceid <span class="keyword">and</span> aa.nd<span class="operator">=</span>e.belongyear</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.hrmresource b <span class="keyword">on</span> e.resourceid<span class="operator">=</span>b.id</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.CUS_FIELDDATA c <span class="keyword">on</span> b.id<span class="operator">=</span>c.id </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.uf_company d <span class="keyword">on</span> d.COMPANY<span class="operator">=</span>c.field6</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.kq_balanceOfLeave f <span class="keyword">on</span> f.leaveRulesId<span class="operator">=</span><span class="number">-6</span> <span class="keyword">and</span> e.resourceid<span class="operator">=</span>f.resourceid <span class="keyword">and</span> e.belongyear<span class="number">-1</span><span class="operator">=</span>f.belongyear</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> <span class="built_in">sum</span>(hjts) txhj,substr(jsrq,<span class="number">0</span>,<span class="number">4</span>) nd,applicant  <span class="keyword">from</span> ecology.formtable_main_82 aa </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.workflow_requestbase bb <span class="keyword">on</span> aa.requestid<span class="operator">=</span>bb.requestid </span><br><span class="line"><span class="keyword">where</span> (qjlx<span class="operator">=</span><span class="number">48</span> <span class="keyword">or</span> qjlx<span class="operator">=</span><span class="number">-13</span>) <span class="keyword">and</span> currentnodetype<span class="operator">=</span><span class="number">1</span> </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> applicant,substr(jsrq,<span class="number">0</span>,<span class="number">4</span>)) g <span class="keyword">on</span> g.applicant <span class="operator">=</span>e.resourceid <span class="keyword">and</span> g.nd<span class="operator">=</span>e.belongyear</span><br><span class="line"><span class="keyword">where</span> e.leaveRulesId<span class="operator">=</span><span class="number">-6</span> <span class="keyword">and</span> e.baseAmount <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">and</span> b.lastname <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">and</span> e.belongyear<span class="operator">&gt;=</span><span class="string">&#x27;2019&#x27;</span> <span class="keyword">and</span> c.field1<span class="operator">=</span><span class="string">&#x27;Y&#x27;</span></span><br></pre></td></tr></table></figure>
 
-
+<h2 id="调休余额控制"><a href="#调休余额控制" class="headerlink" title="调休余额控制"></a>调休余额控制</h2><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231229143040162.png" alt="image-20231229143040162" style="zoom:50%;" />
             
           </div>
         
@@ -352,6 +354,10 @@
       		
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">OA发布</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">未完成</a>
         		</li>
       		
         		<li class="article-tag-list-item">
@@ -425,7 +431,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2023000779%E5%A2%9E%E5%8A%A02024%E5%B9%B4%E8%B0%83%E4%BC%91%E5%81%87%E6%8F%90%E4%BA%A4%E5%8F%97%E9%99%90%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95%E5%8A%9F%E8%83%BD%E7%AD%89"><span class="toc-number">1.</span> <span class="toc-text">CR2023000779增加2024年调休假提交受限人员名单功能等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">后端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL"><span class="toc-number">1.2.</span> <span class="toc-text">SQL</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2023000779%E5%A2%9E%E5%8A%A02024%E5%B9%B4%E8%B0%83%E4%BC%91%E5%81%87%E6%8F%90%E4%BA%A4%E5%8F%97%E9%99%90%E4%BA%BA%E5%91%98%E5%90%8D%E5%8D%95%E5%8A%9F%E8%83%BD%E7%AD%89"><span class="toc-number">1.</span> <span class="toc-text">CR2023000779增加2024年调休假提交受限人员名单功能等</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">后端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL"><span class="toc-number">1.2.</span> <span class="toc-text">SQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E4%BC%91%E4%BD%99%E9%A2%9D%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.</span> <span class="toc-text">调休余额控制</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -628,10 +634,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
@@ -640,11 +642,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">高项</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -665,10 +675,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
