@@ -8,10 +8,10 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>深入理解影刀与实践 | chen.blog</title>
+  <title>影刀初级 | chen.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解影刀与实践">
+<meta property="og:title" content="影刀初级">
 <meta property="og:url" content="http://example.com/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="chen.blog">
 <meta property="og:locale">
@@ -31,8 +31,9 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218220439559.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218222344644.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218223824657.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240101105830655.png">
 <meta property="article:published_time" content="2023-12-10T14:46:25.000Z">
-<meta property="article:modified_time" content="2023-12-26T13:46:53.945Z">
+<meta property="article:modified_time" content="2024-01-02T00:19:52.955Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="自动化">
 <meta property="article:tag" content="爬虫">
@@ -110,7 +111,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 22
+			总文章数 25
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -178,7 +179,14 @@
             }
             // 基于密码输入结果，进行处理
             if (!passwordEntered && password3 != '') {
-                history.back();
+                   try {
+                                    // 可能会抛出异常的代码
+                                      history.back();
+                                  } catch (error) {
+                                    // 捕获异常的代码199818
+                                    console.error(error); // 打印错误信息
+                                  }
+                                  window.location.href=document.referrer
             }
 
             // 当密码正确，或没有设置密码时进行内容显示
@@ -278,7 +286,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">1.</span> <span class="toc-text">搭建第一个机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">操作类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%94%A8%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">1.6.</span> <span class="toc-text">如何搭建一个实用的机器人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92"><span class="toc-number">1.7.</span> <span class="toc-text">如何进行人机交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%88%86%E4%BA%AB"><span class="toc-number">1.8.</span> <span class="toc-text">如何进行机器人的分享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.9.</span> <span class="toc-text">定时任务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="toc-number">2.</span> <span class="toc-text">条件判断</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF"><span class="toc-number">2.1.</span> <span class="toc-text">单分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%94%AF"><span class="toc-number">2.2.</span> <span class="toc-text">二分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF"><span class="toc-number">2.3.</span> <span class="toc-text">多分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E6%88%96"><span class="toc-number">2.4.</span> <span class="toc-text">与或</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E5%88%A4%E6%96%AD"><span class="toc-number">2.5.</span> <span class="toc-text">元素判断</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">1.</span> <span class="toc-text">搭建第一个机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">操作类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%94%A8%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">1.6.</span> <span class="toc-text">如何搭建一个实用的机器人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92"><span class="toc-number">1.7.</span> <span class="toc-text">如何进行人机交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%88%86%E4%BA%AB"><span class="toc-number">1.8.</span> <span class="toc-text">如何进行机器人的分享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.9.</span> <span class="toc-text">定时任务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="toc-number">2.</span> <span class="toc-text">条件判断</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF"><span class="toc-number">2.1.</span> <span class="toc-text">单分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%94%AF"><span class="toc-number">2.2.</span> <span class="toc-text">二分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF"><span class="toc-number">2.3.</span> <span class="toc-text">多分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E6%88%96"><span class="toc-number">2.4.</span> <span class="toc-text">与或</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E5%88%A4%E6%96%AD"><span class="toc-number">2.5.</span> <span class="toc-text">元素判断</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E6%8C%87%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">等待指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E5%9B%BA%E5%AE%9A%E6%97%B6%E9%97%B4"><span class="toc-number">3.1.</span> <span class="toc-text">等待固定时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E4%B8%8D%E5%9B%BA%E5%AE%9A%E7%9A%84%E6%97%B6%E9%97%B4"><span class="toc-number">3.2.</span> <span class="toc-text">等待不固定的时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">等待随机事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">循环指令</span></a></li></ol>
  </div>
  <script type="text/javascript">
   function showToc(){
@@ -302,7 +310,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      深入理解影刀与实践
+      影刀初级
     </h1>
   
 
@@ -333,10 +341,10 @@
     <div class="article-entry" itemprop="articleBody">
       <script>
         (function(){
-          let password2 = 'chenbaitao182';
+          let password2 = '';
           var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
 
-         
+
           //基于缓存密码校验
           var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
           if(storedPassword == password2 ){
@@ -352,9 +360,16 @@
           }
           // 基于密码输入结果，进行处理
           if (!passwordEntered && password2 != '') {
-              history.back();
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
           }
-          
+
           // 当密码正确，或没有设置密码时进行内容显示
           window.addEventListener('load', function() {
               if (passwordEntered  || password2 === '') {
@@ -367,7 +382,7 @@
                 }
                   document.getElementById('protectedContent').style.display = 'block';
               }
-    
+
           });
         })();
       </script>
@@ -449,7 +464,13 @@
 <h2 id="多分支"><a href="#多分支" class="headerlink" title="多分支"></a>多分支</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218220439559.png" alt="image-20231218220439559"></p>
 <h2 id="与或"><a href="#与或" class="headerlink" title="与或"></a>与或</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218222344644.png" alt="image-20231218222344644"></p>
 <h2 id="元素判断"><a href="#元素判断" class="headerlink" title="元素判断"></a>元素判断</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231218223824657.png" alt="image-20231218223824657"></p>
+<h1 id="等待指令"><a href="#等待指令" class="headerlink" title="等待指令"></a>等待指令</h1><p>网页元素没有及时加载出来需要等待一段时间。</p>
+<h2 id="等待固定时间"><a href="#等待固定时间" class="headerlink" title="等待固定时间"></a>等待固定时间</h2><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240101105830655.png" alt="image-20240101105830655" style="zoom:50%;" />
 
+<h2 id="等待不固定的时间"><a href="#等待不固定的时间" class="headerlink" title="等待不固定的时间"></a>等待不固定的时间</h2><p>等待-&gt;等待元素web</p>
+<p> 如果超过时间可以设置超时时间</p>
+<h2 id="等待随机事件"><a href="#等待随机事件" class="headerlink" title="等待随机事件"></a>等待随机事件</h2><p>为了让操作更像人，可以在操作后面加入随机的等待</p>
+<h1 id="循环指令"><a href="#循环指令" class="headerlink" title="循环指令"></a>循环指令</h1>
             
           </div>
         
@@ -501,7 +522,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2023/12/17/%E6%88%90%E6%9C%AC%E7%AE%A1%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/12/17/%E9%AB%98%E9%A1%B9/%E6%88%90%E6%9C%AC%E7%AE%A1%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -540,7 +561,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">1.</span> <span class="toc-text">搭建第一个机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">操作类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%94%A8%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">1.6.</span> <span class="toc-text">如何搭建一个实用的机器人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92"><span class="toc-number">1.7.</span> <span class="toc-text">如何进行人机交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%88%86%E4%BA%AB"><span class="toc-number">1.8.</span> <span class="toc-text">如何进行机器人的分享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.9.</span> <span class="toc-text">定时任务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="toc-number">2.</span> <span class="toc-text">条件判断</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF"><span class="toc-number">2.1.</span> <span class="toc-text">单分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%94%AF"><span class="toc-number">2.2.</span> <span class="toc-text">二分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF"><span class="toc-number">2.3.</span> <span class="toc-text">多分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E6%88%96"><span class="toc-number">2.4.</span> <span class="toc-text">与或</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E5%88%A4%E6%96%AD"><span class="toc-number">2.5.</span> <span class="toc-text">元素判断</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">1.</span> <span class="toc-text">搭建第一个机器人</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">搭建第一个自动化流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">操作类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.</span> <span class="toc-text">变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%9E%E7%94%A8%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA"><span class="toc-number">1.6.</span> <span class="toc-text">如何搭建一个实用的机器人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92"><span class="toc-number">1.7.</span> <span class="toc-text">如何进行人机交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%88%86%E4%BA%AB"><span class="toc-number">1.8.</span> <span class="toc-text">如何进行机器人的分享</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.9.</span> <span class="toc-text">定时任务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="toc-number">2.</span> <span class="toc-text">条件判断</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%88%86%E6%94%AF"><span class="toc-number">2.1.</span> <span class="toc-text">单分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%94%AF"><span class="toc-number">2.2.</span> <span class="toc-text">二分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%88%86%E6%94%AF"><span class="toc-number">2.3.</span> <span class="toc-text">多分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E%E6%88%96"><span class="toc-number">2.4.</span> <span class="toc-text">与或</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E5%88%A4%E6%96%AD"><span class="toc-number">2.5.</span> <span class="toc-text">元素判断</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E6%8C%87%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">等待指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E5%9B%BA%E5%AE%9A%E6%97%B6%E9%97%B4"><span class="toc-number">3.1.</span> <span class="toc-text">等待固定时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E4%B8%8D%E5%9B%BA%E5%AE%9A%E7%9A%84%E6%97%B6%E9%97%B4"><span class="toc-number">3.2.</span> <span class="toc-text">等待不固定的时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%BE%85%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">等待随机事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">循环指令</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -629,7 +650,7 @@ if (language === 'zh-TW') {
 	<div class="outer">
 	  <div id="footer-info">
 		<div class="footer-left">
-		  &copy; 2023 今孔明
+		  &copy; 2024 今孔明
 		</div>
 		<!-- <div class="footer-right">
 			<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -760,10 +781,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -776,7 +793,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">个人应用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">财务管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -788,11 +809,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -804,7 +833,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -816,19 +853,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
             
             <div class="clearfix"></div>

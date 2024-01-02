@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231221133129484.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231229143040162.png">
 <meta property="article:published_time" content="2023-12-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-29T07:44:18.607Z">
+<meta property="article:modified_time" content="2024-01-02T00:44:53.763Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA发布">
@@ -100,7 +100,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 22
+			总文章数 25
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -168,7 +168,14 @@
             }
             // 基于密码输入结果，进行处理
             if (!passwordEntered && password3 != '') {
-                history.back();
+                   try {
+                                    // 可能会抛出异常的代码
+                                      history.back();
+                                  } catch (error) {
+                                    // 捕获异常的代码199818
+                                    console.error(error); // 打印错误信息
+                                  }
+                                  window.location.href=document.referrer
             }
 
             // 当密码正确，或没有设置密码时进行内容显示
@@ -326,7 +333,7 @@
           let password2 = 'chenbaitao181';
           var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
 
-         
+
           //基于缓存密码校验
           var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
           if(storedPassword == password2 ){
@@ -342,9 +349,16 @@
           }
           // 基于密码输入结果，进行处理
           if (!passwordEntered && password2 != '') {
-              history.back();
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
           }
-          
+
           // 当密码正确，或没有设置密码时进行内容显示
           window.addEventListener('load', function() {
               if (passwordEntered  || password2 === '') {
@@ -357,7 +371,7 @@
                 }
                   document.getElementById('protectedContent').style.display = 'block';
               }
-    
+
           });
         })();
       </script>
@@ -380,6 +394,8 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.id,e.resourceid resourceid,b.lastname lastname,e.belongyear belongyear ,<span class="built_in">COALESCE</span>(a.extraamount,<span class="number">0</span>) extraamount</span><br><span class="line">,<span class="built_in">COALESCE</span>(aa.usedAmount,<span class="number">0</span>) usedAmount,<span class="built_in">COALESCE</span>(a.extraamount,<span class="number">0</span>)<span class="operator">-</span><span class="built_in">COALESCE</span>(aa.usedAmount,<span class="number">0</span>) txye,b.departmentid departmentid,c.field6 field6,BUKRS,</span><br><span class="line">e.baseAmount njbaseAmount,e.extraAmount njextraAmount,e.usedAmount njusedAmount </span><br><span class="line">,e.baseAmount<span class="operator">+</span>e.extraAmount<span class="operator">-</span>e.usedAmount njye,<span class="keyword">case</span> <span class="keyword">when</span> e.belongyear<span class="operator">&lt;=</span>to_number(to_char(sysdate,<span class="string">&#x27;yyyy&#x27;</span>))<span class="number">-2</span> <span class="keyword">then</span> <span class="number">0</span> </span><br><span class="line"><span class="keyword">when</span> e.belongyear<span class="operator">=</span>to_number(to_char(sysdate,<span class="string">&#x27;yyyy&#x27;</span>))<span class="number">-1</span> <span class="keyword">then</span> e.baseAmount<span class="operator">+</span>e.extraAmount<span class="operator">-</span>e.usedAmount <span class="keyword">else</span>  </span><br><span class="line">ROUND((trunc(sysdate) <span class="operator">-</span> trunc(sysdate,<span class="string">&#x27;YYYY&#x27;</span>)<span class="operator">+</span><span class="number">1</span>)<span class="operator">*</span>e.baseAmount<span class="operator">/</span><span class="number">365</span>,<span class="number">2</span>)<span class="operator">-</span>e.usedAmount <span class="keyword">end</span> kxnjye ,</span><br><span class="line">NVL(f.baseAmount,<span class="number">0</span>)<span class="operator">+</span>NVL(f.extraAmount,<span class="number">0</span>)<span class="operator">-</span>NVL(f.usedAmount,<span class="number">0</span>) qnye,<span class="built_in">COALESCE</span>(g.txhj, <span class="number">0</span>) <span class="keyword">AS</span> txhj,</span><br><span class="line">e.baseAmount<span class="operator">+</span>e.extraAmount<span class="operator">+</span>NVl(f.baseAmount,<span class="number">0</span>)<span class="operator">+</span>NVL(f.extraAmount,<span class="number">0</span>)<span class="operator">-</span>NVL(f.usedAmount,<span class="number">0</span>) njqnye</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">ecology.kq_balanceOfLeave e</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> resourceid,belongyear,<span class="built_in">sum</span>(extraamount)<span class="operator">+</span><span class="built_in">sum</span>(tiaoxiuamount) extraamount <span class="keyword">from</span> </span><br><span class="line">ecology.KQ_BALANCEOFLEAVE </span><br><span class="line"><span class="keyword">where</span> LEAVERULESID<span class="operator">=</span><span class="number">-13</span> <span class="keyword">and</span> (isdelete<span class="operator">=</span><span class="number">0</span> <span class="keyword">or</span> isdelete <span class="keyword">is</span> <span class="keyword">null</span>)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> resourceid,belongyear) a <span class="keyword">on</span> a.resourceid<span class="operator">=</span>e.resourceid <span class="keyword">and</span> a.belongyear<span class="operator">=</span>e.belongyear</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> nvl(<span class="built_in">sum</span>(aa.hjts), <span class="number">0</span>) <span class="operator">-</span> nvl(<span class="built_in">sum</span>(dd.detail_duration), <span class="number">0</span>) usedAmount,substr(jsrq,<span class="number">0</span>,<span class="number">4</span>) nd,applicant  <span class="keyword">from</span> ecology.formtable_main_82 aa </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.workflow_requestbase bb <span class="keyword">on</span> aa.requestid<span class="operator">=</span>bb.requestid </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.formtable_main_105 cc <span class="keyword">on</span> aa.requestid <span class="operator">=</span> cc.qjlc</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.formtable_main_105_dt1 dd <span class="keyword">on</span> cc.id <span class="operator">=</span> dd.mainid <span class="keyword">and</span> dd.detail_newLeaveType <span class="keyword">in</span> (<span class="number">48</span>, <span class="number">-13</span>)</span><br><span class="line"><span class="keyword">where</span> (qjlx<span class="operator">=</span><span class="number">48</span> <span class="keyword">or</span> qjlx<span class="operator">=</span><span class="number">-13</span>) <span class="keyword">and</span> currentnodetype<span class="operator">=</span><span class="number">3</span> </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> applicant,substr(jsrq,<span class="number">0</span>,<span class="number">4</span>)) aa <span class="keyword">on</span> aa.applicant <span class="operator">=</span>e.resourceid <span class="keyword">and</span> aa.nd<span class="operator">=</span>e.belongyear</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.hrmresource b <span class="keyword">on</span> e.resourceid<span class="operator">=</span>b.id</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.CUS_FIELDDATA c <span class="keyword">on</span> b.id<span class="operator">=</span>c.id </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.uf_company d <span class="keyword">on</span> d.COMPANY<span class="operator">=</span>c.field6</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.kq_balanceOfLeave f <span class="keyword">on</span> f.leaveRulesId<span class="operator">=</span><span class="number">-6</span> <span class="keyword">and</span> e.resourceid<span class="operator">=</span>f.resourceid <span class="keyword">and</span> e.belongyear<span class="number">-1</span><span class="operator">=</span>f.belongyear</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> <span class="built_in">sum</span>(hjts) txhj,substr(jsrq,<span class="number">0</span>,<span class="number">4</span>) nd,applicant  <span class="keyword">from</span> ecology.formtable_main_82 aa </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.workflow_requestbase bb <span class="keyword">on</span> aa.requestid<span class="operator">=</span>bb.requestid </span><br><span class="line"><span class="keyword">where</span> (qjlx<span class="operator">=</span><span class="number">48</span> <span class="keyword">or</span> qjlx<span class="operator">=</span><span class="number">-13</span>) <span class="keyword">and</span> currentnodetype<span class="operator">=</span><span class="number">1</span> </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> applicant,substr(jsrq,<span class="number">0</span>,<span class="number">4</span>)) g <span class="keyword">on</span> g.applicant <span class="operator">=</span>e.resourceid <span class="keyword">and</span> g.nd<span class="operator">=</span>e.belongyear</span><br><span class="line"><span class="keyword">where</span> e.leaveRulesId<span class="operator">=</span><span class="number">-6</span> <span class="keyword">and</span> e.baseAmount <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">and</span> b.lastname <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">and</span> e.belongyear<span class="operator">&gt;=</span><span class="string">&#x27;2019&#x27;</span> <span class="keyword">and</span> c.field1<span class="operator">=</span><span class="string">&#x27;Y&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="调休余额控制"><a href="#调休余额控制" class="headerlink" title="调休余额控制"></a>调休余额控制</h2><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231229143040162.png" alt="image-20231229143040162" style="zoom:50%;" />
+
+
             
           </div>
         
@@ -567,7 +583,7 @@ if (language === 'zh-TW') {
 	<div class="outer">
 	  <div id="footer-info">
 		<div class="footer-left">
-		  &copy; 2023 今孔明
+		  &copy; 2024 今孔明
 		</div>
 		<!-- <div class="footer-right">
 			<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -698,10 +714,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -714,7 +726,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">个人应用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">财务管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,11 +742,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -742,7 +766,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -754,19 +786,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
             
             <div class="clearfix"></div>

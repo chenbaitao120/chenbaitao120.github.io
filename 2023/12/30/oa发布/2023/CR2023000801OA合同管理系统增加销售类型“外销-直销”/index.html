@@ -10,15 +10,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>CR2023000801合同管理系统增加销售类型“外销-直销” | chen.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CR2023000801OA合同管理系统增加销售类型“外销-直销”需求销售类型增加一个类型“外销-直销”，当选中该类型的时候对应的产品单价控制为 金额&#x2F;数量。">
+  <meta name="description" content="CR2023000801OA合同管理系统增加销售类型“外销-直销需求销售类型增加一个类型“外销-直销”，当选中该类型的时候对应的产品单价控制为 金额&#x2F;数量。 实施步骤1.增加外销-直销类型   2.调整金额计算逻辑 1[明细表1.金额]&#x3D;IF([明细表1.金额]&gt;0&amp;([主表.销售类型]&#x3D;&#x3D;1||[主表.销售类型]&#x3D;&#x3D;4),[明细表1.金额],[明细表1.数量]×[明细表1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CR2023000801合同管理系统增加销售类型“外销-直销”">
 <meta property="og:url" content="http://example.com/2023/12/30/oa%E5%8F%91%E5%B8%83/2023/CR2023000801OA%E5%90%88%E5%90%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%A2%9E%E5%8A%A0%E9%94%80%E5%94%AE%E7%B1%BB%E5%9E%8B%E2%80%9C%E5%A4%96%E9%94%80-%E7%9B%B4%E9%94%80%E2%80%9D/index.html">
 <meta property="og:site_name" content="chen.blog">
-<meta property="og:description" content="CR2023000801OA合同管理系统增加销售类型“外销-直销”需求销售类型增加一个类型“外销-直销”，当选中该类型的时候对应的产品单价控制为 金额&#x2F;数量。">
+<meta property="og:description" content="CR2023000801OA合同管理系统增加销售类型“外销-直销需求销售类型增加一个类型“外销-直销”，当选中该类型的时候对应的产品单价控制为 金额&#x2F;数量。 实施步骤1.增加外销-直销类型   2.调整金额计算逻辑 1[明细表1.金额]&#x3D;IF([明细表1.金额]&gt;0&amp;([主表.销售类型]&#x3D;&#x3D;1||[主表.销售类型]&#x3D;&#x3D;4),[明细表1.金额],[明细表1.数量]×[明细表1">
 <meta property="og:locale">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240102084544654.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240102102347727.png">
 <meta property="article:published_time" content="2023-12-30T08:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-29T07:44:56.345Z">
+<meta property="article:modified_time" content="2024-01-02T02:48:58.930Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA发布">
@@ -26,6 +28,7 @@
 <meta property="article:tag" content="未完成">
 <meta property="article:tag" content="合同管理流程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240102084544654.png">
   
     <link rel="alternative" href="/atom.xml" title="chen.blog" type="application/atom+xml">
   
@@ -97,7 +100,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 22
+			总文章数 25
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -165,7 +168,14 @@
             }
             // 基于密码输入结果，进行处理
             if (!passwordEntered && password3 != '') {
-                history.back();
+                   try {
+                                    // 可能会抛出异常的代码
+                                      history.back();
+                                  } catch (error) {
+                                    // 捕获异常的代码199818
+                                    console.error(error); // 打印错误信息
+                                  }
+                                  window.location.href=document.referrer
             }
 
             // 当密码正确，或没有设置密码时进行内容显示
@@ -265,7 +275,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2023000801OA%E5%90%88%E5%90%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%A2%9E%E5%8A%A0%E9%94%80%E5%94%AE%E7%B1%BB%E5%9E%8B%E2%80%9C%E5%A4%96%E9%94%80-%E7%9B%B4%E9%94%80%E2%80%9D"><span class="toc-number">1.</span> <span class="toc-text">CR2023000801OA合同管理系统增加销售类型“外销-直销”</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">需求</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2023000801OA%E5%90%88%E5%90%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%A2%9E%E5%8A%A0%E9%94%80%E5%94%AE%E7%B1%BB%E5%9E%8B%E2%80%9C%E5%A4%96%E9%94%80-%E7%9B%B4%E9%94%80"><span class="toc-number">1.</span> <span class="toc-text">CR2023000801OA合同管理系统增加销售类型“外销-直销</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%96%BD%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.</span> <span class="toc-text">实施步骤</span></a></li></ol></li></ol>
  </div>
  <script type="text/javascript">
   function showToc(){
@@ -323,7 +333,7 @@
           let password2 = 'chenbaitao181';
           var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
 
-         
+
           //基于缓存密码校验
           var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
           if(storedPassword == password2 ){
@@ -339,9 +349,16 @@
           }
           // 基于密码输入结果，进行处理
           if (!passwordEntered && password2 != '') {
-              history.back();
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
           }
-          
+
           // 当密码正确，或没有设置密码时进行内容显示
           window.addEventListener('load', function() {
               if (passwordEntered  || password2 === '') {
@@ -354,7 +371,7 @@
                 }
                   document.getElementById('protectedContent').style.display = 'block';
               }
-    
+
           });
         })();
       </script>
@@ -362,7 +379,15 @@
           <!-- 这部分内容受密码保护 -->
           <div id="protectedContent" style="display: block;">
             
-              <h1 id="CR2023000801OA合同管理系统增加销售类型“外销-直销”"><a href="#CR2023000801OA合同管理系统增加销售类型“外销-直销”" class="headerlink" title="CR2023000801OA合同管理系统增加销售类型“外销-直销”"></a><strong>CR2023000801OA</strong>合同管理系统增加销售类型“外销-直销”</h1><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>销售类型增加一个类型“外销-直销”，当选中该类型的时候对应的产品单价控制为 金额&#x2F;数量。</p>
+              <h1 id="CR2023000801OA合同管理系统增加销售类型“外销-直销"><a href="#CR2023000801OA合同管理系统增加销售类型“外销-直销" class="headerlink" title="CR2023000801OA合同管理系统增加销售类型“外销-直销"></a><strong>CR2023000801OA</strong>合同管理系统增加销售类型“外销-直销</h1><h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>销售类型增加一个类型“外销-直销”，当选中该类型的时候对应的产品单价控制为 金额&#x2F;数量。</p>
+<h2 id="实施步骤"><a href="#实施步骤" class="headerlink" title="实施步骤"></a>实施步骤</h2><p>1.增加外销-直销类型</p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240102084544654.png" alt="image-20240102084544654" style="zoom:50%;" />
+
+<p>2.调整金额计算逻辑</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[明细表1.金额]=IF([明细表1.金额]&gt;0&amp;([主表.销售类型]==1||[主表.销售类型]==4),[明细表1.金额],[明细表1.数量]×[明细表1.单价])</span><br></pre></td></tr></table></figure>
+
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240102102347727.png" alt="image-20240102102347727" style="zoom:50%;" />
+
 
             
           </div>
@@ -423,6 +448,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2023/12/31/it/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          阿里云服务器的使用
+        
+      </div>
+    </a>
+  
   
     <a href="/2023/12/29/%E5%8F%8C%E5%91%A8%E5%91%A8%E6%8A%A5/%E5%8F%8C%E5%91%A8%E5%91%A8%E6%8A%A5/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">2023/12/29双周周报</div>
@@ -453,7 +487,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2023000801OA%E5%90%88%E5%90%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%A2%9E%E5%8A%A0%E9%94%80%E5%94%AE%E7%B1%BB%E5%9E%8B%E2%80%9C%E5%A4%96%E9%94%80-%E7%9B%B4%E9%94%80%E2%80%9D"><span class="toc-number">1.</span> <span class="toc-text">CR2023000801OA合同管理系统增加销售类型“外销-直销”</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">需求</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2023000801OA%E5%90%88%E5%90%8C%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%A2%9E%E5%8A%A0%E9%94%80%E5%94%AE%E7%B1%BB%E5%9E%8B%E2%80%9C%E5%A4%96%E9%94%80-%E7%9B%B4%E9%94%80"><span class="toc-number">1.</span> <span class="toc-text">CR2023000801OA合同管理系统增加销售类型“外销-直销</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%96%BD%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.</span> <span class="toc-text">实施步骤</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -542,7 +576,7 @@ if (language === 'zh-TW') {
 	<div class="outer">
 	  <div id="footer-info">
 		<div class="footer-left">
-		  &copy; 2023 今孔明
+		  &copy; 2024 今孔明
 		</div>
 		<!-- <div class="footer-right">
 			<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -673,10 +707,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -689,7 +719,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">个人应用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">财务管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,11 +735,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -717,7 +759,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -729,19 +779,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
             
             <div class="clearfix"></div>

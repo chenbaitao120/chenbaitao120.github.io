@@ -90,7 +90,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 22
+			总文章数 25
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -158,7 +158,14 @@
             }
             // 基于密码输入结果，进行处理
             if (!passwordEntered && password3 != '') {
-                history.back();
+                   try {
+                                    // 可能会抛出异常的代码
+                                      history.back();
+                                  } catch (error) {
+                                    // 捕获异常的代码199818
+                                    console.error(error); // 打印错误信息
+                                  }
+                                  window.location.href=document.referrer
             }
 
             // 当密码正确，或没有设置密码时进行内容显示
@@ -252,6 +259,207 @@
     
 
     
+      
+      
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-month-wrap">
+          <a href="/archives/2023/12" class="archive-year-month">2023年12月</a>
+        </div>
+        <div class="archives">
+    
+
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2023/12/17/%E9%AB%98%E9%A1%B9/%E6%88%90%E6%9C%AC%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2023-12-17T07:35:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-17</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/12/17/%E9%AB%98%E9%A1%B9/%E6%88%90%E6%9C%AC%E7%AE%A1%E7%90%86/">成本管理</a>
+    </h1>
+  
+
+
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">过滤</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">高项</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/软考/" class="article-tag-list-link color3">软考</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+
+    
+
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
+  	<time datetime="2023-12-10T14:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-10</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/">影刀初级</a>
+    </h1>
+  
+
+
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">自动化</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">影刀</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/IT/" class="article-tag-list-link color3">IT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+
+    
+      
+        </div></section>
+      
+      
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-month-wrap">
+          <a href="/archives/2023/11" class="archive-year-month">2023年11月</a>
+        </div>
+        <div class="archives">
+    
+
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2023/11/10/%E5%A4%A7%E7%90%86%E6%97%85%E6%B8%B8/" class="archive-article-date">
+  	<time datetime="2023-11-10T12:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-11-10</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/11/10/%E5%A4%A7%E7%90%86%E6%97%85%E6%B8%B8/">大理旅游</a>
+    </h1>
+  
+
+
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">大理</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/旅游/" class="article-tag-list-link color3">旅游</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+
+    
+      
+        </div></section>
       
       
       
@@ -403,7 +611,7 @@
 	<div class="outer">
 	  <div id="footer-info">
 		<div class="footer-left">
-		  &copy; 2023 今孔明
+		  &copy; 2024 今孔明
 		</div>
 		<!-- <div class="footer-right">
 			<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -534,10 +742,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -550,7 +754,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">个人应用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">财务管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,11 +770,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,7 +794,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,19 +814,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
             
             <div class="clearfix"></div>
