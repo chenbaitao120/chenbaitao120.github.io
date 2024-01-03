@@ -10,15 +10,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>GIT指令 | chen.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="GIt指令提交指定文件夹下面的文件 123git add path&#x2F;to&#x2F;folder&#x2F;git commit -m &quot;Committing changes in a specific folder&quot;git push  git config 该命令将分别设置提交代码的用户名和电子邮件地址。 12git config –global user.name “[name]”git co">
+  <meta name="description" content="GIt指令基本指令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GIT指令">
 <meta property="og:url" content="http://example.com/2023/12/01/it/GIt%E5%B8%B8%E8%A7%81%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="chen.blog">
-<meta property="og:description" content="GIt指令提交指定文件夹下面的文件 123git add path&#x2F;to&#x2F;folder&#x2F;git commit -m &quot;Committing changes in a specific folder&quot;git push  git config 该命令将分别设置提交代码的用户名和电子邮件地址。 12git config –global user.name “[name]”git co">
+<meta property="og:description" content="GIt指令基本指令">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-11-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-03T00:05:16.728Z">
+<meta property="article:modified_time" content="2024-01-03T03:40:26.150Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="运维">
 <meta name="twitter:card" content="summary">
@@ -268,7 +268,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GIt%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">GIt指令</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GIt%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">GIt指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">基本指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4"><span class="toc-number">1.2.</span> <span class="toc-text">自动提交</span></a></li></ol></li></ol>
  </div>
  <script type="text/javascript">
   function showToc(){
@@ -372,7 +372,9 @@
           <!-- 这部分内容受密码保护 -->
           <div id="protectedContent" style="display: block;">
             
-              <h1 id="GIt指令"><a href="#GIt指令" class="headerlink" title="GIt指令"></a>GIt指令</h1><p>提交指定文件夹下面的文件</p>
+              <h1 id="GIt指令"><a href="#GIt指令" class="headerlink" title="GIt指令"></a>GIt指令</h1><h2 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h2><span id="more"></span>
+
+<p>提交指定文件夹下面的文件</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add path/to/folder/</span><br><span class="line">git commit -m &quot;Committing changes in a specific folder&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 
 <p><strong>git config</strong></p>
@@ -427,6 +429,9 @@
 <p>显示stash的所有变更。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
 
+<h2 id="自动提交"><a href="#自动提交" class="headerlink" title="自动提交"></a>自动提交</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd C:\Users\chenbaitao\Desktop\blog\blog\blog\blog</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line">git status</span><br><span class="line">git commit -m &quot;update&quot;</span><br><span class="line">git push -f</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p>在任务计划程序里面创建自动提交任务</p>
 
             
           </div>
@@ -510,7 +515,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GIt%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">GIt指令</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GIt%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">GIt指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">基本指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4"><span class="toc-number">1.2.</span> <span class="toc-text">自动提交</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -609,12 +614,15 @@ if (language === 'zh-TW') {
 		<span id="busuanzi_container_site_pv">
 			总访问量: <span id="busuanzi_value_site_pv"></span>
 	  </div>
+	  <span id="busuanzi_container_site_uv">
+      本站访客数<span id="busuanzi_value_site_uv"></span>人次
+    </span>
 	</div>
    </footer>
-   
-   
+
+
    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-   
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -714,15 +722,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">OA发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -750,15 +758,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">个人应用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">财务管理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,11 +778,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">商业</a>
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
+                <a href="javascript:void(0)" class="js-tag color3">商业</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -786,7 +794,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -798,23 +814,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
+                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
