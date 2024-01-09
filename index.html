@@ -90,7 +90,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 32
+			总文章数 42
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -254,6 +254,570 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-深入理解影刀与实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/01/07/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/">影刀初级</a>
+    </h1>
+  
+
+
+
+          <!--显示阅读次数-->
+          
+        <!--显示阅读次数完毕-->
+        
+        <a href="/2024/01/07/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
+  	<time datetime="2024-01-07T14:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-07</time>
+</a>
+        
+      </header>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" onclick="window.location.replace(this.href); return false;">  
+  <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144809908.png" alt="image-20231209143728319" style="zoom: 80%;"  />
+
+</a>
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">自动化</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">影刀</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/IT/" class="article-tag-list-link color3">IT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/07/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
+  
+    <article id="post-it/Uni-App" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/01/07/it/Uni-App/">Uni-App</a>
+    </h1>
+  
+
+
+
+          <!--显示阅读次数-->
+          
+        <!--显示阅读次数完毕-->
+        
+        <a href="/2024/01/07/it/Uni-App/" class="archive-article-date">
+  	<time datetime="2024-01-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-07</time>
+</a>
+        
+      </header>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <p>Uni-App</p>
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/IT/" class="article-tag-list-link color3">IT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/07/it/Uni-App/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
+  
+    <article id="post-游戏/贝优妮塔1攻略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/01/06/%E6%B8%B8%E6%88%8F/%E8%B4%9D%E4%BC%98%E5%A6%AE%E5%A1%941%E6%94%BB%E7%95%A5/">贝优妮塔1</a>
+    </h1>
+  
+
+
+
+          <!--显示阅读次数-->
+          
+        <!--显示阅读次数完毕-->
+        
+        <a href="/2024/01/06/%E6%B8%B8%E6%88%8F/%E8%B4%9D%E4%BC%98%E5%A6%AE%E5%A1%941%E6%94%BB%E7%95%A5/" class="archive-article-date">
+  	<time datetime="2024-01-06T08:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-06</time>
+</a>
+        
+      </header>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <p>贝优妮塔1</p>
+<h1 id="剧情"><a href="#剧情" class="headerlink" title="剧情"></a>剧情</h1><h2 id="天使之都"><a href="#天使之都" class="headerlink" title="天使之都"></a>天使之都</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153225132.png" alt="image-20240106153225132"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153314575.png" alt="image-20240106153314575"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153333660.png" alt="image-20240106153333660"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153347708.png" alt="image-20240106153347708"></p>
+<h2 id="幻影之都"><a href="#幻影之都" class="headerlink" title="幻影之都"></a>幻影之都</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153409186.png" alt="image-20240106153409186"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153434656.png" alt="image-20240106153434656"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153449303.png" alt="image-20240106153449303"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153501293.png" alt="image-20240106153501293"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153522680.png" alt="image-20240106153522680"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153602154.png" alt="image-20240106153602154"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153634883.png" alt="image-20240106153634883"></p>
+<h2 id="燃烧的大地"><a href="#燃烧的大地" class="headerlink" title="燃烧的大地"></a>燃烧的大地</h2><p>这个狗一样的怪物攻击速度很快，要尽量用魔女时间打它。</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153653167.png" alt="image-20240106153653167"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153707344.png" alt="image-20240106153707344"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153741250.png" alt="image-20240106153741250"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153754917.png" alt="image-20240106153754917"></p>
+<h2 id="坚韧"><a href="#坚韧" class="headerlink" title="坚韧"></a>坚韧</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153851459.png" alt="image-20240106153851459"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153921212.png" alt="image-20240106153921212"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106153955357.png" alt="image-20240106153955357"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154012058.png" alt="image-20240106154012058"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154025062.png" alt="image-20240106154025062"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154049002.png" alt="image-20240106154049002"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154100594.png" alt="image-20240106154100594"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154121361.png" alt="image-20240106154121361"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154148391.png" alt="image-20240106154148391"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154203867.png" alt="image-20240106154203867"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154219668.png" alt="image-20240106154219668"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154232237.png" alt="image-20240106154232237"></p>
+<h2 id="失落的圣地"><a href="#失落的圣地" class="headerlink" title="失落的圣地"></a>失落的圣地</h2><p>这个女人 一定要装备武士刀和手套和她打，然后尽量近身贴住，找出攻击破绽和闪避，不然伤害太低了。</p>
+<p>这一章以后获得变身黑豹的能力。</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154254855.png" alt="image-20240106154254855"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154342838.png" alt="image-20240106154342838"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154447382.png" alt="image-20240106154447382"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240106154511442.png" alt="image-20240106154511442"></p>
+<h1 id="连招"><a href="#连招" class="headerlink" title="连招"></a>连招</h1><p>装备武士刀+火爪</p>
+<p>1.拳+ZR后滚+拳 剑气 </p>
+<p>2.拳拳+脚 按住释放大核弹</p>
+<p>3.拳拳脚拳  发动上挑编织攻击，随后可以皇牌空战</p>
+<p>4.拳拳脚脚脚 第二下是下踏 第三下前踢吹飞 威力控场</p>
+<p>5.拳拳拳脚脚脚 两下扫堂 最后一下为前踢的编制攻击</p>
+<p>6.拳拳脚（按住） 脚（按住）脚（按住） 可以释放三个大爆弹 </p>
+<p>7.拳拳脚（连按）</p>
+<p>百裂脚-A组武器脚上装爪子，B组武器装上火箭筒</p>
+<p>当最后的爪子百裂脚使出瞬间切换到B组的火箭筒 可以一下子打出几十发火箭炮 威力可观</p>
+
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">贝优妮塔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/游戏/" class="article-tag-list-link color3">游戏</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/06/%E6%B8%B8%E6%88%8F/%E8%B4%9D%E4%BC%98%E5%A6%AE%E5%A1%941%E6%94%BB%E7%95%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
+  
     <article id="post-it/阿里云服务器的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     <!--  -->
@@ -404,169 +968,24 @@
 
 
 
-
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
   
-    <article id="post-深入理解影刀与实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    <!--  -->
-<!-- 目录内容 -->
-
-
-<!-- 目录内容结束 -->
-
-    
-      <header class="article-header">
-        
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/">影刀初级</a>
-    </h1>
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
   
-
-
-
-          <!--显示阅读次数-->
-          
-        <!--显示阅读次数完毕-->
-        
-        <a href="/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
-  	<time datetime="2023-12-10T14:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-10</time>
-</a>
-        
-      </header>
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      <script>
-        (function(){
-          let password2 = '';
-          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
-
-
-          //基于缓存密码校验
-          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
-          if(storedPassword == password2 ){
-            // 当密码正确，或没有设置密码时进行内容显示
-            window.addEventListener('load', function() {
-                  document.getElementById('protectedContent').style.display = 'block';
-                  passwordEntered = true;
-          });
-          return;
-          }
-          if(password2 != ''){
-            passwordEntered = prompt('请输入密码') === password2;
-          }
-          // 基于密码输入结果，进行处理
-          if (!passwordEntered && password2 != '') {
-                 try {
-                                  // 可能会抛出异常的代码
-                                    history.back();
-                                } catch (error) {
-                                  // 捕获异常的代码
-                                  console.error(error); // 打印错误信息
-                                }
-                                window.location.href=document.referrer
-          }
-
-          // 当密码正确，或没有设置密码时进行内容显示
-          window.addEventListener('load', function() {
-              if (passwordEntered  || password2 === '') {
-                if(password2!=''){
-                  localStorage.removeItem('password');
-                  localStorage.setItem('password', password2);
-                  setTimeout(function() {
-                  localStorage.removeItem('password');
-                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
-                }
-                  document.getElementById('protectedContent').style.display = 'block';
-              }
-
-          });
-        })();
-      </script>
-      
-          <!-- 这部分内容受密码保护 -->
-          <div id="protectedContent" style="display: block;">
-            
-              <a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/" onclick="window.location.replace(this.href); return false;">  
-  <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231210144809908.png" alt="image-20231209143728319" style="zoom: 80%;"  />
-
-</a>
-            
-          </div>
-        
-      </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">自动化</a>
-        		</li>
-      		
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">影刀</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/IT/" class="article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%BD%B1%E5%88%80%E4%B8%8E%E5%AE%9E%E8%B7%B5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-    
-        <!--  -->
-        <div class="jump-container" id="js-jump-container" style="display:block;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        <!--  -->
-        <!--  -->
-    </div>
-</aside>
-
-
-
-
-
-
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
   
     <article id="post-it/GIt常见指令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -717,7 +1136,24 @@
 
 
 
-
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
   
     <article id="post-大理旅游" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -868,7 +1304,24 @@
 
 
 
-
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
   
     <article id="post-大连旅游" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1019,7 +1472,24 @@
 
 
 
-
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
   
   
 
@@ -1160,10 +1630,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -1177,6 +1643,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1200,6 +1678,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">策略</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">商业</a>
               </li>
              
@@ -1216,19 +1702,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1240,7 +1722,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1257,6 +1743,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日语</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1304,6 +1794,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
     
     	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://59.110.225.105:8081/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>个人财务管理系统(自用不外传)</a>
+            </li>
+          
+        </ul>
   		
     	</section>
     

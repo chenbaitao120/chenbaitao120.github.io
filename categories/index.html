@@ -92,7 +92,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 32
+			总文章数 42
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -341,7 +341,7 @@
           </div>
 
           <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OA/">OA</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SRM/">SRM</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%91%E5%B8%83/">发布</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%85%E6%B8%B8/">旅游</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%B7%E6%AD%A3%E5%8F%8C%E5%91%A8%E5%91%A8%E6%8A%A5/">海正双周周报</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E8%80%83/">软考</a><span class="category-list-count">4</span></li></ul>
+          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/OA/">OA</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SRM/">SRM</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%91%E5%B8%83/">发布</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%85%E6%B8%B8/">旅游</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%B7%E6%AD%A3%E5%8F%8C%E5%91%A8%E5%91%A8%E6%8A%A5/">海正双周周报</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%8B%B1%E8%AF%AD/">英语</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6/">读书</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E8%80%83/">软考</a><span class="category-list-count">9</span></li></ul>
           </div>
 
         </div>
@@ -398,7 +398,24 @@
 
 
 
-
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
           </div>
         </div>
       </div>
@@ -534,10 +551,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -551,6 +564,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,6 +599,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">策略</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">商业</a>
               </li>
              
@@ -590,19 +623,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,7 +643,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,6 +664,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日语</a>
               </li>
             
             <div class="clearfix"></div>
@@ -678,6 +715,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
     
     	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://59.110.225.105:8081/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>个人财务管理系统(自用不外传)</a>
+            </li>
+          
+        </ul>
   		
     	</section>
     
