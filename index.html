@@ -90,7 +90,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 43
+			总文章数 46
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -253,6 +253,265 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-海正/组织架构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <p>组织架构</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240111112106174.png" alt="image-20240111112106174"></p>
+
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/11/%E6%B5%B7%E6%AD%A3/%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
+  
+    <article id="post-oa/物料报废申请报表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <p>物料报废申请报表</p>
+<h1 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h1><p>2022、2023年所有法律主体存货报废明细（包含申请人、申请部门、申请时间、报废产品名称及编号、产品批次、产品效期、数量、金额、各环节审批人、审批时间、报废原因等字段）</p>
+<p>审批人和审批时间、审批职位 去流程表里面带出来</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> i.requestname,i.status,c.remark,a.no,d.lastname,a.appdate,j.companyname,</span><br><span class="line">a.kwcode,a.bfzje,m.name,</span><br><span class="line">a.mat_doc,</span><br><span class="line">a.doc_year,</span><br><span class="line">a.gzrq,</span><br><span class="line">j.bukrs,k.name,</span><br><span class="line">g.departmentname,b.wlmc,b.wlbh,</span><br><span class="line">b.scph,b.sxrq,b.bfsl,b.zmje,</span><br><span class="line">f.nodename,e.lastname,c.operatedate,c.operatetime ,h.jobtitlename,b.bfyy</span><br><span class="line"> <span class="keyword">from</span> formtable_main_391 a  <span class="keyword">join</span> formtable_main_391_dt1 b <span class="keyword">on</span> a.id <span class="operator">=</span> b.mainid </span><br><span class="line"> <span class="keyword">join</span> workflow_requestlog  c <span class="keyword">on</span> a.requestid <span class="operator">=</span> c.requestid <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">hrmresource d <span class="keyword">on</span> a.applicant <span class="operator">=</span> d.id </span><br><span class="line"><span class="keyword">join</span> hrmresource e <span class="keyword">on</span> e.id <span class="operator">=</span> c.operator</span><br><span class="line"><span class="keyword">join</span> workflow_nodebase f <span class="keyword">on</span> c.nodeid <span class="operator">=</span> f.id </span><br><span class="line"><span class="keyword">join</span> hrmdepartment g <span class="keyword">on</span> a.bm <span class="operator">=</span> g.id</span><br><span class="line"><span class="keyword">join</span> hrmjobtitles h <span class="keyword">on</span> h.id <span class="operator">=</span> e.jobtitle </span><br><span class="line"><span class="keyword">join</span> workflow_requestbase i <span class="keyword">on</span> i.requestid <span class="operator">=</span> a.requestid</span><br><span class="line"><span class="keyword">join</span> uf_company j <span class="keyword">on</span> j.bukrs <span class="operator">=</span> a.bukrs</span><br><span class="line"><span class="keyword">join</span> uf_factory k <span class="keyword">on</span> k.code <span class="operator">=</span> a.fcode</span><br><span class="line"><span class="keyword">join</span> uf_storagelocation m <span class="keyword">on</span> m.id <span class="operator">=</span> a.kwid</span><br><span class="line"><span class="keyword">join</span> hrmdepartment n <span class="keyword">on</span> b.sybm <span class="operator">=</span> n.id</span><br><span class="line"><span class="keyword">where</span> a.appdate <span class="operator">&gt;</span> <span class="string">&#x27;2022-01-01&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> c.operatedate, c.operatetime,b.wlbh ;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="自定义报表"><a href="#自定义报表" class="headerlink" title="自定义报表"></a>自定义报表</h1>
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/11/oa/%E7%89%A9%E6%96%99%E6%8A%A5%E5%BA%9F%E7%94%B3%E8%AF%B7%E6%8A%A5%E8%A1%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
   
     <article id="post-深入理解影刀与实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1577,15 +1836,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大连</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1601,22 +1860,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
@@ -1629,7 +1872,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1641,7 +1900,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
+                <a href="javascript:void(0)" class="js-tag color3">策略</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">商业</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1649,7 +1912,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">策略</a>
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1657,15 +1920,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">商业</a>
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1685,6 +1944,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
@@ -1693,15 +1956,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
               </li>
              
               <li class="article-tag-list-item">
