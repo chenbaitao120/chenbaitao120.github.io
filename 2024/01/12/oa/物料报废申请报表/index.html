@@ -10,15 +10,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>物料报废申请报表 | chen.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="物料报废申请报表 数据导出2022、2023年所有法律主体存货报废明细（包含申请人、申请部门、申请时间、报废产品名称及编号、产品批次、产品效期、数量、金额、各环节审批人、审批时间、报废原因等字段） 审批人和审批时间、审批职位 去流程表里面带出来 12345678910111213141516171819202122select i.requestname,i.status,c.remark,a.n">
+  <meta name="description" content="物料报废申请报表 数据导出2022、2023年所有法律主体存货报废明细（包含申请人、申请部门、申请时间、报废产品名称及编号、产品批次、产品效期、数量、金额、各环节审批人、审批时间、报废原因等字段） 审批人和审批时间、审批职位 去流程表里面带出来 12345678910111213141516171819202122232425262728293031323334353637383940414243">
 <meta property="og:type" content="article">
 <meta property="og:title" content="物料报废申请报表">
 <meta property="og:url" content="http://example.com/2024/01/12/oa/%E7%89%A9%E6%96%99%E6%8A%A5%E5%BA%9F%E7%94%B3%E8%AF%B7%E6%8A%A5%E8%A1%A8/index.html">
 <meta property="og:site_name" content="chen.blog">
-<meta property="og:description" content="物料报废申请报表 数据导出2022、2023年所有法律主体存货报废明细（包含申请人、申请部门、申请时间、报废产品名称及编号、产品批次、产品效期、数量、金额、各环节审批人、审批时间、报废原因等字段） 审批人和审批时间、审批职位 去流程表里面带出来 12345678910111213141516171819202122select i.requestname,i.status,c.remark,a.n">
+<meta property="og:description" content="物料报废申请报表 数据导出2022、2023年所有法律主体存货报废明细（包含申请人、申请部门、申请时间、报废产品名称及编号、产品批次、产品效期、数量、金额、各环节审批人、审批时间、报废原因等字段） 审批人和审批时间、审批职位 去流程表里面带出来 12345678910111213141516171819202122232425262728293031323334353637383940414243">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-01-12T09:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-16T06:28:52.284Z">
+<meta property="article:modified_time" content="2024-01-16T08:50:28.612Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA报表">
@@ -377,7 +377,7 @@
               <p>物料报废申请报表</p>
 <h1 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h1><p>2022、2023年所有法律主体存货报废明细（包含申请人、申请部门、申请时间、报废产品名称及编号、产品批次、产品效期、数量、金额、各环节审批人、审批时间、报废原因等字段）</p>
 <p>审批人和审批时间、审批职位 去流程表里面带出来</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> i.requestname,i.status,c.remark,a.no,d.lastname,a.appdate,j.companyname,</span><br><span class="line">a.kwcode,a.bfzje,m.name,</span><br><span class="line">a.mat_doc,</span><br><span class="line">a.doc_year,</span><br><span class="line">a.gzrq,</span><br><span class="line">j.bukrs,k.name,</span><br><span class="line">g.departmentname,b.wlmc,b.wlbh,</span><br><span class="line">b.scph,b.sxrq,b.bfsl,b.zmje,</span><br><span class="line">f.nodename,e.lastname,c.operatedate,c.operatetime ,h.jobtitlename,b.bfyy</span><br><span class="line"> <span class="keyword">from</span> formtable_main_391 a  <span class="keyword">join</span> formtable_main_391_dt1 b <span class="keyword">on</span> a.id <span class="operator">=</span> b.mainid </span><br><span class="line"> <span class="keyword">join</span> workflow_requestlog  c <span class="keyword">on</span> a.requestid <span class="operator">=</span> c.requestid <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">hrmresource d <span class="keyword">on</span> a.applicant <span class="operator">=</span> d.id </span><br><span class="line"><span class="keyword">join</span> hrmresource e <span class="keyword">on</span> e.id <span class="operator">=</span> c.operator</span><br><span class="line"><span class="keyword">join</span> workflow_nodebase f <span class="keyword">on</span> c.nodeid <span class="operator">=</span> f.id </span><br><span class="line"><span class="keyword">join</span> hrmdepartment g <span class="keyword">on</span> a.bm <span class="operator">=</span> g.id</span><br><span class="line"><span class="keyword">join</span> hrmjobtitles h <span class="keyword">on</span> h.id <span class="operator">=</span> e.jobtitle </span><br><span class="line"><span class="keyword">join</span> workflow_requestbase i <span class="keyword">on</span> i.requestid <span class="operator">=</span> a.requestid</span><br><span class="line"><span class="keyword">join</span> uf_company j <span class="keyword">on</span> j.bukrs <span class="operator">=</span> a.bukrs</span><br><span class="line"><span class="keyword">join</span> uf_factory k <span class="keyword">on</span> k.code <span class="operator">=</span> a.fcode</span><br><span class="line"><span class="keyword">join</span> uf_storagelocation m <span class="keyword">on</span> m.id <span class="operator">=</span> a.kwid</span><br><span class="line"><span class="keyword">join</span> hrmdepartment n <span class="keyword">on</span> b.sybm <span class="operator">=</span> n.id</span><br><span class="line"><span class="keyword">where</span> a.appdate <span class="operator">&gt;</span> <span class="string">&#x27;2022-01-01&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> c.operatedate, c.operatetime,b.wlbh ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> i.requestname,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> i.currentnodetype <span class="operator">=</span> <span class="string">&#x27;3&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;归档&#x27;</span></span><br><span class="line">    <span class="keyword">ELSE</span> <span class="string">&#x27;未归档&#x27;</span></span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"><span class="keyword">as</span> statuss</span><br><span class="line">,</span><br><span class="line"><span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> i.currentnodetype <span class="operator">=</span> <span class="string">&#x27;3&#x27;</span> <span class="keyword">THEN</span> i.lastoperatedate</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">END</span> <span class="keyword">as</span> lastoperatedate,</span><br><span class="line"><span class="keyword">CASE</span></span><br><span class="line">    <span class="keyword">WHEN</span> i.currentnodetype <span class="operator">=</span> <span class="string">&#x27;3&#x27;</span> <span class="keyword">THEN</span> i.lastoperatetime</span><br><span class="line">    <span class="keyword">ELSE</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">END</span> <span class="keyword">as</span> lastoperatetime,</span><br><span class="line">TO_CHAR(SUBSTR(c.remark, <span class="number">1</span>, <span class="number">3500</span>)) <span class="keyword">as</span> remark,a.no,d.lastname,a.appdate,j.companyname,</span><br><span class="line">j.bukrs,</span><br><span class="line">k.name,</span><br><span class="line">a.kwcode,a.bfzje,</span><br><span class="line"></span><br><span class="line">m.name,</span><br><span class="line">n.departmentname,</span><br><span class="line">a.mat_doc,</span><br><span class="line">a.doc_year,</span><br><span class="line">a.gzrq,</span><br><span class="line">b.wlmc,b.wlbh,</span><br><span class="line">b.kcsl,b.jldw,</span><br><span class="line">b.lyjclfa,</span><br><span class="line">b.zmje,</span><br><span class="line">b.qrbfsl,</span><br><span class="line">b.scph,</span><br><span class="line">b.sxrq,</span><br><span class="line">b.bfsl,</span><br><span class="line">u.departmentname,</span><br><span class="line">b.sclcddh,</span><br><span class="line">f.nodename,e.lastname,c.operatedate,c.operatetime ,h.jobtitlename,b.bfyy</span><br><span class="line"> <span class="keyword">from</span> ecology.formtable_main_391 a  <span class="keyword">join</span> ecology.formtable_main_391_dt1 b <span class="keyword">on</span> a.id <span class="operator">=</span> b.mainid </span><br><span class="line"> <span class="keyword">join</span> ecology.workflow_requestlog  c <span class="keyword">on</span> a.requestid <span class="operator">=</span> c.requestid <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">ecology.hrmresource d <span class="keyword">on</span> a.applicant <span class="operator">=</span> d.id </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>  ecology.hrmresource e <span class="keyword">on</span> e.id <span class="operator">=</span> c.operator</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>  ecology.workflow_nodebase f <span class="keyword">on</span> c.nodeid <span class="operator">=</span> f.id </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>  ecology.hrmdepartment g <span class="keyword">on</span> a.bm <span class="operator">=</span> g.id</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>  ecology.hrmjobtitles h <span class="keyword">on</span> h.id <span class="operator">=</span> e.jobtitle </span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.workflow_requestbase i <span class="keyword">on</span> i.requestid <span class="operator">=</span> a.requestid</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.uf_company j <span class="keyword">on</span> j.bukrs <span class="operator">=</span> a.bukrs</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.uf_factory k <span class="keyword">on</span> k.code <span class="operator">=</span> a.fcode</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.uf_storagelocation m <span class="keyword">on</span> m.id <span class="operator">=</span> a.kwid</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.hrmdepartment n <span class="keyword">on</span> b.sybm <span class="operator">=</span> n.id</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> ecology.hrmdepartment u <span class="keyword">on</span> u.id <span class="operator">=</span> b.yjbm</span><br><span class="line"><span class="keyword">where</span> a.appdate <span class="operator">&gt;</span> <span class="string">&#x27;2022-01-01&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> c.operatedate, c.operatetime,b.wlbh ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
@@ -690,10 +690,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
@@ -703,6 +699,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大连</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -722,15 +722,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -742,15 +742,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -766,10 +770,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
               </li>
              
@@ -778,15 +778,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">组织</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -806,10 +806,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
               </li>
              
@@ -818,11 +814,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,11 +826,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
+                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
