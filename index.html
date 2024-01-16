@@ -90,7 +90,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 48
+			总文章数 50
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -253,6 +253,183 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-it/SQL 技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/01/17/it/SQL%20%E6%8A%80%E5%B7%A7/">SQL技巧</a>
+    </h1>
+  
+
+
+
+          <!--显示阅读次数-->
+          
+        <!--显示阅读次数完毕-->
+        
+        <a href="/2024/01/17/it/SQL%20%E6%8A%80%E5%B7%A7/" class="archive-article-date">
+  	<time datetime="2024-01-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-17</time>
+</a>
+        
+      </header>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <span id="more"></span>
+<p>SQL 技巧</p>
+<h1 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h1><h2 id="ROW-NUMBER"><a href="#ROW-NUMBER" class="headerlink" title="ROW_NUMBER()"></a>ROW_NUMBER()</h2><p>在查询中遇到其他列一样，取日期最大的场景可以，为每列分配一个窗口函数根据日期排序，并且分配一个行号，取行号1.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> REPLACE <span class="keyword">VIEW</span> V_DSFK <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> ROWNUM ID1, a.<span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="string">&#x27;已报销&#x27;</span> bxzt, a.APPLICANT, a.OPERATOR JBR, a.DEPARTMENT, a.KOSTL, a.COMPANY, a.NO, c.OPERATOR,</span><br><span class="line">       d.OPERATEDATE, a.VOUCHER, f.PURCHASER, f.PURCHASERTAXNO, f.SELLER, f.SALESTAXNO,</span><br><span class="line">       <span class="keyword">CASE</span></span><br><span class="line">           f.INVOICETYPE</span><br><span class="line">           <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span></span><br><span class="line">               <span class="string">&#x27;增值税普通发票&#x27;</span></span><br><span class="line">           ...</span><br><span class="line">           <span class="keyword">ELSE</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">       <span class="keyword">END</span> <span class="keyword">AS</span> INVOICETYPE,</span><br><span class="line">       <span class="keyword">CASE</span></span><br><span class="line">           <span class="keyword">WHEN</span> f.INVOICETYPE <span class="keyword">in</span> (<span class="number">32</span>,<span class="number">33</span>) <span class="keyword">and</span> LENGTH(f.INVOICENUMBER)<span class="operator">=</span><span class="number">20</span> <span class="keyword">THEN</span> <span class="string">&#x27;数电票&#x27;</span></span><br><span class="line">           <span class="keyword">ELSE</span> f.INVOICECODE</span><br><span class="line">       <span class="keyword">END</span> <span class="keyword">AS</span> INVOICECODE,</span><br><span class="line">       f.INVOICETYPE <span class="keyword">as</span> type, f.TAXINCLUDEDPRICE, f.PRICEWITHOUTTAX, f.TAXRATE, f.INVOICENUMBER, f.BILLINGDATE,</span><br><span class="line">       f.TAX, <span class="string">&#x27;是&#x27;</span> SFGX, f.CHECKSTATUS,</span><br><span class="line">       <span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> a.APPLICANT <span class="keyword">ORDER</span> <span class="keyword">BY</span> d.OPERATEDATE <span class="keyword">DESC</span>) <span class="keyword">AS</span> rn</span><br><span class="line"><span class="keyword">FROM</span> ECOLOGY.FORMTABLE_MAIN_54 a </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> ECOLOGY.FNAINVOICELEDGER f <span class="keyword">ON</span> a.requestid <span class="operator">=</span> f.requestid</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> ECOLOGY.WORKFLOW_REQUESTLOG c <span class="keyword">on</span> a.REQUESTID <span class="operator">=</span> c.REQUESTID <span class="keyword">and</span> c.NODEID <span class="keyword">in</span> (<span class="string">&#x27;3531&#x27;</span>,<span class="string">&#x27;13544&#x27;</span>,<span class="string">&#x27;13536&#x27;</span> )</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> ECOLOGY.WORKFLOW_REQUESTLOG d <span class="keyword">on</span> a.REQUESTID <span class="operator">=</span> d.REQUESTID <span class="keyword">and</span> d.NODEID <span class="keyword">in</span> (<span class="string">&#x27;3533&#x27;</span>,<span class="string">&#x27;13546&#x27;</span>,<span class="string">&#x27;13538&#x27;</span>)</span><br><span class="line">) a</span><br><span class="line"><span class="keyword">WHERE</span> a.rn <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        		</li>
+      		
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/IT/" class="article-tag-list-link color3">IT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/01/17/it/SQL%20%E6%8A%80%E5%B7%A7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+  
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+  
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+  
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
   
     <article id="post-深入理解影刀与实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1601,6 +1778,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
@@ -1617,19 +1826,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">物料报废申请</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1637,27 +1838,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
+                <a href="javascript:void(0)" class="js-tag color3">组织</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组织</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1678,10 +1863,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1709,15 +1890,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日语</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日语</a>
               </li>
             
             <div class="clearfix"></div>
