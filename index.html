@@ -339,6 +339,8 @@
             
               <span id="more"></span>
 <p>SQL 技巧</p>
+<!--more-->
+
 <h1 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h1><h2 id="ROW-NUMBER"><a href="#ROW-NUMBER" class="headerlink" title="ROW_NUMBER()"></a>ROW_NUMBER()</h2><p>在查询中遇到其他列一样，取日期最大的场景可以，为每列分配一个窗口函数根据日期排序，并且分配一个行号，取行号1.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> REPLACE <span class="keyword">VIEW</span> V_DSFK <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> ROWNUM ID1, a.<span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">(<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="string">&#x27;已报销&#x27;</span> bxzt, a.APPLICANT, a.OPERATOR JBR, a.DEPARTMENT, a.KOSTL, a.COMPANY, a.NO, c.OPERATOR,</span><br><span class="line">       d.OPERATEDATE, a.VOUCHER, f.PURCHASER, f.PURCHASERTAXNO, f.SELLER, f.SALESTAXNO,</span><br><span class="line">       <span class="keyword">CASE</span></span><br><span class="line">           f.INVOICETYPE</span><br><span class="line">           <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span></span><br><span class="line">               <span class="string">&#x27;增值税普通发票&#x27;</span></span><br><span class="line">           ...</span><br><span class="line">           <span class="keyword">ELSE</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">       <span class="keyword">END</span> <span class="keyword">AS</span> INVOICETYPE,</span><br><span class="line">       <span class="keyword">CASE</span></span><br><span class="line">           <span class="keyword">WHEN</span> f.INVOICETYPE <span class="keyword">in</span> (<span class="number">32</span>,<span class="number">33</span>) <span class="keyword">and</span> LENGTH(f.INVOICENUMBER)<span class="operator">=</span><span class="number">20</span> <span class="keyword">THEN</span> <span class="string">&#x27;数电票&#x27;</span></span><br><span class="line">           <span class="keyword">ELSE</span> f.INVOICECODE</span><br><span class="line">       <span class="keyword">END</span> <span class="keyword">AS</span> INVOICECODE,</span><br><span class="line">       f.INVOICETYPE <span class="keyword">as</span> type, f.TAXINCLUDEDPRICE, f.PRICEWITHOUTTAX, f.TAXRATE, f.INVOICENUMBER, f.BILLINGDATE,</span><br><span class="line">       f.TAX, <span class="string">&#x27;是&#x27;</span> SFGX, f.CHECKSTATUS,</span><br><span class="line">       <span class="built_in">ROW_NUMBER</span>() <span class="keyword">OVER</span> (<span class="keyword">PARTITION</span> <span class="keyword">BY</span> a.APPLICANT <span class="keyword">ORDER</span> <span class="keyword">BY</span> d.OPERATEDATE <span class="keyword">DESC</span>) <span class="keyword">AS</span> rn</span><br><span class="line"><span class="keyword">FROM</span> ECOLOGY.FORMTABLE_MAIN_54 a </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> ECOLOGY.FNAINVOICELEDGER f <span class="keyword">ON</span> a.requestid <span class="operator">=</span> f.requestid</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> ECOLOGY.WORKFLOW_REQUESTLOG c <span class="keyword">on</span> a.REQUESTID <span class="operator">=</span> c.REQUESTID <span class="keyword">and</span> c.NODEID <span class="keyword">in</span> (<span class="string">&#x27;3531&#x27;</span>,<span class="string">&#x27;13544&#x27;</span>,<span class="string">&#x27;13536&#x27;</span> )</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> ECOLOGY.WORKFLOW_REQUESTLOG d <span class="keyword">on</span> a.REQUESTID <span class="operator">=</span> d.REQUESTID <span class="keyword">and</span> d.NODEID <span class="keyword">in</span> (<span class="string">&#x27;3533&#x27;</span>,<span class="string">&#x27;13546&#x27;</span>,<span class="string">&#x27;13538&#x27;</span>)</span><br><span class="line">) a</span><br><span class="line"><span class="keyword">WHERE</span> a.rn <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 
@@ -1754,11 +1756,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+                <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1778,14 +1780,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
@@ -1794,7 +1788,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1803,10 +1801,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1830,11 +1824,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
