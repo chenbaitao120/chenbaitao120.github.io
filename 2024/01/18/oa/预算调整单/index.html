@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240118140413865.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240118144117209.png">
 <meta property="article:published_time" content="2024-01-18T09:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-18T07:00:20.800Z">
+<meta property="article:modified_time" content="2024-01-18T07:32:54.721Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="预算调整申请单流程">
@@ -98,7 +98,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 55
+			总文章数 56
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -395,11 +395,15 @@
 <p>这里就要想办法去掉无效的人 7是无效的</p>
 <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240118144117209.png" alt="image-20240118144117209" style="zoom:25%;" />
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> hrmdepartmentdefined d</span><br><span class="line"><span class="keyword">SET</span> d.BMFZR <span class="operator">=</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="built_in">LISTAGG</span>(r.id, <span class="string">&#x27;,&#x27;</span>) <span class="keyword">WITHIN</span> <span class="keyword">GROUP</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> r.id)</span><br><span class="line">    <span class="keyword">FROM</span> hrmresource r</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="string">&#x27;,&#x27;</span> <span class="operator">||</span> d.BMFZR <span class="operator">||</span> <span class="string">&#x27;,&#x27;</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%,&#x27;</span> <span class="operator">||</span> TO_CHAR(r.id) <span class="operator">||</span> <span class="string">&#x27;,%&#x27;</span> </span><br><span class="line">      <span class="keyword">AND</span> r.status <span class="operator">!=</span> <span class="number">7</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">FROM</span> hrmresource r</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="string">&#x27;,&#x27;</span> <span class="operator">||</span> d.BMFZR <span class="operator">||</span> <span class="string">&#x27;,&#x27;</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%,&#x27;</span> <span class="operator">||</span> TO_CHAR(r.id) <span class="operator">||</span> <span class="string">&#x27;,%&#x27;</span></span><br><span class="line">      <span class="keyword">AND</span> r.status <span class="operator">=</span> <span class="number">7</span></span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> hrmdepartmentdefined d</span><br><span class="line"><span class="keyword">SET</span> d.BMFZR <span class="operator">=</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="built_in">LISTAGG</span>(r.id, <span class="string">&#x27;,&#x27;</span>) <span class="keyword">WITHIN</span> <span class="keyword">GROUP</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> r.id)</span><br><span class="line">    <span class="keyword">FROM</span> hrmresource r</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="string">&#x27;,&#x27;</span> <span class="operator">||</span> d.BMFZR <span class="operator">||</span> <span class="string">&#x27;,&#x27;</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%,&#x27;</span> <span class="operator">||</span> TO_CHAR(r.id) <span class="operator">||</span> <span class="string">&#x27;,%&#x27;</span> </span><br><span class="line">      <span class="keyword">AND</span> r.status <span class="operator">!=</span> <span class="number">7</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">EXISTS</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">FROM</span> hrmresource r</span><br><span class="line">    <span class="keyword">WHERE</span> <span class="string">&#x27;,&#x27;</span> <span class="operator">||</span> d.BMFZR <span class="operator">||</span> <span class="string">&#x27;,&#x27;</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%,&#x27;</span> <span class="operator">||</span> TO_CHAR(r.id) <span class="operator">||</span> <span class="string">&#x27;,%&#x27;</span></span><br><span class="line">      <span class="keyword">AND</span> r.status <span class="operator">=</span> <span class="number">7</span></span><br><span class="line">) ;</span><br><span class="line"> <span class="keyword">UPDATE</span> ECOLOGY.hrmdepartmentdefined <span class="keyword">set</span> BMFZR <span class="operator">=</span> <span class="string">&#x27;17999&#x27;</span> <span class="keyword">WHERE</span> BMFZR <span class="operator">=</span><span class="string">&#x27;17999,28990&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> ecology.hrmresource <span class="keyword">where</span> id <span class="keyword">in</span> (<span class="number">17999</span>,<span class="number">28990</span>)</span><br></pre></td></tr></table></figure>
 
 <p>这个人有两个有效账号，不知道为什么 需要特殊处理一下</p>
+<p>取中间库的这个人</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> syncdata.sync_hrmdepartment</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> syncdata.sync_hrmresource <span class="keyword">where</span> outkey<span class="operator">=</span><span class="string">&#x27;1001B41000000000028I&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>用17999这个id的</p>
 
             
           </div>
@@ -458,8 +462,8 @@
     </a>
   
   
-    <a href="/2024/01/18/%E9%AB%98%E9%A1%B9/%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">信息系统工程</div>
+    <a href="/2024/01/18/oa/%E6%8A%A5%E8%A1%A8/%E9%87%87%E8%B4%AD%E7%94%B3%E8%AF%B7%E6%8A%A5%E8%A1%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">采购申请报表</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -705,6 +709,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大连</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
@@ -713,15 +729,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
+                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,6 +750,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">影刀</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -761,55 +809,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -829,19 +829,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -861,15 +857,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">日语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">税务</a>
               </li>
             
             <div class="clearfix"></div>
