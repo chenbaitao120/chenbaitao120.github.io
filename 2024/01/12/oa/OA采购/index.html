@@ -10,12 +10,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>OA采购 | chen.blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="采购数据库关系 流程   预算1.选择费用大小类 ​	 2.对应一个预算科目或者项目   3.预算维护（SAP同步过来）   4.采购申请的时候预算费用冻结 入库的时候费用入账 ，确认收货（实际收货发票录入为准），标识为是的时候释放所有冻结的费用，如果超出预算会有 京东供应商为上海圆迈贸易公司的时候需要同步京东账户的数据  CreatePTP0205 归档日期大于预付款基准日期直接付款 入库 归档">
+  <meta name="description" content="采购数据库关系 流程   预算1基金中心-&gt;n成本中心 1.选择费用大小类 ​	 2.对应一个预算科目或者项目   3.预算维护（SAP同步过来）   4.采购申请的时候预算费用冻结 入库的时候费用入账 ，确认收货（实际收货发票录入为准），标识为是的时候释放所有冻结的费用，如果超出预算会有 收货发票到了 选择入库没开发票的单子进行收货发票录入 扫描识别录进来。 付款申请根据发票的过账日期加上">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OA采购">
 <meta property="og:url" content="http://example.com/2024/01/12/oa/OA%E9%87%87%E8%B4%AD/index.html">
 <meta property="og:site_name" content="chen.blog">
-<meta property="og:description" content="采购数据库关系 流程   预算1.选择费用大小类 ​	 2.对应一个预算科目或者项目   3.预算维护（SAP同步过来）   4.采购申请的时候预算费用冻结 入库的时候费用入账 ，确认收货（实际收货发票录入为准），标识为是的时候释放所有冻结的费用，如果超出预算会有 京东供应商为上海圆迈贸易公司的时候需要同步京东账户的数据  CreatePTP0205 归档日期大于预付款基准日期直接付款 入库 归档">
+<meta property="og:description" content="采购数据库关系 流程   预算1基金中心-&gt;n成本中心 1.选择费用大小类 ​	 2.对应一个预算科目或者项目   3.预算维护（SAP同步过来）   4.采购申请的时候预算费用冻结 入库的时候费用入账 ，确认收货（实际收货发票录入为准），标识为是的时候释放所有冻结的费用，如果超出预算会有 收货发票到了 选择入库没开发票的单子进行收货发票录入 扫描识别录进来。 付款申请根据发票的过账日期加上">
 <meta property="og:locale">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240112144748068.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/%E9%87%87%E8%B4%AD%E4%B8%9A%E5%8A%A1%20(1).jpg">
@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231213103428427.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231213164839521.png">
 <meta property="article:published_time" content="2024-01-12T02:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-12T07:20:19.181Z">
+<meta property="article:modified_time" content="2024-01-22T07:52:28.034Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA">
@@ -103,7 +103,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 56
+			总文章数 59
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -278,7 +278,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%87%E8%B4%AD"><span class="toc-number">1.</span> <span class="toc-text">采购</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B3%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">数据库关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">预算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C"><span class="toc-number">1.4.</span> <span class="toc-text">京东</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%87%E8%B4%AD"><span class="toc-number">1.</span> <span class="toc-text">采购</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B3%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">数据库关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">预算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C"><span class="toc-number">1.4.</span> <span class="toc-text">京东</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%A5%E9%94%80"><span class="toc-number">2.</span> <span class="toc-text">报销</span></a></li></ol>
  </div>
  <script type="text/javascript">
   function showToc(){
@@ -386,7 +386,8 @@
 <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/%E9%87%87%E8%B4%AD%E4%B8%9A%E5%8A%A1%20(1).jpg" alt="采购业务 (1)" style="zoom:200%;" />
 
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_17024509248627.png" alt="img"></p>
-<h2 id="预算"><a href="#预算" class="headerlink" title="预算"></a>预算</h2><p>1.选择费用大小类</p>
+<h2 id="预算"><a href="#预算" class="headerlink" title="预算"></a>预算</h2><p>1基金中心-&gt;n成本中心</p>
+<p>1.选择费用大小类</p>
 <p>​	<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231213103220932.png" alt="image-20231213103220932" style="zoom: 33%;" /></p>
 <p>2.对应一个预算科目或者项目</p>
 <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231213103336926.png" alt="image-20231213103336926" style="zoom: 33%;" />
@@ -396,6 +397,9 @@
 
 <p>4.采购申请的时候预算费用冻结</p>
 <p>入库的时候费用入账 ，确认收货（实际收货发票录入为准），标识为是的时候释放所有冻结的费用，如果超出预算会有</p>
+<p>收货发票到了 选择入库没开发票的单子进行收货发票录入 扫描识别录进来。</p>
+<p>付款申请根据发票的过账日期加上订单的账期自动发起付款申请的流程</p>
+<p>针对每一个流程进行配置 需要（集成中心）</p>
 <h2 id="京东"><a href="#京东" class="headerlink" title="京东"></a>京东</h2><p>供应商为上海圆迈贸易公司的时候需要同步京东账户的数据</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231213164839521.png" alt="image-20231213164839521"></p>
 <p>CreatePTP0205 归档日期大于预付款基准日期直接付款</p>
@@ -408,8 +412,21 @@
 <p>应付对应预付款 如果发票没有录入还要走应付发票录入 提交就冻结预算 ，发票录入后才会入账</p>
 <p>招标文件</p>
 <p>sap计划任务推到OA直采数据，入库在直采入 直采不涉及预算</p>
-<p>京东付款 直接走SAP 京东同步数据</p>
+<p>京东付款 不需要走付款和预付款的内容了 直接走SAP 京东同步数据</p>
 <p>采购订单作废</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">科目主数据也是SAP同步过来的</span><br><span class="line">费用大小类是公司划分的，直接导进来的</span><br><span class="line">供应商的编码是SAP传过来的</span><br><span class="line">项目的数据也是在OA维护的,进入到哪一个系统</span><br><span class="line">产品主数据SAP过来的</span><br><span class="line">税率：不同的科目对应的税率不一样</span><br><span class="line">城市主数据：城市的标准划分</span><br><span class="line">地址：物料的</span><br><span class="line">采购组主数据查询</span><br><span class="line">内部订单：维护项目账户数的时候消费</span><br><span class="line">银行主数据 全国所有的银行都在这里</span><br><span class="line">固定资产 资产号的时候匹配是不是成本中心下面的</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="报销"><a href="#报销" class="headerlink" title="报销"></a>报销</h1><p>餐补有限制</p>
+<p>合租标准提高到C</p>
+<p>住宿的财务要开专票</p>
+<p>结账库数据是浙里办同步过来的，防止再去调用扣钱</p>
+<p>百旺的接口是查验用的</p>
 
             
           </div>
@@ -501,7 +518,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%87%E8%B4%AD"><span class="toc-number">1.</span> <span class="toc-text">采购</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B3%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">数据库关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">预算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C"><span class="toc-number">1.4.</span> <span class="toc-text">京东</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%87%E8%B4%AD"><span class="toc-number">1.</span> <span class="toc-text">采购</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B3%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">数据库关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">预算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C"><span class="toc-number">1.4.</span> <span class="toc-text">京东</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%A5%E9%94%80"><span class="toc-number">2.</span> <span class="toc-text">报销</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -719,18 +736,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
@@ -739,15 +744,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
+                <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -763,47 +768,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -815,11 +780,75 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">商业</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,15 +860,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">商业</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+                <a href="javascript:void(0)" class="js-tag color3">日语</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -848,6 +873,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -867,23 +900,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日语</a>
+                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
               </li>
              
               <li class="article-tag-list-item">
