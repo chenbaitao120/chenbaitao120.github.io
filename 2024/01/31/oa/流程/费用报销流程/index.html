@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240201112711547.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240201112742019.png">
 <meta property="article:published_time" content="2024-01-31T09:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-01T05:10:48.094Z">
+<meta property="article:modified_time" content="2024-02-04T01:31:09.097Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="费用报销流程">
@@ -397,6 +397,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/ecodeextend/cmd ExpenseReportGetCompanyAndCostCenterCmd.class</span><br><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/ecodeextend/service ExpenseReportsService.class</span><br><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/ecodeextend/cmd  ExpenseReportGetCompanyAndCostCenterCmd.class</span><br><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/ecodeextend/service/impl  ExpenseReportsServiceImpl.class</span><br><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/ecodeextend/web/expensereport ExpenseReportAction.class</span><br></pre></td></tr></table></figure>
 
 <p>3.前端发布代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>()</span><br><span class="line"><span class="keyword">if</span>(createNodeId.<span class="title function_">indexOf</span>(baseInfo.<span class="property">nodeid</span>)!==-<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="comment">//进入就刷新</span></span><br><span class="line">    <span class="title function_">refreshCompanyAndCostCenter</span>();</span><br><span class="line">    <span class="comment">//字段变化刷新</span></span><br><span class="line">    <span class="title class_">WfForm</span>.<span class="title function_">bindFieldChangeEvent</span>(applicant,<span class="keyword">function</span>(<span class="params">obj,id,value</span>)&#123;   </span><br><span class="line">      <span class="title function_">refreshCompanyAndCostCenter</span>();</span><br><span class="line">    &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">refreshCompanyAndCostCenter</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> userid = <span class="title class_">WfForm</span>.<span class="title function_">getFieldValue</span>(applicant);</span><br><span class="line">    <span class="keyword">let</span> requestid  = <span class="title function_">getUrlParameter</span>(<span class="string">&quot;requestid&quot;</span>);</span><br><span class="line">         $.<span class="title function_">ajax</span>(&#123;</span><br><span class="line">          <span class="attr">type</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">          <span class="attr">url</span>: <span class="string">&#x27;/api/hisun/expensereport/getCompanyAndCostCenter&#x27;</span>,</span><br><span class="line">          <span class="attr">data</span>: &#123;<span class="attr">applicant</span>: userid,<span class="attr">requestid</span>:requestid&#125;,</span><br><span class="line">          <span class="attr">dataType</span>: <span class="string">&#x27;json&#x27;</span>,</span><br><span class="line">          <span class="attr">async</span>: <span class="literal">false</span>,</span><br><span class="line">          <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">resp</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> api_status = resp.<span class="property">api_status</span>;</span><br><span class="line">            <span class="keyword">if</span>(api_status == <span class="literal">true</span>)&#123;</span><br><span class="line">              <span class="keyword">let</span> bukrsVal =  resp.<span class="property">bukrs</span>;</span><br><span class="line">              <span class="keyword">let</span> bxcbzx = resp.<span class="property">bxcbzx</span>;</span><br><span class="line">              <span class="keyword">let</span> bxzt = resp.<span class="property">bxzt</span>;</span><br><span class="line">              <span class="keyword">let</span> butxt = resp.<span class="property">butxt</span>;</span><br><span class="line">              <span class="keyword">let</span> ktext = resp.<span class="property">ktext</span>;</span><br><span class="line">              <span class="keyword">let</span> company = <span class="title class_">WfForm</span>.<span class="title function_">convertFieldNameToId</span>(<span class="string">&quot;company&quot;</span>)</span><br><span class="line">              <span class="keyword">let</span> kostlId = <span class="title class_">WfForm</span>.<span class="title function_">convertFieldNameToId</span>(<span class="string">&quot;kostl&quot;</span>);</span><br><span class="line">              <span class="comment">//修改公司代码</span></span><br><span class="line">              <span class="title class_">WfForm</span>.<span class="title function_">changeFieldValue</span>(bukrs, &#123;    </span><br><span class="line">              <span class="attr">value</span>: bukrsVal,   </span><br><span class="line">              <span class="attr">showhtml</span>: bukrsVal </span><br><span class="line">              &#125;); </span><br><span class="line">              <span class="comment">//修改用工主体</span></span><br><span class="line">              <span class="title class_">WfForm</span>.<span class="title function_">changeFieldValue</span>(company, &#123;    </span><br><span class="line">                <span class="attr">value</span>: bxzt,</span><br><span class="line">                <span class="attr">specialobj</span>:[        </span><br><span class="line">                &#123;<span class="attr">id</span>:bxzt,<span class="attr">name</span>:butxt&#125;</span><br><span class="line">              ] </span><br><span class="line">              &#125;);</span><br><span class="line">              <span class="comment">//修改成本中心</span></span><br><span class="line">              <span class="title class_">WfForm</span>.<span class="title function_">changeFieldValue</span>(kostlId, &#123;    </span><br><span class="line">                <span class="attr">value</span>: bxcbzx,</span><br><span class="line">                <span class="attr">specialobj</span>:[        </span><br><span class="line">                &#123;<span class="attr">id</span>:bxcbzx,<span class="attr">name</span>:ktext&#125;</span><br><span class="line">              ] </span><br><span class="line">              &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取requestid</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getUrlParameter</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> url = <span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">href</span>;</span><br><span class="line">  name = name.<span class="title function_">replace</span>(<span class="regexp">/[\[]/</span>, <span class="string">&#x27;\\[&#x27;</span>).<span class="title function_">replace</span>(<span class="regexp">/[\]]/</span>, <span class="string">&#x27;\\]&#x27;</span>);</span><br><span class="line">  <span class="keyword">var</span> regex = <span class="keyword">new</span> <span class="title class_">RegExp</span>(<span class="string">&#x27;[\\?&amp;]&#x27;</span> + name + <span class="string">&#x27;=([^&amp;#]*)&#x27;</span>);</span><br><span class="line">  <span class="keyword">var</span> results = regex.<span class="title function_">exec</span>(url);</span><br><span class="line">  <span class="keyword">return</span> results === <span class="literal">null</span> ? <span class="string">&#x27;&#x27;</span> : <span class="built_in">decodeURIComponent</span>(results[<span class="number">1</span>].<span class="title function_">replace</span>(<span class="regexp">/\+/g</span>, <span class="string">&#x27; &#x27;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240126143202040.png" alt="image-20240126143202040" style="zoom:33%;" />
 
 <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240126143219647.png" alt="image-20240126143219647" style="zoom:33%;" />
@@ -724,10 +726,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
@@ -736,23 +734,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大连</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,7 +754,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,15 +770,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -800,15 +806,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+                <a href="javascript:void(0)" class="js-tag color3">策略</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">策略</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -820,27 +822,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
+                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -848,31 +834,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -892,7 +858,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -908,11 +874,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">税务</a>
+                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">日语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">税务</a>
               </li>
             
             <div class="clearfix"></div>
