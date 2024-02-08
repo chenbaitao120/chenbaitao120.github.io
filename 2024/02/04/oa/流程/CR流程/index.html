@@ -20,11 +20,13 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205141144370.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205102455299.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205103046905.png">
-<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205133954934.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205135527055.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240206103156188.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240207083149440.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240207161501959.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240207161629190.png">
 <meta property="article:published_time" content="2024-02-04T02:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-06T08:21:34.606Z">
+<meta property="article:modified_time" content="2024-02-08T02:40:48.063Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA">
@@ -102,7 +104,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 73
+			总文章数 74
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -385,24 +387,22 @@
 <h1 id="CR2024000111"><a href="#CR2024000111" class="headerlink" title="CR2024000111"></a>CR2024000111</h1><p>1、对CR流程升级一个版本<br>2、所有的CR都暂时先经过CIO审批，去掉小变更等不经过CIO审核的条件<br>3、CR系统主数据上增加系统所有者字段配置，IT总监节点名改为系统所有者审批；系统负责人改为系统管理员，测试负责人去掉，增加一个全局的开发和测试负责人进行配置，增加模块负责人明细表<br>4、CR系统中增加类型（外购&#x2F;自制），需要开发（是&#x2F;否）和需要测试（是&#x2F;否），在第一个系统负责人节点进行输入<br>5、第二个系统负责人节点增加实际详细实施方案字段，允许上传新附件，不允许修改原附件。点批准后，进入系统负责人&#x2F;开发&#x2F;测试并行节点。并行节点可以上传附件。批准后，到代码部署，申请人确认，归档</p>
 <h2 id="Step"><a href="#Step" class="headerlink" title="Step"></a>Step</h2><p>1.略</p>
 <p>2.略</p>
-<p>2.1配置系统所有者和开发负责人的配置数据</p>
-<p>3.修改字段，添加字段，把模块主数据打成明细表放到应用主数据下面。 再加一个开发负责人。</p>
+<p>2.1配置系统所有者和开发负责人的配置数据 √</p>
+<p>3.修改字段，添加字段，把模块主数据打成明细表放到应用主数据下面。 。√</p>
 <p>4.按描述操作 配置开发负责人节点，配置条件 修改流程走向。要允许系统负责人上传新附件。</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205141144370.png" alt="image-20240205141144370"></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> REGEXP_SUBSTR(<span class="string">&#x27;$mkdjr$&#x27;</span>, <span class="string">&#x27;[^,]+&#x27;</span>, <span class="number">1</span>, LEVEL, <span class="string">&#x27;i&#x27;</span>) <span class="keyword">FROM</span> DUAL <span class="keyword">CONNECT</span> <span class="keyword">BY</span> LEVEL <span class="operator">&lt;=</span> LENGTH(<span class="string">&#x27;$mkdjr$&#x27;</span>) <span class="operator">-</span> LENGTH(REGEXP_REPLACE(<span class="string">&#x27;$mkdjr$&#x27;</span>, <span class="string">&#x27;,&#x27;</span>, <span class="string">&#x27;&#x27;</span>)) <span class="operator">+</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> REGEXP_SUBSTR(<span class="string">&#x27;$mkfzrnew$&#x27;</span>, <span class="string">&#x27;[^,]+&#x27;</span>, <span class="number">1</span>, LEVEL, <span class="string">&#x27;i&#x27;</span>) <span class="keyword">FROM</span> DUAL <span class="keyword">CONNECT</span> <span class="keyword">BY</span> LEVEL <span class="operator">&lt;=</span> LENGTH(<span class="string">&#x27;$mkfzrnew$&#x27;</span>) <span class="operator">-</span> LENGTH(REGEXP_REPLACE(<span class="string">&#x27;$mkfzrnew$&#x27;</span>, <span class="string">&#x27;,&#x27;</span>, <span class="string">&#x27;&#x27;</span>)) <span class="operator">+</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205102455299.png" alt="image-20240205102455299" style="zoom:50%;" />
 
 <p>新建一个浏览框 应用系统模块数据</p>
 <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205103046905.png" alt="image-20240205103046905" style="zoom:50%;" />
 
-<p>加一下唯一索引</p>
-<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205133954934.png" alt="image-20240205133954934" style="zoom:50%;" />
 
 
-
-<p>修改数据展现集成</p>
+<p>新增数据展现集成</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240205135527055.png" alt="image-20240205135527055"></p>
+<p>模块负责人的查询sql需要修改</p>
 <p>改一下所有的涉及模块字段·</p>
 <p>这里是系统管理员本人</p>
 <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240206103156188.png" alt="image-20240206103156188" style="zoom: 80%;" />
@@ -410,9 +410,35 @@
 <p>开发负责人是王仁军</p>
 <p>再加个开发附件</p>
 <p>每个中间节点的展示附件 完成时间和完成情况 都不一样，王悦这个节点要全部可以看到</p>
-<p>添加类型 外购&#x2F;自制 在系统管理员节点</p>
 <p>出口信息也都改一下 改成系统管理员</p>
 <p>测试附件改成非必填</p>
+<p>同步CR系统模块明细表的数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> uf_CRYYXT_dt1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> uf_CRYYXT_dt1 (mkmc, mkbm, mkfzr, yyxt)</span><br><span class="line"><span class="keyword">SELECT</span> mkmc, mkbm, mkdjr, yyxt</span><br><span class="line"><span class="keyword">FROM</span> uf_CRMK;</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> uf_CRYYXT_dt1 c</span><br><span class="line"><span class="keyword">SET</span> c.mainid <span class="operator">=</span> </span><br><span class="line">    (<span class="keyword">SELECT</span> id</span><br><span class="line">     <span class="keyword">FROM</span> uf_CRYYXT r</span><br><span class="line">     <span class="keyword">WHERE</span> r.yyxtbm <span class="operator">=</span> c.yyxt);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240207083149440.png" alt="image-20240207083149440" style="zoom:50%;" />
+
+<p>中间节点要设置为分叉中间节点</p>
+<p>模块的系统所有者的新增和编辑的模板加一下系统所有者，去掉测试负责人。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/usr/weaver/ecology/classbean/com/api/hisun/web CrTableActionApi</span><br><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/itsm/web CrTableAction</span><br><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/itsm/service CrTableService</span><br><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/itsm/service/impl CrTableServiceImpl</span><br><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/itsm/cmd CrTableCmd</span><br></pre></td></tr></table></figure>
+
+<p>同步ecode代码</p>
+<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240207161501959.png" alt="image-20240207161501959" style="zoom: 50%;" />
+
+<p>没有模块负责人的，用业务负责人审批，系统管理员节点默认业务负责人</p>
+<p>增加行自定义属性class标识<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240207161629190.png" alt="image-20240207161629190"></p>
+<p>并行节点出口条件名称改一下<br>申请人确认必需确认（加一个隐藏的编辑字段）<br>类型先隐藏了。</p>
+<p>修改和退回 加签都开放出来 同步签字意见</p>
+<p>原ecode</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> yyxt = <span class="title class_">WfForm</span>.<span class="title function_">convertFieldNameToId</span>(<span class="string">&quot;yyxt&quot;</span>) <span class="comment">// 应用系统</span></span><br><span class="line"><span class="keyword">let</span> sjmk = <span class="title class_">WfForm</span>.<span class="title function_">convertFieldNameToId</span>(<span class="string">&quot;sjmk&quot;</span>) <span class="comment">// 模块</span></span><br><span class="line"><span class="keyword">let</span> mkdjr = <span class="title class_">WfForm</span>.<span class="title function_">convertFieldNameToId</span>(<span class="string">&quot;mkdjr&quot;</span>) <span class="comment">// 模块对接人</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 清空“模块”</span></span><br><span class="line"><span class="title class_">WfForm</span>.<span class="title function_">bindFieldChangeEvent</span>(sjmk, <span class="keyword">function</span> (<span class="params">obj, id, value</span>) &#123;</span><br><span class="line">  <span class="title class_">WfForm</span>.<span class="title function_">changeFieldValue</span>(mkdjr, &#123; <span class="attr">value</span>: <span class="string">&quot;&quot;</span> &#125;)</span><br><span class="line">  <span class="keyword">if</span> (!!value) &#123;</span><br><span class="line">    <span class="comment">// 模块非空时，模块对接人必填</span></span><br><span class="line">    <span class="title class_">WfForm</span>.<span class="title function_">changeFieldAttr</span>(mkdjr, <span class="number">3</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title class_">WfForm</span>.<span class="title function_">changeFieldAttr</span>(mkdjr, <span class="number">2</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="title class_">WfForm</span>.<span class="title function_">bindFieldChangeEvent</span>(yyxt, <span class="keyword">function</span> (<span class="params">obj, id, value</span>) &#123;</span><br><span class="line">  <span class="title class_">WfForm</span>.<span class="title function_">changeFieldValue</span>(sjmk, &#123; <span class="attr">value</span>: <span class="string">&quot;&quot;</span> &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
             
           </div>
@@ -729,19 +755,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">OA发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大连</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -757,15 +783,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -777,19 +811,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -809,11 +835,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">策略</a>
+                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+                <a href="javascript:void(0)" class="js-tag color3">策略</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -833,15 +859,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
+                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,27 +879,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">供应商新增&变更流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,7 +895,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -913,11 +943,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
               </li>
              
               <li class="article-tag-list-item">
