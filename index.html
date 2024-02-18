@@ -90,7 +90,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 74
+			总文章数 82
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -253,6 +253,584 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-it/影刀中级" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: 影刀中级</span><br><span class="line">date: 2024/02/09 22:46:25</span><br><span class="line">tags: [自动化,爬虫,影刀] </span><br><span class="line">categories: [IT]</span><br><span class="line">toc: true</span><br></pre></td></tr></table></figure>
+
+</a>
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/18/it/%E5%BD%B1%E5%88%80%E4%B8%AD%E7%BA%A7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
+
+  
+    <article id="post-it/unicloud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/02/14/it/unicloud/">unicloud</a>
+    </h1>
+  
+
+
+
+          <!--显示阅读次数-->
+          
+        <!--显示阅读次数完毕-->
+        
+        <a href="/2024/02/14/it/unicloud/" class="archive-article-date">
+  	<time datetime="2024-02-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-14</time>
+</a>
+        
+      </header>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <p>unicloud</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/qingnian8/uniall/tree/master/uniCloudBase">https://gitee.com/qingnian8/uniall/tree/master/uniCloudBase</a></p>
+<p>缩短项目开发周期</p>
+<p>降低开发成本 硬件网络免费</p>
+<h1 id="新建unicloud服务"><a href="#新建unicloud服务" class="headerlink" title="新建unicloud服务"></a>新建unicloud服务</h1><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214140438040.png" alt="image-20240214140438040"></p>
+<p>关联服务空间项目</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214141711110.png" alt="image-20240214141711110"></p>
+<h1 id="认识云函数并调用"><a href="#认识云函数并调用" class="headerlink" title="认识云函数并调用"></a>认识云函数并调用</h1><p>  <a target="_blank" rel="noopener" href="https://doc.dcloud.net.cn/uniCloud/quickstart.html">https://doc.dcloud.net.cn/uniCloud/quickstart.html</a></p>
+<p>新建云函数</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214150604258.png" alt="image-20240214150604258"></p>
+<p>定义云函数</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214151147704.png" alt="image-20240214151147704"></p>
+<p>调用云函数</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214151204606.png" alt="image-20240214151204606"></p>
+<h1 id="传参渲染列表页面"><a href="#传参渲染列表页面" class="headerlink" title="传参渲染列表页面"></a>传参渲染列表页面</h1><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214152318633.png" alt="image-20240214152318633"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214152337428.png" alt="image-20240214152337428"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214152410363.png" alt="image-20240214152410363"></p>
+<h1 id="认识云数据库"><a href="#认识云数据库" class="headerlink" title="认识云数据库"></a>认识云数据库</h1><p>非关系型数据库</p>
+<p>右键打开控制台</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214155923928.png" alt="image-20240214155923928"></p>
+<h1 id="请求数据库"><a href="#请求数据库" class="headerlink" title="请求数据库"></a>请求数据库</h1><p> <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214161823426.png" alt="image-20240214161823426"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214161831474.png" alt="image-20240214161831474"></p>
+<h1 id="count统计和add新增与批量添加"><a href="#count统计和add新增与批量添加" class="headerlink" title="count统计和add新增与批量添加"></a>count统计和add新增与批量添加</h1><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240214163024968.png" alt="image-20240214163024968"></p>
+<h1 id="DOC引用与skip-orderby-limit-field的查询条件"><a href="#DOC引用与skip-orderby-limit-field的查询条件" class="headerlink" title="DOC引用与skip_orderby limit field的查询条件"></a>DOC引用与skip_orderby limit field的查询条件</h1><p><a target="_blank" rel="noopener" href="https://doc.dcloud.net.cn/uniCloud/cf-database.html#get-collection">https://doc.dcloud.net.cn/uniCloud/cf-database.html#get-collection</a></p>
+<p>doc根据id来获取</p>
+<p>limit限制</p>
+<p>skip 就是分页 跳过几条 要根据筛选个数来的，比如每页5个就填写5</p>
+<p> orderby就是排序</p>
+<p>filed返回指定需要的数据</p>
+<h1 id="command查询筛选比较符号"><a href="#command查询筛选比较符号" class="headerlink" title="command查询筛选比较符号"></a>command查询筛选比较符号</h1><p>等于或者不等于</p>
+<p>in或者not in</p>
+<p><a target="_blank" rel="noopener" href="https://doc.dcloud.net.cn/uniCloud/cf-database-dbcmd.html#remove">https://doc.dcloud.net.cn/uniCloud/cf-database-dbcmd.html#remove</a></p>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p><a target="_blank" rel="noopener" href="https://doc.dcloud.net.cn/uniCloud/cf-database.html#query">https://doc.dcloud.net.cn/uniCloud/cf-database.html#query</a></p>
+<h1 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h1><p><a target="_blank" rel="noopener" href="https://doc.dcloud.net.cn/uniCloud/cf-database.html#update">https://doc.dcloud.net.cn/uniCloud/cf-database.html#update</a></p>
+<p>数组对象也可以配合where条件去改</p>
+<p>向前追加unshift  向后追加dbcmd.push</p>
+<p> 自乘 自加 自减</p>
+<h1 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h1><p> <img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240215185109115.png" alt="image-20240215185109115"></p>
+<h1 id="本地云函数上传"><a href="#本地云函数上传" class="headerlink" title="本地云函数上传"></a>本地云函数上传</h1><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240215191944494.png" alt="image-20240215191944494" style="zoom: 50%;" />
+
+<h1 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h1><p>创建页面</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240215200729043.png" alt="image-20240215200729043"></p>
+<p>页面全局配置</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240215201000246.png" alt="image-20240215201000246"></p>
+<h1 id="首页布局"><a href="#首页布局" class="headerlink" title="首页布局"></a>首页布局</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;home&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span> <span class="attr">v-for</span>=<span class="string">&quot;item in 5&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span>默认标题默认标题默认标题默认标题默认标题默认标题默认标题<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;info&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">						<span class="tag">&lt;<span class="name">text</span>&gt;</span>小明<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">						<span class="tag">&lt;<span class="name">text</span>&gt;</span>2022-10-10<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">						<span class="tag">&lt;<span class="name">text</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;pic&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">image</span> <span class="attr">mode</span>=<span class="string">&quot;aspectFill&quot;</span> <span class="attr">src</span>=<span class="string">&quot;../../static/logo.png&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		</span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;goAdd&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;goAdd&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="attr">title</span>: <span class="string">&#x27;Hello&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="title function_">onLoad</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="attr">methods</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="comment">//点击跳转到新增页面</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="title function_">goAdd</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				uni.<span class="title function_">navigateTo</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">url</span>:<span class="string">&quot;/pages/add/add&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">&quot;scss&quot;</span> <span class="attr">scoped</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-class">.home</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.content</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">padding</span>:<span class="number">30</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="selector-class">.item</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">display</span>: flex;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">justify-content</span>: space-between;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">padding</span>:<span class="number">20</span>rpx <span class="number">0</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">border-bottom</span>:<span class="number">1</span>rpx solid <span class="number">#eee</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="selector-class">.text</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				<span class="attribute">flex</span>:<span class="number">1</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				<span class="attribute">display</span>: flex;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				<span class="attribute">flex-direction</span>: column;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				<span class="attribute">justify-content</span>: space-between;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				<span class="attribute">padding-right</span>: <span class="number">20</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				<span class="selector-class">.title</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">font-size</span>: <span class="number">44</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">color</span>:<span class="number">#333</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">text-align</span>: justify;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">text-overflow</span>: -o-ellipsis-lastline;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">overflow</span>: hidden;				</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">text-overflow</span>: ellipsis;		</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">display</span>: -webkit-box;			</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					-webkit-line-clamp: <span class="number">2</span>;			</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					line-clamp: <span class="number">2</span>;					</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					-webkit-box-orient: vertical;					</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				<span class="selector-class">.info</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">font-size</span>: <span class="number">28</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">color</span>:<span class="number">#888</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					text&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">						<span class="attribute">padding-right</span>: <span class="number">20</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="selector-class">.pic</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				<span class="attribute">width</span>: <span class="number">260</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				<span class="attribute">height</span>: <span class="number">180</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				image&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">width</span>: <span class="number">100%</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">					<span class="attribute">height</span>: <span class="number">100%</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">				&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.goEdit</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">width</span>: <span class="number">120</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">height</span>: <span class="number">120</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">background</span>: <span class="number">#2B9939</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">color</span>:<span class="number">#fff</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">display</span>: flex;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">justify-content</span>: center;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">align-items</span>: center;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">border-radius</span>: <span class="number">50%</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">font-size</span>: <span class="number">50</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">position</span>: fixed;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">right</span>: <span class="number">60</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">bottom</span>:<span class="number">100</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20</span>rpx <span class="built_in">rgba</span>(<span class="number">43</span>,<span class="number">153</span>,<span class="number">57</span>,<span class="number">0.7</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.goAdd</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">width</span>: <span class="number">120</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">height</span>: <span class="number">120</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">background</span>: <span class="number">#2B9939</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">color</span>:<span class="number">#fff</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">display</span>: flex;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">justify-content</span>: center;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">align-items</span>: center;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">border-radius</span>: <span class="number">50%</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">font-size</span>: <span class="number">50</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">position</span>: fixed;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">right</span>: <span class="number">60</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">bottom</span>:<span class="number">100</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">20</span>rpx <span class="built_in">rgba</span>(<span class="number">43</span>,<span class="number">153</span>,<span class="number">57</span>,<span class="number">0.7</span>);</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="新增页面布局"><a href="#新增页面布局" class="headerlink" title="新增页面布局"></a>新增页面布局</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;add&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">form</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入作者&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span>  <span class="attr">placeholder</span>=<span class="string">&quot;请输入内容&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">button</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">&quot;scss&quot;</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-class">.add</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="attribute">padding</span>:<span class="number">30</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.item</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">padding-bottom</span>:<span class="number">20</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">border</span>:<span class="number">1</span>rpx solid <span class="number">#eee</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">height</span>: <span class="number">80</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">padding</span>:<span class="number">0</span> <span class="number">20</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="selector-tag">textarea</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">height</span>: <span class="number">200</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">width</span>: <span class="number">100%</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">box-sizing</span>: border-box;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="selector-tag">button</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">margin-bottom</span>:<span class="number">20</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这种…加对象的写法相当于 对象一个属性一个属性写的简写。</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216110703960.png" alt="image-20240216110703960"></p>
+<h2 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> db = uniCloud.<span class="title function_">database</span>();</span><br><span class="line"><span class="built_in">exports</span>.<span class="property">main</span> = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line">	<span class="keyword">let</span> &#123;detail&#125; = event;</span><br><span class="line">	db.<span class="title function_">collection</span>(<span class="string">&quot;article&quot;</span>).<span class="title function_">add</span>(&#123;</span><br><span class="line">		<span class="attr">posttime</span>:<span class="title class_">Date</span>.<span class="title function_">now</span>(),</span><br><span class="line">		...detail</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="使用双向绑定"><a href="#使用双向绑定" class="headerlink" title="使用双向绑定"></a>使用双向绑定</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216111514377.png" alt="image-20240216111514377"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216111523350.png" alt="image-20240216111523350"></p>
+<h2 id="发布成功提示并且跳转"><a href="#发布成功提示并且跳转" class="headerlink" title="发布成功提示并且跳转"></a>发布成功提示并且跳转</h2><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216130119477.png" alt="image-20240216130119477"></p>
+<h1 id="触底翻页功能"><a href="#触底翻页功能" class="headerlink" title="触底翻页功能"></a>触底翻页功能</h1><p>限制八条数据</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216131857721.png" alt="image-20240216131857721"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216140902121.png" alt="image-20240216140902121"></p>
+<h1 id="组件市场"><a href="#组件市场" class="headerlink" title="组件市场"></a>组件市场</h1><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/">https://uniapp.dcloud.net.cn/component/</a></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216141735874.png" alt="image-20240216141735874"></p>
+<h1 id="详情页"><a href="#详情页" class="headerlink" title="详情页"></a>详情页</h1><p>样式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">view</span>　<span class="attr">class</span>=<span class="string">&quot;detail&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;info&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">text</span>&gt;</span>王五<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">text</span>&gt;</span>2022-10-10<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span>这是详细内容<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	</span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;btnGroup&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">button</span>&gt;</span>修改<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;warn&quot;</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">&quot;scss&quot;</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-class">.detail</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="attribute">padding</span>:<span class="number">30</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.title</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">font-size</span>: <span class="number">50</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">color</span>:<span class="number">#000</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">text-align</span>: justify;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">line-height</span>: <span class="number">1.4em</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.info</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">font-size</span>: <span class="number">30</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">color</span>:<span class="number">#666</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">padding</span>:<span class="number">30</span>rpx <span class="number">0</span> <span class="number">60</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		text&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">padding-right</span>: <span class="number">30</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.content</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">font-size</span>: <span class="number">36</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">line-height</span>: <span class="number">1.7em</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.picurls</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">padding-top</span>: <span class="number">50</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		image&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">width</span>: <span class="number">100%</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">display</span>: block;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">margin-bottom</span>:<span class="number">30</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.btnGroup</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">padding</span>:<span class="number">50</span>rpx <span class="number">0</span>;	</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="selector-tag">button</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">margin-right</span>: <span class="number">30</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>云代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> db=uniCloud.<span class="title function_">database</span>();</span><br><span class="line"><span class="built_in">exports</span>.<span class="property">main</span> = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line">	<span class="keyword">let</span> &#123;id&#125;=event;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">await</span> db.<span class="title function_">collection</span>(<span class="string">&quot;article&quot;</span>).<span class="title function_">doc</span>(id).<span class="title function_">get</span>();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="页面细节优化"><a href="#页面细节优化" class="headerlink" title="页面细节优化"></a>页面细节优化</h2><p>uni-load-more</p>
+<p>数据拿到以后才展示数据</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216180602517.png" alt="image-20240216180602517"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216180614441.png" alt="image-20240216180614441"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216180614441-17080779821651.png"></p>
+<p>修改当前页面的标题</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216180754529.png" alt="image-20240216180754529"></p>
+<h1 id="修改和删除"><a href="#修改和删除" class="headerlink" title="修改和删除"></a>修改和删除</h1><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216181221921.png" alt="image-20240216181221921"></p>
+<p>修改页面和提交差不多</p>
+<p>代码如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> db=uniCloud.<span class="title function_">database</span>()</span><br><span class="line"><span class="keyword">const</span> dbCmd = db.<span class="property">command</span></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">main</span> = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line">	<span class="keyword">let</span> &#123;detail,picurls&#125; = event;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">await</span> db.<span class="title function_">collection</span>(<span class="string">&quot;article&quot;</span>).<span class="title function_">doc</span>(detail.<span class="property">_id</span>).<span class="title function_">update</span>(&#123;	</span><br><span class="line">		<span class="attr">updateip</span>:dbCmd.<span class="title function_">push</span>(context.<span class="property">CLIENTIP</span>),</span><br><span class="line">		<span class="attr">title</span>:detail.<span class="property">title</span>,</span><br><span class="line">		<span class="attr">author</span>:detail.<span class="property">author</span>,</span><br><span class="line">		<span class="attr">content</span>:detail.<span class="property">content</span>,</span><br><span class="line">		picurls</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>编辑页面代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;edit&quot;</span>&gt;</span>		</span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">form</span> @<span class="attr">submit</span>=<span class="string">&quot;onSubmit&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;formValue.title&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;title&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			</span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;formValue.author&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入作者&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			</span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">v-model</span>=<span class="string">&quot;formValue.content&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入详细内容&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			</span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		</span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			</span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">button</span> <span class="attr">form-type</span>=<span class="string">&quot;reset&quot;</span>&gt;</span>重置<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">button</span> <span class="attr">form-type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> <span class="attr">:disabled</span>=<span class="string">&quot;inDisabled(formValue)&quot;</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			</span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="keyword">let</span> id;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="attr">picurls</span>:[],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="attr">imageValue</span>:[],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="attr">formValue</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">title</span>:<span class="string">&quot;&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">author</span>:<span class="string">&quot;&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">content</span>:<span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="title function_">onLoad</span>(<span class="params">e</span>)&#123;			</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			id=e.<span class="property">id</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="variable language_">this</span>.<span class="title function_">getDetail</span>();</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="attr">methods</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="comment">//图片上传成功</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="title function_">uploadSuccess</span>(<span class="params">e</span>)&#123;				</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="variable language_">this</span>.<span class="property">picurls</span>=e.<span class="property">tempFilePaths</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="comment">//获取详情</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="title function_">getDetail</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				uniCloud.<span class="title function_">callFunction</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">name</span>:<span class="string">&quot;art_get_row&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">						id</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;					</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="variable language_">this</span>.<span class="property">formValue</span>=res.<span class="property">result</span>.<span class="property">data</span>[<span class="number">0</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">if</span>(!<span class="variable language_">this</span>.<span class="property">formValue</span>.<span class="property">picurls</span>) <span class="keyword">return</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">let</span> urls=<span class="variable language_">this</span>.<span class="property">formValue</span>.<span class="property">picurls</span>.<span class="title function_">map</span>(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">						<span class="keyword">return</span> &#123;<span class="attr">url</span>:item&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="variable language_">this</span>.<span class="property">imageValue</span>=urls;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="comment">//判断按钮是否禁用</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="title function_">inDisabled</span>(<span class="params">obj</span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">let</span> &#123;title,author,content&#125; = obj;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">let</span> nobj=&#123;title,author,content&#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">let</span> bool= <span class="title class_">Object</span>.<span class="title function_">keys</span>(nobj).<span class="title function_">some</span>(<span class="function">(<span class="params">key,value</span>)=&gt;</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">return</span> nobj[key]==<span class="string">&#x27;&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">return</span> bool;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="comment">//点击提交</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			<span class="title function_">onSubmit</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				<span class="keyword">let</span> _picurls=<span class="variable language_">this</span>.<span class="property">imageValue</span>.<span class="title function_">map</span>(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="keyword">return</span> item.<span class="property">url</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				uniCloud.<span class="title function_">callFunction</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">name</span>:<span class="string">&quot;art_update_row&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="attr">data</span>:&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">						<span class="attr">detail</span>:<span class="variable language_">this</span>.<span class="property">formValue</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">						<span class="attr">picurls</span>:_picurls</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					uni.<span class="title function_">showToast</span>(&#123;						</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">						<span class="attr">title</span>:<span class="string">&quot;修改成功&quot;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					<span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">						uni.<span class="title function_">navigateBack</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">					&#125;,<span class="number">800</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">				&#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">			&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">&quot;scss&quot;</span> <span class="attr">scoped</span>&gt;</span><span class="language-css"></span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"><span class="selector-class">.edit</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="attribute">padding</span>:<span class="number">30</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	<span class="selector-class">.item</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="attribute">padding-bottom</span>:<span class="number">20</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">border</span>:<span class="number">1</span>rpx solid <span class="number">#eee</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">height</span>: <span class="number">80</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">padding</span>:<span class="number">0</span> <span class="number">20</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="selector-tag">textarea</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">height</span>: <span class="number">200</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">width</span>: <span class="number">100%</span>;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">box-sizing</span>: border-box;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		<span class="selector-tag">button</span>&#123;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">			<span class="attribute">margin-bottom</span>:<span class="number">20</span>rpx;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">		&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">	&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h1><p>获取下拉刷新重新请求还要停止请求在请求数据成功以后。</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216193815427.png" alt="image-20240216193815427"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216193827197.png" alt="image-20240216193827197"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240216194138507.png" alt="image-20240216194138507"></p>
+<h1 id="传统方式操作云数据库"><a href="#传统方式操作云数据库" class="headerlink" title="传统方式操作云数据库"></a>传统方式操作云数据库</h1><h1 id="云存储"><a href="#云存储" class="headerlink" title="云存储"></a>云存储</h1><p><a target="_blank" rel="noopener" href="https://doc.dcloud.net.cn/uniCloud/storage/">https://doc.dcloud.net.cn/uniCloud/storage/</a></p>
+<p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/component/uniui/uni-file-picker.html">https://uniapp.dcloud.net.cn/component/uniui/uni-file-picker.html</a></p>
+<p>组件市场直接找到插件拷贝过来</p>
+<h2 id="如何回调放到数据库里面"><a href="#如何回调放到数据库里面" class="headerlink" title="如何回调放到数据库里面"></a>如何回调放到数据库里面</h2><p>创建一个数据库放文件的数据</p>
+<p>在上传成功之后的success回调函数里面放到数据库</p>
+<h1 id="云开发配置跨域"><a href="#云开发配置跨域" class="headerlink" title="云开发配置跨域"></a>云开发配置跨域</h1><p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240217164745102.png" alt="image-20240217164745102"></p>
+<h1 id="发行"><a href="#发行" class="headerlink" title="发行"></a>发行</h1><p>网站-PC</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240217164959139.png" alt="image-20240217164959139"></p>
+<h1 id="前端页面托管"><a href="#前端页面托管" class="headerlink" title="前端页面托管"></a>前端页面托管</h1><p>相当于自己硬盘</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240217170706846.png" alt="image-20240217170706846"></p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240217173715494.png" alt="image-20240217173715494"></p>
+
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+				
+					<li class="article-tag-list-item">
+						<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+					</li>
+				
+			
+				
+					<li class="article-tag-list-item">
+						<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+					</li>
+				
+			
+		</ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/IT/" class="article-tag-list-link color3">IT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/14/it/unicloud/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
+
+  
+    <article id="post-it/青年帮新闻" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/02/11/it/%E9%9D%92%E5%B9%B4%E5%B8%AE%E6%96%B0%E9%97%BB/">Uni-App</a>
+    </h1>
+  
+
+
+
+          <!--显示阅读次数-->
+          
+        <!--显示阅读次数完毕-->
+        
+        <a href="/2024/02/11/it/%E9%9D%92%E5%B9%B4%E5%B8%AE%E6%96%B0%E9%97%BB/" class="archive-article-date">
+  	<time datetime="2024-02-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-11</time>
+</a>
+        
+      </header>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <p>青年帮新闻</p>
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+				
+					<li class="article-tag-list-item">
+						<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+					</li>
+				
+			
+				
+					<li class="article-tag-list-item">
+						<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+					</li>
+				
+			
+		</ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/IT/" class="article-tag-list-link color3">IT</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/11/it/%E9%9D%92%E5%B9%B4%E5%B8%AE%E6%96%B0%E9%97%BB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
+
   
     <article id="post-it/SQL 技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1479,177 +2057,10 @@
   </script>
 
   
-    <article id="post-大连旅游" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    <!--  -->
-<!-- 目录内容 -->
-
-
-<!-- 目录内容结束 -->
-
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/10/10/%E5%A4%A7%E8%BF%9E%E6%97%85%E6%B8%B8/">大连旅游</a>
-    </h1>
-  
-
-
-
-          <!--显示阅读次数-->
-          
-        <!--显示阅读次数完毕-->
-        
-        <a href="/2023/10/10/%E5%A4%A7%E8%BF%9E%E6%97%85%E6%B8%B8/" class="archive-article-date">
-  	<time datetime="2023-10-10T12:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-10-10</time>
-</a>
-        
-      </header>
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      <script>
-        (function(){
-          let password2 = '';
-          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
-
-
-          //基于缓存密码校验
-          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
-          if(storedPassword == password2 ){
-            // 当密码正确，或没有设置密码时进行内容显示
-            window.addEventListener('load', function() {
-                  document.getElementById('protectedContent').style.display = 'block';
-                  passwordEntered = true;
-          });
-          return;
-          }
-          if(password2 != ''){
-            passwordEntered = prompt('请输入密码') === password2;
-          }
-          // 基于密码输入结果，进行处理
-          if (!passwordEntered && password2 != '') {
-                 try {
-                                  // 可能会抛出异常的代码
-                                    history.back();
-                                } catch (error) {
-                                  // 捕获异常的代码
-                                  console.error(error); // 打印错误信息
-                                }
-                                window.location.href=document.referrer
-          }
-
-          // 当密码正确，或没有设置密码时进行内容显示
-          window.addEventListener('load', function() {
-              if (passwordEntered  || password2 === '') {
-                if(password2!=''){
-                  localStorage.removeItem('password');
-                  localStorage.setItem('password', password2);
-                  setTimeout(function() {
-                  localStorage.removeItem('password');
-                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
-                }
-                  document.getElementById('protectedContent').style.display = 'block';
-              }
-
-          });
-        })();
-      </script>
-      
-          <!-- 这部分内容受密码保护 -->
-          <div id="protectedContent" style="display: block;">
-            
-              <p><a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/nodeppt/旅游/dist/大连.html">国庆游大连</a></p>
-            
-          </div>
-        
-      </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-				
-					<li class="article-tag-list-item">
-						<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">大连</a>
-					</li>
-				
-			
-		</ul>
-	</div>
-
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/旅游/" class="article-tag-list-link color3">旅游</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/10/10/%E5%A4%A7%E8%BF%9E%E6%97%85%E6%B8%B8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-    
-        <!--  -->
-        <div class="jump-container" id="js-jump-container" style="display:block;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        <!--  -->
-        <!--  -->
-    </div>
-</aside>
-
-
-
-
-
-<script>
-  // 获取包含标签的父元素
-  var tagCloudTags = document.querySelector('.tag-cloud-tags');
-
-  // 获取所有标签元素
-  var tags = tagCloudTags.children;
-
-  // 遍历所有标签元素
-  for (var i = 0; i < tags.length; i++) {
-    var tag = tags[i];
-
-    // 判断标签的内容是否包含指定字符串
-    if (tag.textContent.includes('过滤')) {
-      // 隐藏包含指定字符串的标签元素
-      tag.style.display = 'none';
-    }
-  }
-  </script>
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+    </nav>
   
 
 
@@ -1789,10 +2200,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -1805,7 +2212,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1825,23 +2248,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1853,19 +2264,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">策略</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
+                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">商业</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1877,15 +2288,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1901,15 +2312,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1917,11 +2324,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
+                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1961,11 +2372,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
