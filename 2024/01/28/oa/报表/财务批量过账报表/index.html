@@ -18,7 +18,7 @@
 <meta property="og:description" content="财务批量过账报表 CR2024000068 1、财务批量过账界面处增加一个“说明”处的文字检索功能   2、财务批量过账界面”请求标题“处筛选全电子票流程 步骤发布后端代码 12&#x2F;usr&#x2F;weaver&#x2F;ecology&#x2F;classbean&#x2F;com&#x2F;engine&#x2F;hisun&#x2F;report&#x2F;cmd com.engine.hisun.report.cmd.EERBatchDataCmd&#x2F;usr&#x2F;weave">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-01-28T09:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-29T07:14:43.014Z">
+<meta property="article:modified_time" content="2024-02-21T00:18:28.412Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA报表">
@@ -269,7 +269,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2024000068"><span class="toc-number">1.</span> <span class="toc-text">CR2024000068</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.</span> <span class="toc-text">步骤</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2024000068"><span class="toc-number">1.</span> <span class="toc-text">CR2024000068</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.</span> <span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">验证方法</span></a></li></ol></li></ol>
  </div>
  <script type="text/javascript">
   function showToc(){
@@ -379,6 +379,8 @@
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>发布后端代码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/report/cmd com.engine.hisun.report.cmd.EERBatchDataCmd</span><br><span class="line">/usr/weaver/ecology/classbean/com/engine/hisun/report/cmd com.engine.hisun.report.cmd.EERBatchConditionCmd</span><br></pre></td></tr></table></figure>
 
+<h2 id="验证方法"><a href="#验证方法" class="headerlink" title="验证方法"></a>验证方法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> creater, appdate, requestid, requestnamehtmlnew, <span class="keyword">no</span>, amount, remark  </span><br><span class="line"><span class="keyword">from</span>  (<span class="keyword">select</span> A.<span class="operator">*</span>, B.appdate, B.no, B.amount, B.remark <span class="keyword">from</span> ecology.workflow_requestbase </span><br><span class="line">A <span class="keyword">join</span> ecology.formtable_main_54 B <span class="keyword">on</span> A.Requestid <span class="operator">=</span> B.requestid <span class="keyword">where</span> </span><br><span class="line">currentnodetype <span class="keyword">in</span> (<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>) <span class="keyword">and</span> ((workflowid <span class="operator">=</span> <span class="number">4023</span> <span class="keyword">and</span> currentnodeid</span><br><span class="line"> <span class="keyword">in</span> (<span class="number">3533</span>)) <span class="keyword">or</span> (workflowid <span class="operator">=</span> <span class="number">12023</span> <span class="keyword">and</span> currentnodeid <span class="keyword">in</span> (<span class="number">13546</span>)) <span class="keyword">or</span> </span><br><span class="line"> (workflowid <span class="operator">=</span> <span class="number">76022</span> <span class="keyword">and</span> currentnodeid <span class="keyword">in</span> (<span class="number">115527</span>)) <span class="keyword">or</span></span><br><span class="line">  (workflowid <span class="operator">=</span> <span class="number">12022</span> <span class="keyword">and</span> currentnodeid <span class="keyword">in</span> (<span class="number">13538</span>))) </span><br><span class="line">  <span class="keyword">and</span> <span class="keyword">exists</span> (<span class="keyword">select</span> <span class="number">1</span> <span class="keyword">from</span> ecology.workflow_currentoperator </span><br><span class="line">   <span class="keyword">where</span> requestid<span class="operator">=</span>A.requestid <span class="keyword">and</span> userid<span class="operator">=</span><span class="number">13423</span> <span class="keyword">and</span> nodeid<span class="operator">=</span>A.currentnodeid <span class="keyword">and</span> </span><br><span class="line">   isremark <span class="keyword">in</span>( <span class="string">&#x27;0&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;5&#x27;</span>,<span class="string">&#x27;8&#x27;</span>,<span class="string">&#x27;9&#x27;</span>,<span class="string">&#x27;7&#x27;</span>) <span class="keyword">and</span> islasttimes<span class="operator">=</span><span class="number">1</span>)) X  <span class="keyword">where</span>  <span class="string">&#x27;1&#x27;</span> <span class="operator">=</span> <span class="string">&#x27;1&#x27;</span> </span><br><span class="line">   </span><br><span class="line">   <span class="keyword">select</span> <span class="operator">*</span><span class="keyword">from</span> ecology.hrmresource <span class="keyword">where</span> lastname <span class="keyword">like</span> <span class="string">&#x27;%阮素青%&#x27;</span></span><br></pre></td></tr></table></figure>
+
 
             
           </div>
@@ -470,7 +472,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2024000068"><span class="toc-number">1.</span> <span class="toc-text">CR2024000068</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.</span> <span class="toc-text">步骤</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CR2024000068"><span class="toc-number">1.</span> <span class="toc-text">CR2024000068</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.</span> <span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">验证方法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -689,6 +691,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
@@ -697,15 +703,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">大连</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -722,6 +720,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -761,11 +763,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组织</a>
+                <a href="javascript:void(0)" class="js-tag color3">绩效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绩效</a>
+                <a href="javascript:void(0)" class="js-tag color3">组织</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -785,27 +787,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
+                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -813,43 +799,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">供应商新增&变更流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -861,14 +819,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
@@ -877,11 +827,63 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
+                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">供应商新增&变更流程</a>
               </li>
              
               <li class="article-tag-list-item">
