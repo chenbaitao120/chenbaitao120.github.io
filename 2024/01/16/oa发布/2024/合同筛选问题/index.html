@@ -17,18 +17,17 @@
 <meta property="og:site_name" content="chen.blog">
 <meta property="og:description" content="合同筛选物料客户问题 查询所有的中间库的表 1SELECT * FROM all_tables where TABLESPACE_NAME &#x3D; &#x27;SYNCDATA&#x27;  1vkorg就是签约主体公司  实施步骤物料的操作sql 创建一张中间表同步物料销售组织数据 接口是FUNCTION：ZMM0042  先同步到中间表 123456CREATE TABLE SYNCDATA.T_">
 <meta property="og:locale">
-<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240204161308696.png">
-<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240204161335855.png">
+<meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240223142118092.png">
 <meta property="article:published_time" content="2024-01-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-04T08:13:38.329Z">
+<meta property="article:modified_time" content="2024-02-26T08:20:04.367Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA发布">
+<meta property="article:tag" content="未完成">
 <meta property="article:tag" content="供应链发布">
 <meta property="article:tag" content="合同管理流程">
-<meta property="article:tag" content="未完成">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240204161308696.png">
+<meta name="twitter:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240223142118092.png">
   
     <link rel="alternative" href="/atom.xml" title="chen.blog" type="application/atom+xml">
   
@@ -100,7 +99,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 86
+			总文章数 88
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -275,7 +274,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
       <strong class="toc-title">文章目录</strong>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%96%BD%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">实施步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E6%96%99%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">物料的操作</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%96%BD%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">实施步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E6%96%99%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">物料的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">用户的操作</span></a></li></ol></li></ol>
  </div>
  <script type="text/javascript">
   function showToc(){
@@ -506,9 +505,738 @@
 <p>2.创建视图</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  <span class="keyword">or</span> REPLACE <span class="keyword">VIEW</span> uf_mm_yly <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> P.<span class="operator">*</span>,ROWNUM ID1 <span class="keyword">FROM</span> (</span><br><span class="line"><span class="keyword">select</span> a.<span class="operator">*</span>,b.VKORG,b.VTWEG <span class="keyword">from</span> uf_mm a <span class="keyword">left</span> <span class="keyword">join</span> ECOLOGY.T_ZMMS018 b</span><br><span class="line"><span class="keyword">on</span> b.MATNR2<span class="operator">=</span>a.code <span class="keyword">where</span> (b.LVORM <span class="operator">!=</span> <span class="string">&#x27;X&#x27;</span> <span class="keyword">or</span>  b.LVORM <span class="keyword">is</span> <span class="keyword">null</span>)</span><br><span class="line">)P</span><br></pre></td></tr></table></figure>
 
-<p>3.导入这个浏览框</p>
-<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240204161308696.png" alt="image-20240204161308696"></p>
-<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240204161335855.png" alt="image-20240204161335855"></p>
+<p>3.这个浏览框更换绑定对象</p>
+<p>更新链接对象和查询条件</p>
+<p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240223142118092.png" alt="image-20240223142118092"></p>
+<p>更新到原来那张物料表上面</p>
+<h2 id="用户的操作"><a href="#用户的操作" class="headerlink" title="用户的操作"></a>用户的操作</h2><p>SYNCDATA.sync_sapcustomer</p>
+<table>
+<thead>
+<tr>
+<th>FUNCTION：ZSD0021</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>输入参数</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>参数</td>
+<td></td>
+<td></td>
+<td>主键</td>
+<td>类型</td>
+<td>长度</td>
+<td>小数点</td>
+<td>描述</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>输出参数</td>
+<td>表</td>
+<td>IT_ITEM</td>
+<td>OA同步客户主数据(中心数据）</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>KUNNR</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>10</td>
+<td>0</td>
+<td>客户编号</td>
+</tr>
+<tr>
+<td></td>
+<td>NAME</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>120</td>
+<td>0</td>
+<td>客户名称</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>NAME4</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>40</td>
+<td>0</td>
+<td>名称 4</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>SORT1</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>20</td>
+<td>0</td>
+<td>检索项1</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>STREET</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>140</td>
+<td>0</td>
+<td>街道</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>LAND1</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>3</td>
+<td>0</td>
+<td>国家代码</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>LANDX</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>15</td>
+<td>0</td>
+<td>国家名称</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>REGIO</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>3</td>
+<td>0</td>
+<td>地区（省&#x2F;自治区&#x2F;直辖市、市、县）</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BEZEI</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>20</td>
+<td>0</td>
+<td>描述</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>TEL_NUMBER1</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>40</td>
+<td>0</td>
+<td>注册电话</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>TELFX</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>31</td>
+<td>0</td>
+<td>传真号</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>REMARK</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>50</td>
+<td>0</td>
+<td>地址注释</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>STCD1</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>27</td>
+<td>0</td>
+<td>税号</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>AKONT</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>10</td>
+<td>0</td>
+<td>总帐中的统驭科目</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>TEL_NUMBER2</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>40</td>
+<td>0</td>
+<td>联系人电话</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ZSHNAM</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>30</td>
+<td>0</td>
+<td>特性值</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ZFRDB</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>30</td>
+<td>0</td>
+<td>特性值</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ZWTNAM</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>30</td>
+<td>0</td>
+<td>特性值</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>NODEL</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>1</td>
+<td>0</td>
+<td>主记录的中心删除冻结</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>LOEVM</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>1</td>
+<td>0</td>
+<td>主记录的集中删除标志</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CASSD</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>客户的中央销售冻结</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>AUFSD</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>客户主要订单块</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>LIFSD</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>客户主要交货块</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>FAKSD</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>客户集中出具发票块</td>
+<td></td>
+</tr>
+<tr>
+<td>表</td>
+<td>T_ZSDS012</td>
+<td>OA同步客户主数据 (银行细目)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>KUNNR</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>10</td>
+<td>0</td>
+<td>客户编号</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BANKS</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>3</td>
+<td>0</td>
+<td>银行国家代码</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BANKL</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>15</td>
+<td>0</td>
+<td>银行代码</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BANKA</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>60</td>
+<td>0</td>
+<td>银行名称</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BANKN</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>100</td>
+<td>0</td>
+<td>银行账户</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BKREF</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>20</td>
+<td>0</td>
+<td>银行帐户的参考规定</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>KOINH</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>60</td>
+<td>0</td>
+<td>帐户持有人姓名</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BKONT</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>银行控制代码</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BVTYP</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>4</td>
+<td>0</td>
+<td>合作银行类型</td>
+<td></td>
+</tr>
+<tr>
+<td>表</td>
+<td>T_ZSDS015</td>
+<td>OA同步客户主数据 (销售细目)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>KUNNR</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>10</td>
+<td>0</td>
+<td>客户编号</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VKORG</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>4</td>
+<td>0</td>
+<td>销售组织</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>SPART</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>产品组</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>KALKS</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>1</td>
+<td>0</td>
+<td>定价过程分配到该客户</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>WAERS</td>
+<td></td>
+<td></td>
+<td>CUKY</td>
+<td>5</td>
+<td>0</td>
+<td>货币码</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VSBED</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>装运条件</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VTWEG</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>分销渠道</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CASSD</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>客户的销售冻结(销售范围)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>KTGRD</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>客户组的帐户分配</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ZTERM</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>4</td>
+<td>0</td>
+<td>付款条件代码</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>LOEVM</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>1</td>
+<td>0</td>
+<td>客户的删除标记 (销售级别)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>AUFSD</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>客户订单冻结(销售范围)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>LIFSD</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>客户交货冻结(销售范围)</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>FAKSD</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>2</td>
+<td>0</td>
+<td>冻结客户出具发票( 销售和分销 )</td>
+<td></td>
+</tr>
+<tr>
+<td>表</td>
+<td>T_ZSDS016</td>
+<td>OA同步客户主数据 (公司细目)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>KUNNR</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>10</td>
+<td>0</td>
+<td>客户编号</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BUKRS</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>4</td>
+<td>0</td>
+<td>公司代码</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ZUAWA</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>3</td>
+<td>0</td>
+<td>根据分配号排序代码</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>AKONT</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>10</td>
+<td>0</td>
+<td>总帐中的统驭科目</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>SPERR</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>1</td>
+<td>0</td>
+<td>对公司代码过帐冻结</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>NODEL</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>1</td>
+<td>0</td>
+<td>主记录的删除冻结（公司代码级）</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>LOEVM</td>
+<td></td>
+<td></td>
+<td>CHAR</td>
+<td>1</td>
+<td>0</td>
+<td>主记录删除标记(公司代码级)</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>改变表结构&#x2F;新增表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> SYNCDATA.sync_sapcustomer</span><br><span class="line"><span class="keyword">ADD</span> (NODEL VARCHAR2(<span class="number">255</span>),</span><br><span class="line">     LOEVM VARCHAR2(<span class="number">255</span>),</span><br><span class="line">     CASSD VARCHAR2(<span class="number">255</span>),</span><br><span class="line">     AUFSD VARCHAR2(<span class="number">255</span>),</span><br><span class="line">     LIFSD VARCHAR2(<span class="number">255</span>),</span><br><span class="line">     FAKSD VARCHAR2(<span class="number">255</span>));</span><br></pre></td></tr></table></figure>
+
+<p>新增表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> SYNCDATA.T_ZSDS012</span><br><span class="line"> (</span><br><span class="line">  KUNNR <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  BANKS <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  BANKL <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  BANKA <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  BANKN <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  BKREF <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  KOINH <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  BKONT <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  BVTYP <span class="type">VARCHAR</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> SYNCDATA.T_ZSDS015 (</span><br><span class="line">  KUNNR <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  VKORG <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  SPART <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  KALKS <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  WAERS <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  VSBED <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  VTWEG <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  CASSD <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  KTGRD <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  ZTERM <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  LOEVM <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  AUFSV <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  LIFSD <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  FAKSD <span class="type">VARCHAR</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> SYNCDATA.T_ZSDS016 (</span><br><span class="line">  KUNNR <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  BUKRS <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  ZUAWA <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  AKONT <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  SPERR <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  NODEL <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">  LOEVM <span class="type">VARCHAR</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>绿色的有值就不显示</p>
+<p>其实就第二张表SYNCDATA.T_ZSDS015有用</p>
 
             
           </div>
@@ -534,6 +1262,8 @@
 				
 			
 				
+			
+				
 					<li class="article-tag-list-item">
 						<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">供应链发布</a>
 					</li>
@@ -543,8 +1273,6 @@
 					<li class="article-tag-list-item">
 						<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">合同管理流程</a>
 					</li>
-				
-			
 				
 			
 		</ul>
@@ -614,7 +1342,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%96%BD%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">实施步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E6%96%99%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">物料的操作</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E6%96%BD%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">实施步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E6%96%99%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">物料的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">用户的操作</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -841,14 +1569,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大连</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -865,39 +1585,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绩效</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组织</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -909,15 +1597,63 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">策略</a>
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">日本旅游</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">大连旅游</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绩效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">组织</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">东北菜</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">策略</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -929,7 +1665,51 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
+                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">付款申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">供应商新增&变更流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -937,11 +1717,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -961,10 +1753,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
@@ -978,58 +1766,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">付款申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">供应商新增&变更流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
               </li>
              
               <li class="article-tag-list-item">
