@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240228150700534.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240228150732087.png">
 <meta property="article:published_time" content="2024-01-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-28T08:48:47.856Z">
+<meta property="article:modified_time" content="2024-03-01T05:33:18.457Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA发布">
@@ -101,7 +101,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 89
+			总文章数 91
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -1242,13 +1242,13 @@
 
 <p>绿色的有值就不显示</p>
 <p>其实就第二张表SYNCDATA.T_ZSDS015有用</p>
-<h3 id="视图SQL"><a href="#视图SQL" class="headerlink" title="视图SQL"></a>视图SQL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> REPLACE <span class="keyword">VIEW</span> SYNCDATA.sapcustomer <span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">select</span> A.KUNNR,A.NAME,A.LANDX,A.SORT1,B.VKORG</span><br><span class="line"> <span class="keyword">from</span> SYNCDATA.sync_sapcustomer A</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">SYNCDATA.T_ZSDS015 B <span class="keyword">ON</span> A.KUNNR <span class="operator">=</span> B.KUNNR</span><br><span class="line"><span class="keyword">WHERE</span> A.NODEL <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> A.LOEVM <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> A.CASSD <span class="keyword">IS</span> <span class="keyword">NULL</span> </span><br><span class="line"><span class="keyword">AND</span> A.AUFSD <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> A.LIFSD <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> A.FAKSD <span class="keyword">IS</span> <span class="keyword">NULL</span> </span><br><span class="line"><span class="keyword">AND</span> B.LOEVM <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> B.AUFSV <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> B.LIFSD <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="keyword">AND</span> B.FAKSD <span class="keyword">IS</span> <span class="keyword">NULL</span> </span><br></pre></td></tr></table></figure>
+<h3 id="视图SQL"><a href="#视图SQL" class="headerlink" title="视图SQL"></a>视图SQL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> REPLACE <span class="keyword">VIEW</span> SYNCDATA.sapcustomer <span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> A.KUNNR,A.NAME,A.LANDX,A.SORT1,B.VKORG,C.BUKRS</span><br><span class="line"> <span class="keyword">from</span> SYNCDATA.sync_sapcustomer A</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">SYNCDATA.T_ZSDS015 B <span class="keyword">ON</span> A.KUNNR <span class="operator">=</span> B.KUNNR</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> </span><br><span class="line">SYNCDATA.T_ZSDS016 C <span class="keyword">ON</span> C.KUNNR <span class="operator">=</span> A.KUNNR</span><br><span class="line"><span class="keyword">WHERE</span> A.NODEL <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> A.LOEVM <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> A.CASSD <span class="keyword">IS</span> <span class="keyword">NULL</span> </span><br><span class="line"><span class="keyword">AND</span> A.AUFSD <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> A.LIFSD <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> A.FAKSD <span class="keyword">IS</span> <span class="keyword">NULL</span> </span><br><span class="line"><span class="keyword">AND</span> B.LOEVM <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> B.AUFSV <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> B.LIFSD <span class="keyword">IS</span> <span class="keyword">NULL</span></span><br><span class="line"><span class="keyword">AND</span> B.FAKSD <span class="keyword">IS</span> <span class="keyword">NULL</span> </span><br></pre></td></tr></table></figure>
 
 <p>这个需要改成新增表单</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> ecology.sapcustomer (</span><br><span class="line">    KUNNR <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    NAME <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    LANDX <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    SORT1 <span class="type">VARCHAR</span>(<span class="number">255</span>),</span><br><span class="line">    VKORG <span class="type">VARCHAR</span>(<span class="number">255</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <p>搞个定时任务搞同步</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ecology.sapcustomer (KUNNR, NAME, LANDX, SORT1, VKORG)</span><br><span class="line"><span class="keyword">SELECT</span> A.KUNNR, A.NAME, A.LANDX, A.SORT1,A.VKORG</span><br><span class="line"><span class="keyword">FROM</span> SYNCDATA.sapcustomer A</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> ecology.uf_sapcustomer;</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ecology.uf_sapcustomer (KUNNR, NAME, LANDX, SORT1, VKORG,BUKRS)</span><br><span class="line"><span class="keyword">SELECT</span> A.KUNNR, A.NAME, A.LANDX, A.SORT1,A.VKORG,A.BUKRS</span><br><span class="line"><span class="keyword">FROM</span> SYNCDATA.sapcustomer A</span><br></pre></td></tr></table></figure>
 
 <p>改成新的表单</p>
 <p><img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240228150700534.png" alt="image-20240228150700534"></p>
@@ -1586,6 +1586,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">自动化</a>
               </li>
              
@@ -1598,19 +1602,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">OA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1619,6 +1611,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1638,11 +1638,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">大连旅游</a>
+                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
+                <a href="javascript:void(0)" class="js-tag color5">大连旅游</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1658,11 +1658,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">东北菜</a>
+                <a href="javascript:void(0)" class="js-tag color3">绩效</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绩效</a>
+                <a href="javascript:void(0)" class="js-tag color4">东北菜</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1694,11 +1694,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
+                <a href="javascript:void(0)" class="js-tag color2">OA邮件提醒</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OA邮件提醒</a>
+                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1706,19 +1706,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">付款申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HR流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">付款申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1730,7 +1734,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1738,15 +1742,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">采购需求流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1766,6 +1774,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
               </li>
              
@@ -1774,19 +1790,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
+                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
