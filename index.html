@@ -90,7 +90,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 91
+			总文章数 93
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -375,6 +375,177 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2024/03/27/%E6%97%85%E6%B8%B8/%E5%85%B3%E8%A5%BF%E6%97%85%E6%B8%B8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+    
+        <!--  -->
+        <div class="jump-container" id="js-jump-container" style="display:block;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+    </div>
+</aside>
+
+
+
+
+
+<script>
+  // 获取包含标签的父元素
+  var tagCloudTags = document.querySelector('.tag-cloud-tags');
+
+  // 获取所有标签元素
+  var tags = tagCloudTags.children;
+
+  // 遍历所有标签元素
+  for (var i = 0; i < tags.length; i++) {
+    var tag = tags[i];
+
+    // 判断标签的内容是否包含指定字符串
+    if (tag.textContent.includes('过滤')) {
+      // 隐藏包含指定字符串的标签元素
+      tag.style.display = 'none';
+    }
+  }
+  </script>
+
+  
+    <article id="post-游戏/陷阵之志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    <!--  -->
+<!-- 目录内容 -->
+
+
+<!-- 目录内容结束 -->
+
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/02/29/%E6%B8%B8%E6%88%8F/%E9%99%B7%E9%98%B5%E4%B9%8B%E5%BF%97/">陷阵之志</a>
+    </h1>
+  
+
+
+
+          <!--显示阅读次数-->
+          
+        <!--显示阅读次数完毕-->
+        
+        <a href="/2024/02/29/%E6%B8%B8%E6%88%8F/%E9%99%B7%E9%98%B5%E4%B9%8B%E5%BF%97/" class="archive-article-date">
+  	<time datetime="2024-02-29T08:46:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-29</time>
+</a>
+        
+      </header>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      <script>
+        (function(){
+          let password2 = '';
+          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
+
+
+          //基于缓存密码校验
+          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
+          if(storedPassword == password2 ){
+            // 当密码正确，或没有设置密码时进行内容显示
+            window.addEventListener('load', function() {
+                  document.getElementById('protectedContent').style.display = 'block';
+                  passwordEntered = true;
+          });
+          return;
+          }
+          if(password2 != ''){
+            passwordEntered = prompt('请输入密码') === password2;
+          }
+          // 基于密码输入结果，进行处理
+          if (!passwordEntered && password2 != '') {
+                 try {
+                                  // 可能会抛出异常的代码
+                                    history.back();
+                                } catch (error) {
+                                  // 捕获异常的代码
+                                  console.error(error); // 打印错误信息
+                                }
+                                window.location.href=document.referrer
+          }
+
+          // 当密码正确，或没有设置密码时进行内容显示
+          window.addEventListener('load', function() {
+              if (passwordEntered  || password2 === '') {
+                if(password2!=''){
+                  localStorage.removeItem('password');
+                  localStorage.setItem('password', password2);
+                  setTimeout(function() {
+                  localStorage.removeItem('password');
+                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
+                }
+                  document.getElementById('protectedContent').style.display = 'block';
+              }
+
+          });
+        })();
+      </script>
+      
+          <!-- 这部分内容受密码保护 -->
+          <div id="protectedContent" style="display: block;">
+            
+              <p>陷阵之志</p>
+            
+          </div>
+        
+      </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			
+				
+					<li class="article-tag-list-item">
+						<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">陷阵之志</a>
+					</li>
+				
+			
+		</ul>
+	</div>
+
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/游戏/" class="article-tag-list-link color3">游戏</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2024/02/29/%E6%B8%B8%E6%88%8F/%E9%99%B7%E9%98%B5%E4%B9%8B%E5%BF%97/">展开全文 >></a>
         </p>
       
 
@@ -1844,178 +2015,6 @@
   </script>
 
   
-    <article id="post-it/阿里云服务器的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    <!--  -->
-<!-- 目录内容 -->
-
-
-<!-- 目录内容结束 -->
-
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/12/31/it/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/">云服务器部署指令</a>
-    </h1>
-  
-
-
-
-          <!--显示阅读次数-->
-          
-        <!--显示阅读次数完毕-->
-        
-        <a href="/2023/12/31/it/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2023-12-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-31</time>
-</a>
-        
-      </header>
-
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      <script>
-        (function(){
-          let password2 = '';
-          var passwordEntered = false; // 定义一个变量来跟踪密码是否输入正确
-
-
-          //基于缓存密码校验
-          var storedPassword = localStorage.getItem('password'); // 获取本地存储中的密码
-          if(storedPassword == password2 ){
-            // 当密码正确，或没有设置密码时进行内容显示
-            window.addEventListener('load', function() {
-                  document.getElementById('protectedContent').style.display = 'block';
-                  passwordEntered = true;
-          });
-          return;
-          }
-          if(password2 != ''){
-            passwordEntered = prompt('请输入密码') === password2;
-          }
-          // 基于密码输入结果，进行处理
-          if (!passwordEntered && password2 != '') {
-                 try {
-                                  // 可能会抛出异常的代码
-                                    history.back();
-                                } catch (error) {
-                                  // 捕获异常的代码
-                                  console.error(error); // 打印错误信息
-                                }
-                                window.location.href=document.referrer
-          }
-
-          // 当密码正确，或没有设置密码时进行内容显示
-          window.addEventListener('load', function() {
-              if (passwordEntered  || password2 === '') {
-                if(password2!=''){
-                  localStorage.removeItem('password');
-                  localStorage.setItem('password', password2);
-                  setTimeout(function() {
-                  localStorage.removeItem('password');
-                }, 3600000); // 一小时等于 60 * 60 * 1000 毫秒
-                }
-                  document.getElementById('protectedContent').style.display = 'block';
-              }
-
-          });
-        })();
-      </script>
-      
-          <!-- 这部分内容受密码保护 -->
-          <div id="protectedContent" style="display: block;">
-            
-              <a target="_blank" rel="noopener" href="https://chenbaitao120.gitee.io/2023/12/31/it/阿里云服务器的使用/" onclick="window.location.replace(this.href); return false;">  
-<img src="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20231230220847087.png" alt="image-20231230220847087" style="zoom: 100%;"  />
-            
-          </div>
-        
-      </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			
-				
-					<li class="article-tag-list-item">
-						<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">运维</a>
-					</li>
-				
-			
-		</ul>
-	</div>
-
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/IT/" class="article-tag-list-link color3">IT</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2023/12/31/it/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-    
-        <!--  -->
-        <div class="jump-container" id="js-jump-container" style="display:block;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        <!--  -->
-        <!--  -->
-    </div>
-</aside>
-
-
-
-
-
-<script>
-  // 获取包含标签的父元素
-  var tagCloudTags = document.querySelector('.tag-cloud-tags');
-
-  // 获取所有标签元素
-  var tags = tagCloudTags.children;
-
-  // 遍历所有标签元素
-  for (var i = 0; i < tags.length; i++) {
-    var tag = tags[i];
-
-    // 判断标签的内容是否包含指定字符串
-    if (tag.textContent.includes('过滤')) {
-      // 隐藏包含指定字符串的标签元素
-      tag.style.display = 'none';
-    }
-  }
-  </script>
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
@@ -2143,6 +2142,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
@@ -2167,26 +2170,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">OA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">后端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
@@ -2199,6 +2182,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">供应链</a>
               </li>
              
@@ -2207,11 +2198,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">大连旅游</a>
+                <a href="javascript:void(0)" class="js-tag color3">OA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">日本旅游</a>
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2219,7 +2210,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+                <a href="javascript:void(0)" class="js-tag color5">日本旅游</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2227,15 +2218,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">东北菜</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">策略</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
+                <a href="javascript:void(0)" class="js-tag color5">大连旅游</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">策略</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2247,11 +2246,71 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
+                <a href="javascript:void(0)" class="js-tag color5">陷阵之志</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2267,15 +2326,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OA报表</a>
+                <a href="javascript:void(0)" class="js-tag color5">HR流程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HR流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2287,14 +2342,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">供应商新增&变更流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
               </li>
              
@@ -2303,19 +2350,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
+                <a href="javascript:void(0)" class="js-tag color1">供应商新增&变更流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2323,43 +2358,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
+                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">电子档案移交流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">档案室发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">人力发布</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">请假流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
               </li>
              
               <li class="article-tag-list-item">
