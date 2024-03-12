@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_1709019808568.png">
 <meta property="og:image" content="https://gulimall-chenbaitao.oss-cn-hangzhou.aliyuncs.com/typora/image-20240228101344783.png">
 <meta property="article:published_time" content="2024-02-21T02:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-01T06:52:24.528Z">
+<meta property="article:modified_time" content="2024-03-07T06:40:33.958Z">
 <meta property="article:author" content="今孔明">
 <meta property="article:tag" content="过滤">
 <meta property="article:tag" content="OA">
@@ -101,7 +101,7 @@
 			</ul>
 		</nav>
 		<nav class="header-subtitle">
-			总文章数 93
+			总文章数 98
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -400,7 +400,7 @@
 
 
 <p>定期同步数据</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> dt1.sjgzrq, dt1.yxhdh, dt1.id,dt1.hjpznd,dt1.hjpzbh,m.bukrs,dt1.HGJAHR,</span><br><span class="line">  dt1.BUKRS <span class="keyword">as</span> BUKRS2 ,dt1.DIRECTION,dt1.CURRENCY,dt1.AMOUNT,dt1.VBLNR_PAY,dt1.ZALDT,dt1.GJAHR,dt1.FBELNR,dt1.FGJAHR</span><br><span class="line">  <span class="keyword">FROM</span> ecology.formtable_main_129_dt1 dt1</span><br><span class="line">  <span class="keyword">INNER</span> <span class="keyword">JOIN</span> ecology.formtable_main_129 m <span class="keyword">ON</span> dt1.mainid <span class="operator">=</span> m.id</span><br><span class="line">) d</span><br><span class="line"><span class="keyword">SET</span> (d.sjgzrq, d.yxhdh,d.HGJAHR,d.BUKRS2,d.DIRECTION,d.CURRENCY,d.AMOUNT,d.VBLNR_PAY,d.ZALDT,d.GJAHR,d.FBELNR,d.FGJAHR) <span class="operator">=</span></span><br><span class="line">  (<span class="keyword">SELECT</span> s.BUDAT2, s.REFERENCE,S.HGJAHR,s.BUKRS,s.DIRECTION,s.CURRENCY,s.AMOUNT,s.VBLNR_PAY,s.ZALDT2,s.GJAHR,s.FBELNR,s.FGJAHR</span><br><span class="line">  <span class="keyword">FROM</span> SYNCDATA.IT_ZEPIC003 s</span><br><span class="line">  <span class="keyword">WHERE</span> s.bukrs <span class="operator">=</span> d.bukrs</span><br><span class="line">    <span class="keyword">AND</span> s.FGJAHR <span class="operator">=</span> d.hjpznd</span><br><span class="line">    <span class="keyword">AND</span> s.FBELNR <span class="operator">=</span> d.hjpzbh);</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> dt1.BELNR,dt1.FBUDAT,dt1.sjgzrq, dt1.yxhdh, dt1.id,dt1.hjpznd,dt1.hjpzbh,m.bukrs,dt1.HGJAHR,</span><br><span class="line">  dt1.gsdm <span class="keyword">as</span> BUKRS2 ,dt1.DIRECTION,dt1.CURRENCY,dt1.AMOUNT,dt1.VBLNR_PAY,dt1.ZALDT,dt1.GJAHR,dt1.FBELNR,dt1.FGJAHR</span><br><span class="line">  <span class="keyword">FROM</span> ecology.formtable_main_129_dt1 dt1</span><br><span class="line">  <span class="keyword">INNER</span> <span class="keyword">JOIN</span> ecology.formtable_main_129 m <span class="keyword">ON</span> dt1.mainid <span class="operator">=</span> m.id</span><br><span class="line">) d</span><br><span class="line"><span class="keyword">SET</span> (d.BELNR,d.FBUDAT,d.sjgzrq, d.yxhdh,d.HGJAHR,d.BUKRS2,d.DIRECTION,d.CURRENCY,d.AMOUNT,d.VBLNR_PAY,d.ZALDT,d.GJAHR,d.FBELNR,d.FGJAHR) <span class="operator">=</span></span><br><span class="line">  (<span class="keyword">SELECT</span> s.BELNR,s.FBUDAT2,s.BUDAT2, s.REFERENCE,S.HGJAHR,s.BUKRS,s.DIRECTION,s.CURRENCY,s.AMOUNT,s.VBLNR_PAY,s.ZALDT2,s.GJAHR,s.FBELNR,s.FGJAHR</span><br><span class="line">  <span class="keyword">FROM</span> SYNCDATA.IT_ZEPIC003 s</span><br><span class="line">  <span class="keyword">WHERE</span> s.bukrs <span class="operator">=</span> d.bukrs</span><br><span class="line">    <span class="keyword">AND</span> s.FGJAHR <span class="operator">=</span> d.hjpznd</span><br><span class="line">    <span class="keyword">AND</span> s.FBELNR <span class="operator">=</span> d.hjpzbh</span><br><span class="line">    <span class="keyword">AND</span> ROWNUM <span class="operator">=</span> <span class="number">1</span>); <span class="comment">-- 添加限制条件只返回一行数据</span></span><br></pre></td></tr></table></figure>
 
 <p>发布后端代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/weaver/ecology/classbean/hisun/cron hisun.cron.SyhcITZEPIC003CronJob</span><br></pre></td></tr></table></figure>
@@ -729,10 +729,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过滤</a>
               </li>
              
@@ -757,15 +753,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">运维</a>
+                <a href="javascript:void(0)" class="js-tag color4">GIT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -777,11 +765,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -793,7 +789,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">组织</a>
+                <a href="javascript:void(0)" class="js-tag color4">供应链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">会议纪要</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">大连旅游</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -801,11 +805,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绩效</a>
+                <a href="javascript:void(0)" class="js-tag color3">大理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
+                <a href="javascript:void(0)" class="js-tag color3">组织</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绩效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -813,11 +821,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">大理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">大连旅游</a>
+                <a href="javascript:void(0)" class="js-tag color5">贝优妮塔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -829,7 +833,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">高项</a>
+                <a href="javascript:void(0)" class="js-tag color1">金字塔原理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,15 +841,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
+                <a href="javascript:void(0)" class="js-tag color3">高项</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">合同管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">电子档案系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OA邮件提醒</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,15 +877,63 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
+                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
+                <a href="javascript:void(0)" class="js-tag color5">HR流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">付款申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">供应商新增&变更流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">物料报废申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">采购申请流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">采购需求流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">供应链发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">合同管理流程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,75 +953,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">其他发布</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">法务支持流程-法律文书流程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">省公司请假流程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">采购需求三合一流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">未完成</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组织架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ASL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">法务调整</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OA邮件提醒</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">瀚晖</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HR流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CR流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">付款申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">会议事项流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">原料药研究院工作委托联系单</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">应付申请流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">供应商新增&变更流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">采购需求流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">费用报销流程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">预算调整申请单流程</a>
               </li>
              
               <li class="article-tag-list-item">
